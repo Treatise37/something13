@@ -2670,13 +2670,16 @@
 		item.throw_at(target, item.throw_range, item.throw_speed)
 
 /mob/living/carbon/human/click(atom/target, list/params)
-	if (src.in_throw_mode || params.Find("shift"))
+	if (params.Find("shift"))
+		target.examine()
+		return
+	if (src.in_throw_mode || (src.client && src.client.check_key("throwmode")))
 		src.throw_item(target)
 		return
 	return ..()
 
 /mob/living/carbon/human/update_cursor()
-	if ((src.client && src.client.check_key("shift")) || src.in_throw_mode)
+	if ((src.client && src.client.check_key("throwmode")) || src.in_throw_mode)
 		src.set_cursor('icons/cursors/throw.dmi')
 		return
 	return ..()

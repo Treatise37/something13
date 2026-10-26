@@ -347,6 +347,8 @@ var/global/curr_day = null
 	return
 
 /client/proc/install_macros()
+	if (isnull(src.keys["throwmode"]))
+		src.keys["throwmode"] = 0
 	for(var/key in list("alt", "shift", "ctrl"))
 		src.keys[key] = 0
 		for(var/macro in params2list(winget(src, null, "macro")))
@@ -408,6 +410,8 @@ var/global/curr_day = null
 	if (src.keys.Find(key))
 		src.keys[key] = 1
 		mob.key_down(key)
+		if (key == "throwmode")
+			mob.update_cursor()
 
 /client/verb/keyup(key as text)
 	set hidden = 1
@@ -416,6 +420,8 @@ var/global/curr_day = null
 	if (src.keys.Find(key))
 		src.keys[key] = 0
 		mob.key_up(key)
+		if (key == "throwmode")
+			mob.update_cursor()
 
 /client/verb/hotkey(key as text)
 	set hidden = 1
@@ -433,6 +439,13 @@ var/global/curr_day = null
 	set hidden = 1
 	if (!src.mob.stat && (ishuman(src.mob) || istype(src.mob, /mob/living/critter)) && isturf(src.mob.loc) && !src.mob.restrained())
 		src.mob:toggle_throw_mode()
+
+/client/verb/toggle_resting()
+	set hidden = 1
+	set name = ".toggle_resting"
+	if (ishuman(src.mob))
+		var/mob/living/carbon/human/H = src.mob
+		H.hud.clicked("rest", H, list())
 	return
 
 /client/verb/togglepoint(force_off as num) // force_off is set to 1 when the button for this is released in WASD mode (currently B), else it's 0
