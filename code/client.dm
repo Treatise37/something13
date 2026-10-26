@@ -94,9 +94,6 @@ var/global/list/hellbans = null
 		del(src)
 		return
 
-	if (config && config.env == "dev" && (!src.address || src.address == "127.0.0.1"))
-		winshow(src, "runtimes", 1)
-
 	//Assign custom interface datums
 	src.chatOutput = new /datum/chatOutput(src)
 	//src.chui = new /datum/chui(src)

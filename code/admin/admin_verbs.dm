@@ -3,14 +3,14 @@
 var/list/admin_verbs = list(
 
 
-1 = list(\
+list(\
 // LEVEL_BABBY, goat fart, ayn rand's armpit
 /client/proc/cmd_admin_say,\
 /client/proc/cmd_admin_gib_self,\
 ),
 
 
-2 = list(\
+list(\
 // LEVEL_MOD, moderator
 /client/proc/admin_changes,\
 /client/proc/admin_play,\
@@ -60,8 +60,8 @@ var/list/admin_verbs = list(
 /client/proc/cmd_shame_cube,\
 ),\
 
-
-3 = list(\
+
+list(\
 // LEVEL_SA, secondary administrator
 /client/proc/stealth,\
 /datum/admins/proc/pixelexplosion,\
@@ -132,8 +132,8 @@ var/list/admin_verbs = list(
 /client/proc/respawn_as_self,\
 /datum/admins/proc/toggletraitorscaling,\
 ),\
-
-4 = list(\
+
+list(\
 /*// LEVEL_ADMIN, admin
 /client/proc/noclip,\
 /client/proc/cmd_admin_mute,\
@@ -149,8 +149,8 @@ var/list/admin_verbs = list(
 /datum/admins/proc/togglerandomaiblobs\
 */),\
 
-
-5 = list(\
+
+list(\
 // LEVEL_PA, primary administrator
 /datum/admins/proc/togglesuicide,\
 /datum/admins/proc/pixelexplosion,\
@@ -200,8 +200,8 @@ var/list/admin_verbs = list(
 /client/proc/cmd_give_pets\
 ),\
 
-
-6 = list(\
+
+list(\
 // LEVEL_SHITGUY, shit person
 /datum/admins/proc/togglesoundwaiting,\
 /datum/admins/proc/pixelexplosion,\
@@ -279,8 +279,8 @@ var/list/admin_verbs = list(
 /client/proc/replace_with_explosive\
 
 ),\
-
-7 = list(\
+
+list(\
 // LEVEL_CODER, coder
 /client/proc/cmd_job_controls,\
 /datum/admins/proc/pixelexplosion,\
@@ -335,8 +335,8 @@ var/list/admin_verbs = list(
 /client/proc/debugResourceCache\
 ),\
 
-
-8 = list(\
+
+list(\
 // LEVEL_HOST, host
 /client/proc/cmd_claim_rs_verbs\
 )\

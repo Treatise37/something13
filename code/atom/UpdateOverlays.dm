@@ -210,6 +210,9 @@ ClearSpecificOverlays(1, "key0", "key1", "key2") 	//Same as above but retains ca
 //helper procs
 /////////////////////////////////////////////
 /proc/hash_image(var/image/I)
+	if(islist(I))
+		var/list/L = I
+		return md5("\ref[L][L.len]")
 	if(I)
 		. = md5("\ref[I][I.icon_state][I.overlays ? I.overlays.len : 0][I.color][I.alpha]")
 	else

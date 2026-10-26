@@ -22,11 +22,10 @@ chui.bycall = function( method, data ){
 
 chui.close = function( ){
 	document.location = "byond://winset?command=" + escaper( ".chui-close " + chui.window );
-	chui.winset( "is-visible", "false" );
 };
 
 chui.winset = function( key, value ){
-	document.location = "byond://winset?" + chui.window + "." + key + "=" + escape( value );
+	document.location = "byond://winset?id=" + escaper( chui.window ) + "&" + key + "=" + escaper( value );
 };
 
 chui.setPos = function( x, y ){

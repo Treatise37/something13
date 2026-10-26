@@ -167,16 +167,16 @@ body
 			var/new_dir = href_list["DirectionToSet"]
 			if (new_dir == "L90")
 				A.dir = turn(A.dir, 90)
-				boutput(src, "Turned [A] 90° to the left: direction is now [uppertext(dir2text(A.dir))].")
+				boutput(src, "Turned [A] 90ï¿½ to the left: direction is now [uppertext(dir2text(A.dir))].")
 			else if (new_dir == "L45")
 				A.dir = turn(A.dir, 45)
-				boutput(src, "Turned [A] 45° to the left: direction is now [uppertext(dir2text(A.dir))].")
+				boutput(src, "Turned [A] 45ï¿½ to the left: direction is now [uppertext(dir2text(A.dir))].")
 			else if (new_dir == "R90")
 				A.dir = turn(A.dir, -90)
-				boutput(src, "Turned [A] 90° to the right: direction is now [uppertext(dir2text(A.dir))].")
+				boutput(src, "Turned [A] 90ï¿½ to the right: direction is now [uppertext(dir2text(A.dir))].")
 			else if (new_dir == "R45")
 				A.dir = turn(A.dir, -45)
-				boutput(src, "Turned [A] 45° to the right: direction is now [uppertext(dir2text(A.dir))].")
+				boutput(src, "Turned [A] 45ï¿½ to the right: direction is now [uppertext(dir2text(A.dir))].")
 			else
 				var/list/english_dirs = list("NORTH", "NORTHEAST", "EAST", "SOUTHEAST", "SOUTH", "SOUTHWEST", "WEST", "NORTHWEST")
 				new_dir = input(src, "Choose a direction for [A] to face.", "Selection", "NORTH") as null|anything in english_dirs
@@ -453,7 +453,7 @@ body
 			if (istype(M))
 				var/datum/targetable/refpicker/R
 				if (set_global)
-					R = new /datum/targetable/refpicker/global()
+					R = new /datum/targetable/refpicker/global_all()
 				else
 					R = new()
 				R.target = D

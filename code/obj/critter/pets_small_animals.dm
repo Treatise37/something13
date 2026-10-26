@@ -1159,22 +1159,22 @@ var/list/cat_names = list("Gary", "Mittens", "Mr. Jingles", "Rex", "Jasmine", "L
 				src.desc = stop_the_runtimes_please[2]
 
 var/list/parrot_species = list(\
-	"eclectus" = list(1 = "space eclectus", 2 = "A spacefaring species of <i>eclectus roratus</i>."),\
-	"eclectusf" = list(1 = "space eclectus", 2 = "A spacefaring species of <i>eclectus roratus</i>."),\
-	"agrey" = list(1 = "space grey", 2 = "A spacefaring species of <i>psittacus erithacus</i>."),\
-	"bcaique" = list(1 = "space caique", 2 = "A spacefaring species of <i>pionites melanocephalus</i>."),\
-	"wcaique" = list(1 = "space caique", 2 = "A spacefaring species of <i>pionites leucogaster</i>."),\
-	"gbudge" = list(1 = "space budgerigar", 2 = "A spacefaring species of <i>melopsittacus undulatus</i>."),\
-	"bbudge" = list(1 = "space budgerigar", 2 = "A spacefaring species of <i>melopsittacus undulatus</i>."),\
-	"bgbudge" = list(1 = "space budgerigar", 2 = "A spacefaring species of <i>melopsittacus undulatus</i>."),\
-	"tiel" = list(1 = "space cockatiel", 2 = "A spacefaring species of <i>nymphicus hollandicus</i>."),\
-	"wtiel" = list(1 = "space cockatiel", 2 = "A spacefaring species of <i>nymphicus hollandicus</i>."),\
-	"luttiel" = list(1 = "space cockatiel", 2 = "A spacefaring species of <i>nymphicus hollandicus</i>."),\
-	"blutiel" = list(1 = "space cockatiel", 2 = "A spacefaring species of <i>nymphicus hollandicus</i>."),\
-	"too" = list(1 = "space cockatoo", 2 = "A spacefaring species of <i>cacatua galerita</i>."),\
-	"utoo" = list(1 = "space cockatoo", 2 = "A spacefaring species of <i>cacatua alba</i>."),\
-	"mtoo" = list(1 = "space cockatoo", 2 = "A spacefaring species of <i>lophochroa leadbeateri</i>."),\
-	"kea" = list(1 = "space kea", 2 = "A spacefaring species of <i>nestor notabillis</i>, also known as the 'space mountain parrot,' originating from Space Zealand.")\
+	"eclectus" = list("space eclectus", "A spacefaring species of <i>eclectus roratus</i>."),\
+	"eclectusf" = list("space eclectus", "A spacefaring species of <i>eclectus roratus</i>."),\
+	"agrey" = list("space grey", "A spacefaring species of <i>psittacus erithacus</i>."),\
+	"bcaique" = list("space caique", "A spacefaring species of <i>pionites melanocephalus</i>."),\
+	"wcaique" = list("space caique", "A spacefaring species of <i>pionites leucogaster</i>."),\
+	"gbudge" = list("space budgerigar", "A spacefaring species of <i>melopsittacus undulatus</i>."),\
+	"bbudge" = list("space budgerigar", "A spacefaring species of <i>melopsittacus undulatus</i>."),\
+	"bgbudge" = list("space budgerigar", "A spacefaring species of <i>melopsittacus undulatus</i>."),\
+	"tiel" = list("space cockatiel", "A spacefaring species of <i>nymphicus hollandicus</i>."),\
+	"wtiel" = list("space cockatiel", "A spacefaring species of <i>nymphicus hollandicus</i>."),\
+	"luttiel" = list("space cockatiel", "A spacefaring species of <i>nymphicus hollandicus</i>."),\
+	"blutiel" = list("space cockatiel", "A spacefaring species of <i>nymphicus hollandicus</i>."),\
+	"too" = list("space cockatoo", "A spacefaring species of <i>cacatua galerita</i>."),\
+	"utoo" = list("space cockatoo", "A spacefaring species of <i>cacatua alba</i>."),\
+	"mtoo" = list("space cockatoo", "A spacefaring species of <i>lophochroa leadbeateri</i>."),\
+	"kea" = list("space kea", "A spacefaring species of <i>nestor notabillis</i>, also known as the 'space mountain parrot,' originating from Space Zealand.")\
 	)
 
 /obj/critter/parrot/random/testing

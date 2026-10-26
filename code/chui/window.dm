@@ -96,7 +96,7 @@ chui/window
 		var/list/config = params2list( options )
 		var/name = config[ "window" ]
 		if( isnull( body ) )
-			usr << browse( null, options )
+			who << browse( null, options )
 			return
 		if( !name )
 			CRASH( "No window name given" )

@@ -172,8 +172,9 @@ var/zapLimiter = 0
 		cell.maxcharge = cell_type	// cell_type is maximum charge (old default was 1000 or 2500 (values one and two respectively)
 		cell.charge = start_charge * cell.maxcharge / 100.0 		// (convert percentage to actual value)
 
-	if (!isnull(src.areastring) && !isnull(get_area_name(src.areastring)))
-		src.area = get_area_name(src.areastring)
+	var/area/named_area = isnull(src.areastring) ? null : get_area_name(src.areastring)
+	if (named_area)
+		src.area = named_area
 		src.name = "[src.areastring] APC"
 	else
 		src.area = get_area(src)

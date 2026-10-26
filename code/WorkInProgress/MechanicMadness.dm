@@ -165,7 +165,7 @@ var/list/mechanics_telepads = new/list()
 	w_class = 1.0
 	level = 2
 	var/under_floor = 0
-	var/list/particles = new/list()
+	var/list/mech_particles = new/list()
 
 	New()
 		mechanics = new(src)
@@ -175,10 +175,10 @@ var/list/mechanics_telepads = new/list()
 		return ..()
 
 	proc/cutParticles()
-		if(particles.len)
-			for(var/datum/particleSystem/mechanic/M in particles)
+		if(mech_particles.len)
+			for(var/datum/particleSystem/mechanic/M in mech_particles)
 				M.Die()
-			particles.Cut()
+			mech_particles.Cut()
 		return
 
 	process()
@@ -186,10 +186,10 @@ var/list/mechanics_telepads = new/list()
 			cutParticles()
 			return
 
-		if(particles.len != mechanics.connected_outgoing.len)
+		if(mech_particles.len != mechanics.connected_outgoing.len)
 			cutParticles()
 			for(var/atom/X in mechanics.connected_outgoing)
-				particles.Add(particleMaster.SpawnSystem(new /datum/particleSystem/mechanic(src.loc, X.loc)))
+				mech_particles.Add(particleMaster.SpawnSystem(new /datum/particleSystem/mechanic(src.loc, X.loc)))
 
 		return
 

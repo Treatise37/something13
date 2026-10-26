@@ -117,11 +117,13 @@
 
 	New(var/L)
 		..()
-		set_dir(dir)
 		effect_overlay = new/obj/overlay/tile_effect/secondary/bookcase(loc)
+		set_dir(dir)
 		if (isturf(loc))
-			if (loc:effect_overlay)
-				effect_overlay.color = loc:effect_overlay.color
+			var/turf/T = loc
+			if (T.vars.Find("effect_overlay") && T.vars["effect_overlay"])
+				var/obj/overlay/tile_effect/E = T.vars["effect_overlay"]
+				effect_overlay.color = E.color
 
 	onVarChanged(var/varname, var/oldvalue, var/newvalue)
 		if (varname == "dir")
@@ -132,7 +134,8 @@
 		if (!(dir & 2))
 			dir = 2
 		pixel_y = 28
-		effect_overlay.dir = dir
+		if (effect_overlay)
+			effect_overlay.dir = dir
 
 	attack_hand(var/mob/user)
 		if (user.y != src.y || user.x < src.x - 1 || user.x > src.x + 1)

@@ -1663,8 +1663,6 @@ var/global/noir = 0
 								evilize(M, "traitor", "hardmode")
 							else
 								evilize(M, selection)
-							else
-								spawn (0) alert("An error occurred, please try again.")
 					else
 						var/list/traitor_types = list("Traitor", "Wizard", "Changeling", "Vampire", "Werewolf", "Predator", "Wrestler", "Grinch", "Omnitraitor")
 						if(ticker && ticker.mode && istype(ticker.mode, /datum/game_mode/gang))
@@ -1678,8 +1676,6 @@ var/global/noir = 0
 									evilize(M, "traitor")
 							else
 								evilize(M, selection)
-							else
-								spawn (0) alert("An error occurred, please try again.")
 			//they're a ghost/hivebotthing/etc
 			else
 				alert("Cannot make this mob a traitor")

@@ -76,6 +76,6 @@ SERVERNAME LLJK-510
 SERVERSUFFIX
 SERVERREGION US
 
-ENV prod
+ENV dev
 
-CDN http://cdn.goonhub.com
+#CDN http://cdn.goonhub.com

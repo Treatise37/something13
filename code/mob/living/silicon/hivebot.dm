@@ -1134,21 +1134,21 @@ Frequency:
 
 		if (src.healths)
 			if (src.stat != 2)
-				switch(health)
-					if(max_health to INFINITY)
-						src.healths.icon_state = "health0"
-					if(src.max_health*0.80 to src.max_health)
-						src.healths.icon_state = "health1"
-					if(src.max_health*0.60 to src.max_health*0.80)
-						src.healths.icon_state = "health2"
-					if(src.max_health*0.40 to src.max_health*0.60)
-						src.healths.icon_state = "health3"
-					if(src.max_health*0.20 to src.max_health*0.40)
-						src.healths.icon_state = "health4"
-					if(0 to max_health*0.20)
-						src.healths.icon_state = "health5"
-					else
-						src.healths.icon_state = "health6"
+				var/hp_ratio = src.health
+				if (hp_ratio >= src.max_health)
+					src.healths.icon_state = "health0"
+				else if (hp_ratio >= src.max_health*0.80)
+					src.healths.icon_state = "health1"
+				else if (hp_ratio >= src.max_health*0.60)
+					src.healths.icon_state = "health2"
+				else if (hp_ratio >= src.max_health*0.40)
+					src.healths.icon_state = "health3"
+				else if (hp_ratio >= src.max_health*0.20)
+					src.healths.icon_state = "health4"
+				else if (hp_ratio >= 0)
+					src.healths.icon_state = "health5"
+				else
+					src.healths.icon_state = "health6"
 			else
 				src.healths.icon_state = "health7"
 
