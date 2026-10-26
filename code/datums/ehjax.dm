@@ -23,6 +23,8 @@ var/global/datum/ehjax/ehjax = new /datum/ehjax()
 		send(client/C, window, data)
 			if (!C || !window || !data) return
 			if (!istype(C, /client)) return
+			if (window == "browseroutput")
+				window = "outputwindow.browseroutput"
 			if (istype(data, /list))
 				data = json_encode(data)
 
@@ -85,4 +87,3 @@ var/global/datum/ehjax/ehjax = new /datum/ehjax()
 					if (data && windowName)
 						data = url_encode(data)
 						src.send(C, windowName, data)
-

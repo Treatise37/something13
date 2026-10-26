@@ -1171,4 +1171,5 @@ var/list/fun_images = list()
 		var/changelogHtml = grabResource("html/changelog.html")
 		var/data = admin_changelog:html
 		changelogHtml = replacetext(changelogHtml, "<!-- HTML GOES HERE -->", "[data]")
+		changelogHtml = replacetext(changelogHtml, "<!-- CLOSE WINDOW -->", "<button class=\"close-changelog\" onclick=\"window.location='byond://winset?id=adminchanges;is-visible=false'\">Close</button>")
 		src.Browse(changelogHtml, "window=adminchanges;size=500x650;title=Admin+Changelog;")

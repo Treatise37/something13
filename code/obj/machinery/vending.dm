@@ -1059,6 +1059,7 @@
 			src.generate_HTML(0, 1)
 
 	user << browse(src.HTML, "window=vending")
+	winset(user, "vending", "auto-format=false")
 	onclose(user, "vending")
 	return
 

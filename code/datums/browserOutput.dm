@@ -59,7 +59,7 @@ var/global
 		start()
 			//Check for existing chat
 			if (!src.owner) return 0
-			if (winget(src.owner, "browseroutput", "is-disabled") == "false") //Already setup
+			if (winget(src.owner, "outputwindow.browseroutput", "is-disabled") == "false") //Already setup
 				src.doneLoading()
 			else //Not setup
 				src.load()
@@ -83,7 +83,7 @@ var/global
 					)
 					src.owner.loadResourcesFromList(chatResources)
 
-				src.owner << browse(grabResource("html/browserOutput.html"), "window=browseroutput")
+				src.owner << browse(grabResource("html/browserOutput.html"), "window=outputwindow.browseroutput")
 
 				if (src.loadAttempts < 5) //To a max of 5 load attempts
 					spawn(200) //20 seconds
@@ -101,7 +101,7 @@ var/global
 		doneLoading(ua)
 			if (!src.loaded)
 				src.loaded = 1
-				winset(src.owner, "browseroutput", "is-disabled=false")
+				winset(src.owner, "outputwindow.browseroutput", "is-disabled=false")
 				if (src.owner.holder)
 					src.loadAdmin()
 				if (src.messageQueue)
@@ -311,7 +311,7 @@ var/global
 			//Client sucks at loading things, put their messages in a queue
 			C.chatOutput.messageQueue.Add(message)
 		else
-			target << output(url_encode(message), "browseroutput:output")
+			target << output(url_encode(message), "outputwindow.browseroutput:output")
 
 //Aliases for boutput
 /proc/bout(target, message, banMsg = 0)
