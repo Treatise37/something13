@@ -7,21 +7,13 @@ macro "macro"
 		name = "CENTER+REP"
 		command = ".center"
 		is-disabled = false
-	elem 
+	elem "holdthrow"
 		name = "SPACE"
-		command = ".hotkey \"space\""
-		is-disabled = falsemacro "macro"
-	elem "togglewasd"
-		name = "TAB"
-		command = ".winset \"wasd_toggle.on=true mapwindow.map.focus=true command=togglewasd\""
+		command = ".keydown shift"
 		is-disabled = false
-	elem "center"
-		name = "CENTER+REP"
-		command = ".center"
-		is-disabled = false
-	elem 
-		name = "SPACE"
-		command = ".hotkey \"space\""
+	elem "releaseholdthrow"
+		name = "SPACE+UP"
+		command = ".keyup shift"
 		is-disabled = false
 	elem "northeast"
 		name = "NORTHEAST"
@@ -153,9 +145,13 @@ macro "wasd"
 		name = "CENTER+REP"
 		command = ".center"
 		is-disabled = false
-	elem 
+	elem "holdthrow"
 		name = "SPACE"
-		command = ".hotkey \"space\""
+		command = ".keydown shift"
+		is-disabled = false
+	elem "releaseholdthrow"
+		name = "SPACE+UP"
+		command = ".keyup shift"
 		is-disabled = false
 	elem "northeast"
 		name = "NORTHEAST"
@@ -269,10 +265,6 @@ macro "wasd"
 		name = "D+REP"
 		command = ".east"
 		is-disabled = false
-	elem "wasd-northeast"
-		name = "E"
-		command = ".northeast"
-		is-disabled = false
 	elem "eyebrow_2"
 		name = "CTRL+E"
 		command = "say \"*eyebrow\""
@@ -323,7 +315,7 @@ macro "wasd"
 		is-disabled = false
 	elem "flip_2"
 		name = "R"
-		command = "say \"*flip\""
+		command = "togglethrow"
 		is-disabled = false
 	elem "flip_3"
 		name = "CTRL+R"
@@ -350,7 +342,7 @@ macro "wasd"
 		command = "asay"
 		is-disabled = false
 	elem "wasd-equip"
-		name = "V"
+		name = "E"
 		command = "equip"
 		is-disabled = false
 	elem "wink_2"
@@ -363,7 +355,7 @@ macro "wasd"
 		is-disabled = false
 	elem "wasd-togglethrow"
 		name = "X"
-		command = "togglethrow"
+		command = ".northeast"
 		is-disabled = false
 	elem "flex_2"
 		name = "CTRL+X"
@@ -378,8 +370,8 @@ macro "wasd"
 		command = "say \"*snap\""
 		is-disabled = false
 	elem "wasd-southwest"
-		name = "Z+REP"
-		command = ".southwest"
+		name = "Z"
+		command = ".southeast"
 		is-disabled = false
 	elem "adminhelp"
 		name = "F1"
@@ -3220,9 +3212,13 @@ macro "wasd"
 		name = "CENTER+REP"
 		command = ".center"
 		is-disabled = false
-	elem 
+	elem "holdthrow"
 		name = "SPACE"
-		command = ".hotkey \"space\""
+		command = ".keydown shift"
+		is-disabled = false
+	elem "releaseholdthrow"
+		name = "SPACE+UP"
+		command = ".keyup shift"
 		is-disabled = false
 	elem "northeast"
 		name = "NORTHEAST"
@@ -3336,10 +3332,6 @@ macro "wasd"
 		name = "D+REP"
 		command = ".east"
 		is-disabled = false
-	elem "wasd-northeast"
-		name = "E"
-		command = ".northeast"
-		is-disabled = false
 	elem "eyebrow_2"
 		name = "CTRL+E"
 		command = "say \"*eyebrow\""
@@ -3390,7 +3382,7 @@ macro "wasd"
 		is-disabled = false
 	elem "flip_2"
 		name = "R"
-		command = "say \"*flip\""
+		command = "togglethrow"
 		is-disabled = false
 	elem "flip_3"
 		name = "CTRL+R"
@@ -3417,7 +3409,7 @@ macro "wasd"
 		command = "asay"
 		is-disabled = false
 	elem "wasd-equip"
-		name = "V"
+		name = "E"
 		command = "equip"
 		is-disabled = false
 	elem "wink_2"
@@ -3430,7 +3422,7 @@ macro "wasd"
 		is-disabled = false
 	elem "wasd-togglethrow"
 		name = "X"
-		command = "togglethrow"
+		command = ".northeast"
 		is-disabled = false
 	elem "flex_2"
 		name = "CTRL+X"
@@ -3445,8 +3437,8 @@ macro "wasd"
 		command = "say \"*snap\""
 		is-disabled = false
 	elem "wasd-southwest"
-		name = "Z+REP"
-		command = ".southwest"
+		name = "Z"
+		command = ".southeast"
 		is-disabled = false
 	elem "adminhelp"
 		name = "F1"
