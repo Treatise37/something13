@@ -255,12 +255,6 @@
 		update_gulp_size()
 		doants = src.reagents && src.reagents.total_volume > 0
 
-	on_spin_emote(var/mob/living/carbon/human/user as mob)
-		if (src.reagents && src.reagents.total_volume > 0)
-			user.visible_message("<span style=\"color:red\"><b>[user] spills the contents of [src] all over [him_or_her(user)]self!</b></span>")
-			src.reagents.reaction(get_turf(user), TOUCH)
-			src.reagents.clear_reagents()
-
 	attack_self(mob/user as mob)
 		return
 

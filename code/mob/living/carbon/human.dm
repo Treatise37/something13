@@ -885,7 +885,6 @@
 									thing.set_loc(src.loc)
 								else
 									message = "<B>[src]</B> [pick("spins", "twirls")] [thing] around in [his_or_her(src)] hand."
-									thing.on_spin_emote(src)
 							else
 								message = "<B>[src]</B> wiggles [his_or_her(src)] fingers a bit.[prob(10) ? " Weird." : null]"
 				else
@@ -6350,9 +6349,6 @@
 	else
 		src.visible_message("<b>[src]</b> starts juggling [thing]!")
 	src.juggling += thing
-	if (isitem(thing))
-		var/obj/item/i = thing
-		i.on_spin_emote(src)
 	src.update_body()
 	logTheThing("combat", src, null, "juggles [thing]")
 
