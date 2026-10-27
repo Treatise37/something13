@@ -2,7 +2,7 @@ world
 	mob = /mob/new_player
 	turf = /turf/space
 	area = /area
-	view = "15x15"
+	view = "15x17"
 //
 /world/proc/load_mode()
 	var/text = file2text("data/mode.txt")
