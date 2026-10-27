@@ -274,11 +274,11 @@
 	icon_state = "switch"
 	anchored = 1
 	density = 0
-	var ID = 0
-	var noise = 0
-	var broken = 0
-	var sound = 0
-	var rep = 0
+	var/ID = 0
+	var/noise = 0
+	var/broken = 0
+	var/sound = 0
+	var/rep = 0
 
 /obj/machinery/noise_maker
 	name = "Alert Horn"
@@ -287,12 +287,12 @@
 	icon_state = "nm n +o"
 	anchored = 1
 	density = 0
-	var ID = 0
-	var sound = 0
-	var broken = 0
-	var containment_fail = 0
-	var last_shot = 0
-	var fire_delay = 4
+	var/ID = 0
+	var/sound = 0
+	var/broken = 0
+	var/containment_fail = 0
+	var/last_shot = 0
+	var/fire_delay = 4
 
 /obj/machinery/wire
 	name = "wire"

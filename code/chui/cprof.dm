@@ -19,3 +19,4 @@ datum/cprofiler
 #define CPROF_PRECISION 10//10 GTIME/s
 
 #define CPROF(name) CPROFILER.begin(name)
+#endif

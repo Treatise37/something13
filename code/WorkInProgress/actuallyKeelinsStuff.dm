@@ -1767,7 +1767,6 @@
 /obj/shifting_wall/sneaky
 
 	var/sightrange = 8
-	pixel_step_size = 7
 
 	proc/find_suitable_tiles()
 		var/list/possible = new/list()
