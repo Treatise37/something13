@@ -1,7 +1,7 @@
 macro "macro"
 	elem "togglewasd"
 		name = "TAB"
-		command = ".winset \"wasd_toggle.on=true mapwindow.map.focus=true command=togglewasdzqsd\"\n.output browseroutput:toggleWasd on"
+		command = ".winset \"wasd_toggle.on=true mapwindow.map.focus=true command=togglewasd\"\n.output browseroutput:toggleWasd on"
 		is-disabled = false
 	elem "center"
 		name = "CENTER+REP"
@@ -159,7 +159,7 @@ macro "macro"
 macro "wasd"
 	elem "togglewasd"
 		name = "TAB"
-		command = ".winset \"wasd_toggle.on=false input.focus=true command=togglewasdzqsd\"\n.output browseroutput:toggleWasd off"
+		command = ".winset \"wasd_toggle.on=false input.focus=true command=togglewasd\"\n.output browseroutput:toggleWasd off"
 		is-disabled = false
 	elem "center"
 		name = "CENTER+REP"
@@ -437,281 +437,6 @@ macro "wasd"
 		name = "F3"
 		command = "mentorhelp"
 		is-disabled = false
-
-macro "zqsd"
-	elem "togglewasd"
-		name = "TAB"
-		command = ".winset \"wasd_toggle.on=false input.focus=true command=togglewasdzqsd\"\n.output browseroutput:toggleWasd off"
-		is-disabled = false
-	elem "center"
-		name = "CENTER+REP"
-		command = ".center"
-		is-disabled = false
-	elem "escape"
-		name = "ESCAPE"
-		command = ".winset \"mapwindow.map.focus=true;mainwindow.input.text=\"\"\""
-		is-disabled = false
-	elem 
-		name = "SPACE"
-		command = ".keydown throwmode"
-		is-disabled = false
-	elem "releaseholdthrow"
-		name = "SPACE+UP"
-		command = ".keyup throwmode"
-		is-disabled = false
-	elem "northeast"
-		name = "NORTHEAST"
-		command = ".northeast"
-		is-disabled = false
-	elem "southeast"
-		name = "SOUTHEAST"
-		command = ".southeast"
-		is-disabled = false
-	elem "southwest"
-		name = "SOUTHWEST+REP"
-		command = ".southwest"
-		is-disabled = false
-	elem "northwest"
-		name = "NORTHWEST"
-		command = ".northwest"
-		is-disabled = false
-	elem "west"
-		name = "WEST+REP"
-		command = ".west"
-		is-disabled = false
-	elem "north"
-		name = "NORTH+REP"
-		command = ".north"
-		is-disabled = false
-	elem "east"
-		name = "EAST+REP"
-		command = ".east"
-		is-disabled = false
-	elem "south"
-		name = "SOUTH+REP"
-		command = ".south"
-		is-disabled = false
-	elem "togglethrow"
-		name = "DELETE"
-		command = "togglethrow"
-		is-disabled = false
-	elem 
-		name = "0"
-		command = ".action 10"
-		is-disabled = false
-	elem 
-		name = "1"
-		command = ".action 1"
-		is-disabled = false
-	elem 
-		name = "2"
-		command = ".action 2"
-		is-disabled = false
-	elem 
-		name = "3"
-		command = ".action 3"
-		is-disabled = false
-	elem 
-		name = "4"
-		command = ".action 4"
-		is-disabled = false
-	elem 
-		name = "5"
-		command = ".action 5"
-		is-disabled = false
-	elem 
-		name = "6"
-		command = ".action 6"
-		is-disabled = false
-	elem 
-		name = "7"
-		command = ".action 7"
-		is-disabled = false
-	elem 
-		name = "8"
-		command = ".action 8"
-		is-disabled = false
-	elem 
-		name = "9"
-		command = ".action 9"
-		is-disabled = false
-	elem "zqsd-northwest"
-		name = "A"
-		command = ".northwest"
-		is-disabled = false
-	elem 
-		name = "B"
-		command = "togglepoint 0"
-		is-disabled = false
-	elem "burp_2"
-		name = "CTRL+B"
-		command = "say \"*burp\""
-		is-disabled = false
-	elem "toggle-resting"
-		name = "SHIFT+B"
-		command = ".toggle_resting"
-		is-disabled = false
-	elem 
-		name = "B+UP"
-		command = "togglepoint 1"
-		is-disabled = false
-	elem "zqsd-southeast"
-		name = "C"
-		command = ".southeast"
-		is-disabled = false
-	elem "ooc"
-		name = "ALT+C"
-		command = "ooc"
-		is-disabled = false
-	elem "dance_2"
-		name = "CTRL+D"
-		command = "say \"*dance\""
-		is-disabled = false
-	elem "zqsd-east"
-		name = "D+REP"
-		command = ".east"
-		is-disabled = false
-	elem "zqsd-northeast"
-		name = "E"
-		command = ".northeast"
-		is-disabled = false
-	elem "eyebrow_2"
-		name = "CTRL+E"
-		command = "say \"*eyebrow\""
-		is-disabled = false
-	elem "fart"
-		name = "F"
-		command = "say \"*fart\""
-		is-disabled = false
-	elem "fart_2"
-		name = "CTRL+F"
-		command = "say \"*fart\""
-		is-disabled = false
-	elem "zqsd-generalcommand"
-		name = "G"
-		command = ".winset \"mainwindow.input.focus=true;mainwindow.input.text=\"\"\""
-		is-disabled = false
-	elem "gasp_2"
-		name = "CTRL+G"
-		command = "say \"*gasp\""
-		is-disabled = false
-	elem "raise_hand"
-		name = "CTRL+H"
-		command = "say \"*raisehand\""
-		is-disabled = false
-	elem "looc_zqsd"
-		name = "ALT+L"
-		command = "looc"
-		is-disabled = false
-	elem "laugh_2"
-		name = "CTRL+L"
-		command = "say \"*laugh\""
-		is-disabled = false
-	elem "nod_2"
-		name = "CTRL+N"
-		command = "say \"*nod\""
-		is-disabled = false
-	elem "zqsd_togglepoint"
-		name = "P"
-		command = "togglepoint 0"
-		is-disabled = false
-	elem "togglepoint"
-		name = "CTRL+P"
-		command = "togglepoint 0"
-		is-disabled = false
-	elem "salute_2"
-		name = "CTRL+Q"
-		command = "say \"*wave\""
-		is-disabled = false
-	elem "zqsd-west"
-		name = "Q+REP"
-		command = ".west"
-		is-disabled = false
-	elem "flip_2"
-		name = "R"
-		command = "togglethrow"
-		is-disabled = false
-	elem "flip_3"
-		name = "CTRL+R"
-		command = "say \"*flip\""
-		is-disabled = false
-	elem "spin"
-		name = "ALT+S"
-		command = "say \"*spin\""
-		is-disabled = false
-	elem "scream_2"
-		name = "CTRL+S"
-		command = "say \"*scream\""
-		is-disabled = false
-	elem "zqsd-south"
-		name = "S+REP"
-		command = ".south"
-		is-disabled = false
-	elem "say"
-		name = "T"
-		command = "say"
-		is-disabled = false
-	elem "zqsd-dsay"
-		name = "ALT+T"
-		command = "dsay"
-		is-disabled = false
-	elem "zqsd-asay"
-		name = "CTRL+T"
-		command = "asay"
-		is-disabled = false
-	elem "zqsd-equip"
-		name = "V"
-		command = "equip"
-		is-disabled = false
-	elem "wink_2"
-		name = "CTRL+W"
-		command = "say \"*wink\""
-		is-disabled = false
-	elem "zqsd-southwest"
-		name = "W+REP"
-		command = ".southwest"
-		is-disabled = false
-	elem "zqsd-togglethrow"
-		name = "X"
-		command = ".northeast"
-		is-disabled = false
-	elem "flex_2"
-		name = "CTRL+X"
-		command = "say \"*flex\""
-		is-disabled = false
-	elem "yawn_2"
-		name = "CTRL+Y"
-		command = "say \"*yawn\""
-		is-disabled = false
-	elem "snap_2"
-		name = "CTRL+Z"
-		command = "say \"*snap\""
-		is-disabled = false
-	elem "zqsd-north"
-		name = "Z+REP"
-		command = ".north"
-		is-disabled = false
-	elem "adminhelp"
-		name = "F1"
-		command = "adminhelp"
-		is-disabled = false
-	elem "options"
-		name = "CTRL+SHIFT+F1"
-		command = ".options"
-		is-disabled = false
-	elem "autoscreenshot"
-		name = "F2"
-		command = ".screenshot auto\n.output browseroutput:output Screenshot taken"
-		is-disabled = false
-	elem "screenshot"
-		name = "SHIFT+F2"
-		command = ".screenshot"
-		is-disabled = false
-	elem "mentorhelp_zqsd"
-		name = "F3"
-		command = "mentorhelp"
-		is-disabled = false
-
 
 menu "menu"
 	elem 
@@ -3668,7 +3393,7 @@ window "traitssetup"
 		align = center
 		text-wrap = false
 		allow-html = false
-		letterbox = true
+		letterbox = false
 	elem "lblsel"
 		type = LABEL
 		pos = 216,92

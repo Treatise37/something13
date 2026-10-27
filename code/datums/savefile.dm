@@ -72,7 +72,6 @@ datum/preferences/proc/savefile_save(client/user, profileNum=1)
 	F["listen_ooc"] << src.listen_ooc
 	F["listen_looc"] << src.listen_looc
 	F["default_wasd"] << src.default_wasd
-	F["use_azerty"] << src.use_azerty
 
 	return 1
 
@@ -222,9 +221,6 @@ datum/preferences/proc/savefile_load(client/user, var/profileNum = 1)
 	if (isnull(src.listen_looc))
 		src.listen_looc = 1
 
-	F["use_azerty"] >> src.use_azerty
-	C.preferences.use_azerty = src.use_azerty
-
 	var/saved_wasdpref
 	F["default_wasd"] >> saved_wasdpref
 	if (isnull(saved_wasdpref))
@@ -234,7 +230,7 @@ datum/preferences/proc/savefile_load(client/user, var/profileNum = 1)
 
 		var/current = winget(user, "mainwindow", "macro")
 		if (current == "macro")
-			user.togglewasdzqsd()
+			user.togglewasd()
 
 	return 1
 

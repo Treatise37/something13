@@ -29,7 +29,6 @@ datum/preferences
 	var/listen_ooc = 1
 	var/listen_looc = 1
 	var/default_wasd = 0 // do they want wasd on by default?
-	var/use_azerty = 0 // do they have an AZERTY keyboard?
 
 	var/job_favorite = null
 	var/list/jobs_med_priority = list()
@@ -229,7 +228,6 @@ datum/preferences
 		dat += "<b>Use Click Buffer?: <a href =\"byond://?src=\ref[user];preferences=1;clickbuffer=1\">[(src.use_click_buffer ? "Yes" : "No")]</a></b><br>"
 		dat += "<b>Admin Music Volume: <a href =\"byond://?src=\ref[user];preferences=1;volume=1\">[src.admin_music_volume]</a></b><br>"
 		dat += "<b>Default to WASD Mode?: <a href =\"byond://?src=\ref[user];preferences=1;default_wasd=1\">[(src.default_wasd ? "Yes" : "No")]</a></b><br>"
-		dat += "<b>Use AZERTY Layout?: <a href =\"byond://?src=\ref[user];preferences=1;use_azerty=1\">[(src.use_azerty ? "Yes" : "No")]</a></b><br>"
 
 		dat += "<hr>"
 		if (!IsGuestKey(user.key))
@@ -808,11 +806,6 @@ datum/preferences
 
 		if (link_tags["default_wasd"])
 			src.default_wasd = !(src.default_wasd)
-
-		if (link_tags["use_azerty"])
-			src.use_azerty = !(src.use_azerty)
-			if (user && user.client)
-				user.client.use_azerty = src.use_azerty
 
 		if (link_tags["scores"])
 			src.view_score = !(src.view_score)

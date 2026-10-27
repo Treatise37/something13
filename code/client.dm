@@ -41,7 +41,6 @@
 	var/see_mentor_pms = 1
 	var/last_adminhelp = 0
 	var/list/keys = list()
-	var/use_azerty = 0
 	var/queued_click = 0
 	var/joined_date = null
 	var/non_admin_dj = 0
@@ -445,25 +444,10 @@ var/global/curr_day = null
 		src.mob:toggle_point_mode(force_off)
 	return
 
-/client/verb/togglewasdzqsd()
-	set hidden = 1
-	if (src.use_azerty)
-		src.togglezqsd()
-	else
-		src.togglewasd()
-
-/client/verb/toggle_between_wasd_zqsd()
-	set name = "Toggle AZERTY Hotkey Layout"
-	set desc = "For WASD/ZQSD users: toggles between use of the WASD or ZQSD hotkey sets. You may have to disable and then re-enable WASD/ZQSD mode for it to change."
-	set category = "Toggles"
-
-	src.use_azerty = !(src.use_azerty)
-	boutput(src, "<span style=\"color:blue\">[src.use_azerty ? "ZQSD" : "WASD"] hotkey layout enabled.</span>")
-
 /client/verb/togglewasd()
 	set hidden = 1
 	var/current = winget(src, "mainwindow", "macro")
-	if (current == "macro" || current == "zqsd")
+	if (current == "macro")
 		winset(src, "mainwindow", "macro=wasd")
 		// ctrl+t for admin say
 		if (src.holder)
@@ -478,39 +462,20 @@ var/global/curr_day = null
 		boutput(src, "<span style=\"color:blue\">WASD hotkeys disabled.</span>")
 	src.install_macros()
 
-/client/verb/togglezqsd()
-	set hidden = 1
-	var/current = winget(src, "mainwindow", "macro")
-	if (current == "macro" || current == "wasd")
-		winset(src, "mainwindow", "macro=zqsd")
-		// ctrl+t for admin say
-		if (src.holder)
-			winset(src, "zqsd.zqsd-asay", "is-disabled=false")
-			winset(src, "zqsd.zqsd-dsay", "is-disabled=false")
-		else
-			winset(src, "zqsd.zqsd-asay", "is-disabled=true")
-			winset(src, "zqsd.zqsd-dsay", "is-disabled=true")
-		boutput(src, "<span style=\"color:blue\">ZQSD hotkeys enabled.</span>")
-	else
-		winset(src, "mainwindow", "macro=macro")
-		boutput(src, "<span style=\"color:blue\">ZQSD hotkeys disabled.</span>")
-	src.install_macros()
-
 /client/verb/toggletogglewasd()
-	set name = "Toggle Tab WASD/ZQSD"
-	set desc = "Enables/disables the Tab key WASD/ZQSD keyboard shortcut"
+	set name = "Toggle Tab WASD"
+	set desc = "Enables/disables the Tab key WASD keyboard shortcut"
 	set category = "Toggles"
 
 	var/current = winget(usr, "macro.togglewasd", "is-disabled")
 	if (current == "true")
 		winset(usr, "macro.togglewasd", "is-disabled=false")
 		winset(usr, "wasd.togglewasd", "is-disabled=false")
-		winset(usr, "zqsd.togglewasd", "is-disabled=false")
-		boutput(usr, "<span style=\"color:blue\">Tab now toggles WASD/ZQSD.</span>")
+		boutput(usr, "<span style=\"color:blue\">Tab now toggles WASD.</span>")
 	else
 		winset(usr, "macro.togglewasd", "is-disabled=true")
 		winset(usr, "wasd.togglewasd", "is-disabled=true")
-		boutput(usr, "<span style=\"color:blue\">Tab no longer toggles WASD/ZQSD.</span>")
+		boutput(usr, "<span style=\"color:blue\">Tab no longer toggles WASD.</span>")
 
 /client/verb/equip()
 	set name = "Equip"
