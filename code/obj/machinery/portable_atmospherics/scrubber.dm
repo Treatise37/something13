@@ -118,7 +118,7 @@ Target Pressure: <A href='?src=\ref[src];volume_adj=-100'>-</A> <A href='?src=\r
 <A href='?action=mach_close&window=scrubber'>Close</A><BR>
 "}
 
-	user << browse(output_text, "window=scrubber;size=600x300")
+	BrowseHTML(user, output_text, "window=scrubber;size=600x300")
 	onclose(user, "scrubber")
 	return
 
@@ -151,6 +151,6 @@ Target Pressure: <A href='?src=\ref[src];volume_adj=-100'>-</A> <A href='?src=\r
 		src.add_fingerprint(usr)
 		update_icon()
 	else
-		usr << browse(null, "window=scrubber")
+		BrowseHTML(usr, null, "window=scrubber")
 		return
 	return

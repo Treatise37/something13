@@ -241,7 +241,7 @@ Note: Add new traitor items to syndicate_buylist.dm, not here.
 				if (src.can_selfdestruct == 1)
 					dat += "[do_divider == 1 ? "<HR>" : ""]<A href='byond://?src=\ref[src];selfdestruct=1'>Self-Destruct</A>"
 
-		usr << browse(dat, "window=radio")
+		BrowseHTML(usr, dat, "window=radio")
 		onclose(usr, "radio")
 		return
 
@@ -279,7 +279,7 @@ Note: Add new traitor items to syndicate_buylist.dm, not here.
 				var/obj/item/uplink/integrated/radio/RU = src
 				if (!isnull(RU.origradio) && istype(RU.origradio, /obj/item/device/radio))
 					usr.machine = null
-					usr << browse(null, "window=radio")
+					BrowseHTML(usr, null, "window=radio")
 					var/obj/item/device/radio/T = RU.origradio
 					RU.set_loc(T)
 					T.set_loc(usr)
@@ -833,7 +833,7 @@ Note: Add new traitor items to syndicate_buylist.dm, not here.
 				dat += "<HR>"
 			dat += "<A href='byond://?src=\ref[src];selfdestruct=1'>Self-Destruct</A>"
 */
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -865,7 +865,7 @@ Note: Add new traitor items to syndicate_buylist.dm, not here.
 		else if (href_list["lock"] && src.origradio)
 			// presto chango, a regular radio again! (reset the freq too...)
 			usr.machine = null
-			usr << browse(null, "window=radio")
+			BrowseHTML(usr, null, "window=radio")
 			var/obj/item/device/radio/T = src.origradio
 			var/obj/item/SWF_uplink/R = src
 			R.set_loc(T)

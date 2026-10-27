@@ -209,7 +209,7 @@
 				dat += {"Cannot toggle while cloning pod is active. <BR>
 						AGA: <B>[pod1.gen_analysis ? "Enabled" : "Disabled"]</B>"}
 
-	user << browse(dat, "window=cloning")
+	BrowseHTML(user, dat, "window=cloning")
 	onclose(user, "cloning")
 	return
 

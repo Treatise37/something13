@@ -407,7 +407,7 @@
 	proc/interact(mob/user)
 		if ( (get_dist(src, user) > 1 ) && (!istype(user, /mob/living/silicon/ai)))
 			user.machine = null
-			user << browse(null, "window=teg")
+			BrowseHTML(user, null, "window=teg")
 			return
 
 		user.machine = src
@@ -427,7 +427,7 @@
 		t += "<BR><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
 		t += "</PRE>"
-		user << browse(t, "window=teg;size=460x300")
+		BrowseHTML(user, t, "window=teg;size=460x300")
 		onclose(user, "teg")
 		return 1
 
@@ -435,7 +435,7 @@
 		..()
 
 		if( href_list["close"] )
-			usr << browse(null, "window=teg")
+			BrowseHTML(usr, null, "window=teg")
 			usr.machine = null
 			return 0
 
@@ -570,7 +570,7 @@
 	attack_hand(mob/user)
 		if(stat & (BROKEN | NOPOWER))
 			return
-		user << browse(return_text(),"window=computer")
+		BrowseHTML(user, return_text(),"window=computer")
 		user.machine = src
 		onclose(user, "computer")
 

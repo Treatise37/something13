@@ -234,7 +234,7 @@
 	html += body
 	html += "</body></html>"
 
-	M << browse(html, "window=adminpm;size=700x300")
+	BrowseHTML(M, html, "window=adminpm;size=700x300")
 	return
 */
 
@@ -481,7 +481,7 @@
 		windowHeight = "310"
 
 	dat += "</body></html>"
-	usr << browse(dat, "window=adminplayeropts[M.ckey];size=505x[windowHeight]")
+	BrowseHTML(usr, dat, "window=adminplayeropts[M.ckey];size=505x[windowHeight]")
 
 /client/proc/cmd_admin_add_freeform_ai_law()
 	set category = "Admin"
@@ -680,7 +680,7 @@
 			<td>The job of a random player, this is <B>different</B> for everyone viewing the report.
 
 		</table>"}
-	usr << browse(T, "window=adv_com_help;size=700x500")
+	BrowseHTML(usr, T, "window=adv_com_help;size=700x500")
 
 /client/proc/cmd_admin_delete(atom/O as obj|mob|turf in world)
 	set category = "Debug"
@@ -899,7 +899,7 @@
 
 	disposing()
 		if(usercl && usercl.mob)
-			usercl.mob << browse(null, "window=adminpmorph")
+			BrowseHTML(usercl.mob, null, "window=adminpmorph")
 		usercl = null
 		target_mob = null
 		mutantrace = null
@@ -1092,7 +1092,7 @@
 		dat += "Cinematic Application: <a href='byond://?src=\ref[src];cinematic=1'>[src.cinematic]</a><br>"
 		dat += "</body></html>"
 
-		user << browse(dat, "window=adminpmorph;size=300x550")
+		BrowseHTML(user, dat, "window=adminpmorph;size=300x550")
 		onclose(user, "adminpmorph", src)
 		return
 
@@ -1446,7 +1446,7 @@
 	var/final_report = "[report_reagents]</tbody></table>"
 
 	boutput(usr, "<span style=\"color:blue\"><b>[target]'s contents: <i>[final_log]</i>. Temp: <i>[target.reagents.total_temperature] K</i></b></span>") // Added temperature (Convair880).
-	usr << browse(final_report, "window=reagent_report")
+	BrowseHTML(usr, final_report, "window=reagent_report")
 
 	logTheThing("admin", usr, null, "checked the reagents of [target] <i>(<b>Contents:</b>[final_log])</i>. <b>Temp:</b> <i>[target.reagents.total_temperature] K</i>) [log_loc(target)]")
 	logTheThing("diary", usr, null, "checked the reagents of [target] <i>(<b>Contents:</b>[final_log])</i>. <b>Temp:</b> <i>[target.reagents.total_temperature] K</i>) [log_loc(target)]", "admin")
@@ -1718,7 +1718,7 @@
 
 	if (show_message == 1)
 		M.show_text("<h2><font color=red><B>Your antagonist status has been revoked by an admin! If this is an unexpected development, please inquire about it in adminhelp.</B></font></h2>", "red")
-		M << browse(grabResource("html/traitorTips/antagRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(M, grabResource("html/traitorTips/antagRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	// Replace the mind first, so the new mob doesn't automatically end up with changeling etc. abilities.
 	var/datum/mind/newMind = new /datum/mind()

@@ -322,7 +322,7 @@ var/global/list/airbridge_controllers = list()
 		dat += "<A href='?src=\ref[src];air=1'>Pressurize</A><BR>"
 
 		user.machine = src
-		user << browse("<TITLE>Airbridge Computer</TITLE><BR>[dat]", "window=t_computer;size=400x300")
+		BrowseHTML(user, "<TITLE>Airbridge Computer</TITLE><BR>[dat]", "window=t_computer;size=400x300")
 		onclose(user, "airbr_computer")
 		return
 
@@ -390,7 +390,7 @@ var/global/list/airbridge_controllers = list()
 				logTheThing("station", usr, null, "pressurized the airbridge at [usr.loc.loc] ([showCoords(usr.x, usr.y, usr.z)])")
 
 		update_status()
-		usr << browse(null, "window=airbr_computer")
+		BrowseHTML(usr, null, "window=airbr_computer")
 		//src.updateUsrDialog()
 		src.updateDialog()
 		return

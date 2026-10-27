@@ -67,7 +67,7 @@ body
 	html += body
 	html += "</body></html>"
 
-	usr << browse(html, "window=variables\ref[D]")
+	BrowseHTML(usr, html, "window=variables\ref[D]")
 
 	return
 

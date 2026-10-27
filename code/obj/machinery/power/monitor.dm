@@ -29,7 +29,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=[window_tag]")
+			BrowseHTML(user, null, "window=[window_tag]")
 			return
 
 	user.machine = src
@@ -67,13 +67,13 @@
 
 	t += "<BR><HR><A href='?src=\ref[src];close=1'>Close</A></TT>"
 
-	user << browse(t, "window=[window_tag];size=840x700")
+	BrowseHTML(user, t, "window=[window_tag];size=840x700")
 	onclose(user, window_tag)
 
 /obj/machinery/power/monitor/Topic(href, href_list)
 	..()
 	if( href_list["close"] )
-		usr << browse(null, "window=[window_tag]")
+		BrowseHTML(usr, null, "window=[window_tag]")
 		usr.machine = null
 		return
 
@@ -111,7 +111,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=[window_tag]")
+			BrowseHTML(user, null, "window=[window_tag]")
 			return
 
 
@@ -156,5 +156,5 @@
 
 	t += "<BR><HR><A href='?src=\ref[src];close=1'>Close</A></TT>"
 
-	user << browse(t, "window=[window_tag];size=660x400")
+	BrowseHTML(user, t, "window=[window_tag];size=660x400")
 	onclose(user, window_tag)

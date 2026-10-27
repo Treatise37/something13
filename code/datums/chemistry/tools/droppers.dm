@@ -126,7 +126,7 @@
 							<center><a href='?src=\ref[src];action=toggle_mode'>[transfer_mode == TO_SELF ? "DRAW":"DROP"]</a></center>
 				</table>"}
 
-		user << browse(t,"window=mechdropper")
+		BrowseHTML(user, t,"window=mechdropper")
 		onclose(user, "mechdropper")
 		return
 

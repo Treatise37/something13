@@ -57,7 +57,7 @@
 			dat+=  {"<B>SYSTEM ONLINE</B>"}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 		return
 
@@ -86,7 +86,7 @@
 
 		var/dat = "<TT><B>[src] Console</B><BR><HR><BR>"
 		dat += {"<BR><B>Capacity: [src.contents.len]/[src.capacity]</B><HR>"}
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 		return
 
@@ -175,7 +175,7 @@
 		for(var/cargoitem in load)
 			dat += "<BR><B>[cargoitem]</B><HR>"
 			dat += "<BR>"
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 		return
 
@@ -341,7 +341,7 @@
 			dat+=  {"<BR><B>Current Target</B>: [target]"}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 		return
 
@@ -426,7 +426,7 @@
 			dat+=  {"<B>Current Ammo</B>:[src.ammo]/[src.maxammo]"}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 		return
 
@@ -445,7 +445,7 @@
 		var/dat = "<TT><B>[src] Console</B><BR><HR><BR>"
 		dat+=  {"<BR><B>Located at:</B><HR>
 			<b>X</b>: [src.ship.x]<BR><b>Y</b>: [src.ship.y]"}
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 
 /obj/item/shipcomponent/secondary_system/UFO
@@ -468,7 +468,7 @@
 		for(var/mob/M in ship)
 			if(M == ship.pilot) continue
 			dat +="<A href='?src=\ref[src];release=[M.name]'><B><U>[M.name]</U></B></A><BR>"
-		user << browse(dat, "window=ship_sec_system")
+		BrowseHTML(user, dat, "window=ship_sec_system")
 		onclose(user, "ship_sec_system")
 
 	Topic(href, href_list)
@@ -622,7 +622,7 @@
 
 </body>"}
 
-		user << browse(dat, "window=ship_lock;size=270x300;can_resize=0;can_minimize=0")
+		BrowseHTML(user, dat, "window=ship_lock;size=270x300;can_resize=0;can_minimize=0")
 		onclose(user, "ship_lock")
 
 	Topic(href, href_list)

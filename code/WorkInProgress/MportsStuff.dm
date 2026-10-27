@@ -10,7 +10,7 @@
 /obj/infared_icon/examine()
 	set src in view()
 	if(usr.see_infrared)
-		usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, src.info), text("window=[]", src.name))
+		BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, src.info), text("window=[]", src.name))
 		onclose(usr, "[src.name]")
 	return
 
@@ -55,7 +55,7 @@
 
 		if("View")
 			if(usr.see_infrared)
-				user << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, src.info), text("window=[]", src.name))
+				BrowseHTML(user, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, src.info), text("window=[]", src.name))
 				onclose(usr, "[src.name]")
 	return
 

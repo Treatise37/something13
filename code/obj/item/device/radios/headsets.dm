@@ -170,7 +170,7 @@ Secure Frequency:
 <A href='byond://?src=\ref[src];sfreq=10'>+</A><BR>
 [t1]
 </TT>"}
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 

@@ -17,7 +17,7 @@
 				area_txt += "[area.name] [area.type] has [apc_count] APCs.<br>"
 			apcs.len = 0
 
-		usr << browse(area_txt,"window=mapdebugpanel")
+		BrowseHTML(usr, area_txt,"window=mapdebugpanel")
 
 
 	general_report()
@@ -39,7 +39,7 @@
 <B># of Mobs:</B> [mobs]<BR>
 "}
 
-		usr << browse(output,"window=generalreport")
+		BrowseHTML(usr, output,"window=generalreport")
 
 	air_report()
 		set category = "Debug"
@@ -82,7 +82,7 @@
 [air_histogram()]
 "}
 
-		usr << browse(output,"window=airreport")
+		BrowseHTML(usr, output,"window=airreport")
 
 	air_histogram()
 	

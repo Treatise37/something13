@@ -49,7 +49,7 @@
 	dat += "USE 3 AA BATTERIES (BOT INCLUDED)<BR>"
 	dat += "BUMP THE SHOT WILL TURN A CORNER<BR>"
 	dat += "INSTALL THE EGG<BR>"
-	user << browse("<HEAD><TITLE>THE GOOSE</TITLE></HEAD>[dat]", "window=GOOSE")
+	BrowseHTML(user, "<HEAD><TITLE>THE GOOSE</TITLE></HEAD>[dat]", "window=GOOSE")
 	onclose(user, "GOOSE")
 	return
 

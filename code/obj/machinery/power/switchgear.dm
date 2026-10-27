@@ -65,7 +65,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=switchgear")
+			BrowseHTML(user, null, "window=switchgear")
 			return
 
 
@@ -103,7 +103,7 @@
 
 	t += "<HR></TT>"
 
-	user << browse(t, "window=switchgear;size=500x700")
+	BrowseHTML(user, t, "window=switchgear;size=500x700")
 	onclose(user, "switchgear")
 
 /obj/machinery/power/switchgear/Topic(href, href_list)
@@ -124,14 +124,14 @@
 			if (istype(usr, /mob/living/silicon/ai))
 				boutput(usr, "<span style=\"color:red\">You'd close the panel, if only you had hands.</span>")
 				return
-			usr << browse(null, "window=switchgear")
+			BrowseHTML(usr, null, "window=switchgear")
 			usr.machine = null
 			src.open = 0
 			icon_state = "c_unpowered"
 			// update icon to closed state
 			return
 	else
-		usr << browse(null, "window=switchgear")
+		BrowseHTML(usr, null, "window=switchgear")
 		usr.machine = null
 
 /obj/machinery/power/switchgear/process()

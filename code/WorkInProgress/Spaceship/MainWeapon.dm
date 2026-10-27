@@ -30,7 +30,7 @@
 					dat += {"[src]<BR>"}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_main_weapon")
+		BrowseHTML(user, dat, "window=ship_main_weapon")
 		onclose(user, "ship_main_weapon")
 		return
 
@@ -50,7 +50,7 @@
 				if ((M.client && M.machine == src))
 					src.opencomputer(M)
 		else
-			usr << browse(null, "window=ship_main_weapon")
+			BrowseHTML(usr, null, "window=ship_main_weapon")
 			return
 		return
 
@@ -204,7 +204,7 @@
 
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_main_weapon")
+		BrowseHTML(user, dat, "window=ship_main_weapon")
 		onclose(user, "ship_main_weapon")
 		return
 
@@ -285,7 +285,7 @@
 
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_main_weapon")
+		BrowseHTML(user, dat, "window=ship_main_weapon")
 		onclose(user, "ship_main_weapon")
 		return
 

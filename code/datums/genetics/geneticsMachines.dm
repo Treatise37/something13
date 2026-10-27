@@ -186,7 +186,7 @@ var/list/genetics_computers = list()
 			p.name = "Genetics Console Paper"
 		p.info = temp_html
 
-	user << browse(html, "window=genetics;size=730x415;can_resize=0;can_minimize=0")
+	BrowseHTML(user, html, "window=genetics;size=730x415;can_resize=0;can_minimize=0")
 	onclose(user, "genetics")
 	return
 
@@ -1194,7 +1194,7 @@ var/list/genetics_computers = list()
 							src.log_me(subject, "appearance modifier accessed")
 
 							new/datum/genetics_appearancemenu(usr.client, subject)
-							usr << browse(null, "window=genetics")
+							BrowseHTML(usr, null, "window=genetics")
 							usr.machine = null
 				else
 					topbotbutton_html = ""

@@ -242,7 +242,7 @@
 			else dat += "None"
 			dat += "<BR><HR>"
 
-		user << browse(dat, "window=cyberdock;size=400x500")
+		BrowseHTML(user, dat, "window=cyberdock;size=400x500")
 		onclose(user, "cyberdock")
 
 	Topic(href, href_list)

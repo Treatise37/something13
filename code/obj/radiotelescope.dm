@@ -186,7 +186,7 @@ var/list/telescope_computers = list()
 			return
 
 		if(using && (!using.client || using.client.inactivity >= 1200 || get_dist(src, using) > 1))
-			using << browse(null, "window=materials")
+			BrowseHTML(using, null, "window=materials")
 			using = null
 
 		if(using && using != user)
@@ -227,7 +227,7 @@ var/list/telescope_computers = list()
 
 		user.machine = src
 		add_fingerprint(user)
-		user << browse(html, "window=telescope;size=800x435;can_resize=0;can_minimize=0;can_close=1")
+		BrowseHTML(user, html, "window=telescope;size=800x435;can_resize=0;can_minimize=0;can_close=1")
 		onclose(user, "telescope", src)
 
 		spawn(10)
@@ -290,7 +290,7 @@ var/list/telescope_computers = list()
 	Topic(href, href_list)
 		//boutput(world, href)
 		if(!using || get_dist(using, src) > 1)
-			using << browse(null, "window=telescope")
+			BrowseHTML(using, null, "window=telescope")
 			using = null
 			return
 
@@ -345,7 +345,7 @@ var/list/telescope_computers = list()
 
 					loadContent("EventList", "#contentSide")
 				if("closeWindow")
-					usr << browse(null, "window=telescope")
+					BrowseHTML(usr, null, "window=telescope")
 					using = null
 				if("loadContent")
 					var/contentName = href_list["name"]

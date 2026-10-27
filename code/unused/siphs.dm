@@ -411,7 +411,7 @@
 	if (src.t_status == 4)
 		at = text("Automatic On <A href='?src=\ref[];t=3'>Stop</A>", src)
 	var/dat = text("<TT><B>Canister Valves</B> []<BR><br>&emsp;<FONT color = 'blue'><B>Contains/Capacity</B> [] / []</FONT><BR><br>&emsp;Upper Valve Status: [] []<BR><br>&emsp;&emsp;<A href='?src=\ref[];tp=-[]'>M</A> <A href='?src=\ref[];tp=-10000'>-</A> <A href='?src=\ref[];tp=-1000'>-</A> <A href='?src=\ref[];tp=-100'>-</A> <A href='?src=\ref[];tp=-1'>-</A> [] <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=100'>+</A> <A href='?src=\ref[];tp=1000'>+</A> <A href='?src=\ref[];tp=10000'>+</A> <A href='?src=\ref[];tp=[]'>M</A><BR><br>&emsp;Pipe Valve Status: []<BR><br>&emsp;&emsp;<A href='?src=\ref[];cp=-[]'>M</A> <A href='?src=\ref[];cp=-10000'>-</A> <A href='?src=\ref[];cp=-1000'>-</A> <A href='?src=\ref[];cp=-100'>-</A> <A href='?src=\ref[];cp=-1'>-</A> [] <A href='?src=\ref[];cp=1'>+</A> <A href='?src=\ref[];cp=100'>+</A> <A href='?src=\ref[];cp=1000'>+</A> <A href='?src=\ref[];cp=10000'>+</A> <A href='?src=\ref[];cp=[]'>M</A><BR><br><BR><br><br><A href='?action=mach_close&window=&user=[]siphon'>Close</A><BR><br>&emsp;</TT>", (!( src.alterable ) ? "<B>Valves are locked. Unlock with wrench!</B>" : "You can lock this interface with a wrench."), num2text(src.gas.return_pressure(), 10), num2text(src.maximum, 10), (src.t_status == 4 ? text("[]", at) : text("[]", tt)), (src.holding ? text("<BR>(<A href='?src=\ref[];tank=1'>Tank ([]</A>)", src, src.holding.air_contents.return_pressure()) : null), src, num2text(max_valve, 7), src, src, src, src, src.t_per, src, src, src, src, src, num2text(max_valve, 7), ct, src, num2text(max_valve, 7), src, src, src, src, src.c_per, src, src, src, src, src, num2text(max_valve, 7), user)
-	user << browse(dat, "window=siphon;size=600x300")
+	BrowseHTML(user, dat, "window=siphon;size=600x300")
 	onclose(user, "siphon")
 	return
 
@@ -472,7 +472,7 @@
 
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=canister")
+		BrowseHTML(usr, null, "window=canister")
 		return
 	return
 

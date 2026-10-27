@@ -63,7 +63,7 @@
 			if (4)
 				spyObjective = bestow_objective(leaderMind,/datum/objective/regular/steal)
 
-		leaderMind.current << browse(grabResource("html/traitorTips/spyTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(leaderMind.current, grabResource("html/traitorTips/spyTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		boutput(leaderMind.current, "<span style=\"color:red\">Oh yes, and <b>one more thing:</b> <b>[spyObjective.explanation_text]</b> That is, if you <i>really</i> want that new position.</span>")
 
 		equip_leader(leaderMind.current)

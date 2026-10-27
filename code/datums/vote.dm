@@ -62,7 +62,7 @@
 
 	for(var/mob/M in mobs)		// clear vote window from all clients
 		if(M.client)
-			M << browse(null, "window=vote")
+			BrowseHTML(M, null, "window=vote")
 			M.client.showvote = 0
 
 	calcwin()
@@ -176,7 +176,7 @@
 	if(config.vote_no_dead && usr.stat == 2)
 		text += "Voting while dead has been disallowed."
 		text += footer
-		usr << browse(text, "window=vote")
+		BrowseHTML(usr, text, "window=vote")
 		usr.client.showvote = 0
 		usr.client.vote = "none"
 		return
@@ -213,7 +213,7 @@
 
 			text += footer
 
-			usr << browse(text, "window=vote")
+			BrowseHTML(usr, text, "window=vote")
 
 		else	// voting to restart
 
@@ -237,7 +237,7 @@
 
 			text += footer
 
-			usr << browse(text, "window=vote")
+			BrowseHTML(usr, text, "window=vote")
 
 
 	else		//no vote in progress
@@ -249,7 +249,7 @@
 		if(!config.allow_vote_restart && !config.allow_vote_mode)
 			text += "<P>Player voting is disabled.</BODY></HTML>"
 
-			usr << browse(text, "window=vote")
+			BrowseHTML(usr, text, "window=vote")
 			usr.client.showvote = 0
 			return
 
@@ -260,7 +260,7 @@
 			text+="<BR><P>Next vote can begin in [vote.nextwait()]."
 			text+=footer
 
-			usr << browse(text, "window=vote")
+			BrowseHTML(usr, text, "window=vote")
 
 		else			// voting can begin
 			if(config.allow_vote_restart)
@@ -269,13 +269,13 @@
 				text += "<A href='?src=\ref[vote];voter=\ref[src];vmode=2'>Begin change mode vote.</A><BR>"
 
 			text += footer
-			usr << browse(text, "window=vote")
+			BrowseHTML(usr, text, "window=vote")
 
 	spawn(20)
 		if(usr.client && usr.client.showvote)
 			usr.vote()
 		else
-			usr << browse(null, "window=vote")
+			BrowseHTML(usr, null, "window=vote")
 
 		return
 
@@ -288,7 +288,7 @@
 	if(href_list["vclose"])
 
 		if(M)
-			M << browse(null, "window=vote")
+			BrowseHTML(M, null, "window=vote")
 			M.client.showvote = 0
 		return
 

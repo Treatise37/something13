@@ -415,7 +415,7 @@
 		for(var/obj/item/photo/P in src) //Todo: make it actually show the photo.  Currently, using [bicon()] just makes an egg image pop up (??)
 			dat += "<A href='?src=\ref[src];remove=\ref[P]'>[P.name]</A><br>"
 
-		user << browse(dat, "window=clipboard")
+		BrowseHTML(user, dat, "window=clipboard")
 		onclose(user, "clipboard")
 		return
 
@@ -453,10 +453,10 @@
 				var/obj/item/paper/P = locate(href_list["read"])
 				if ((P && P.loc == src))
 					if (!( istype(usr, /mob/living/carbon/human) ))
-						usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, stars(P.info)), text("window=[]", P.name))
+						BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, stars(P.info)), text("window=[]", P.name))
 						onclose(usr, "[P.name]")
 					else
-						usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.info), text("window=[]", P.name))
+						BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.info), text("window=[]", P.name))
 						onclose(usr, "[P.name]")
 			else if (href_list["title"])
 				var/obj/item/P = locate(href_list["title"])

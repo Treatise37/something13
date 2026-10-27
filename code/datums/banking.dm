@@ -289,7 +289,7 @@
 
 
 		dat += "<BR>\[ <A HREF='?action=mach_close&window=atm'>Close</A> \]"
-		user << browse(dat, "window=atm;size=400x500")
+		BrowseHTML(user, dat, "window=atm;size=400x500")
 		onclose(user, "atm")
 
 
@@ -439,7 +439,7 @@
 					else
 			else
 				dat += text("<A href='?src=\ref[];login=1'>{Log In}</A>", src)
-		user << browse(text("<HEAD><TITLE>Bank Records</TITLE></HEAD><TT>[]</TT>", dat), "window=secure_bank")
+		BrowseHTML(user, text("<HEAD><TITLE>Bank Records</TITLE></HEAD><TT>[]</TT>", dat), "window=secure_bank")
 		onclose(user, "secure_bank")
 		return
 
@@ -663,7 +663,7 @@
 						dat += "<BR>Please swipe your card to continue."
 
 		dat += "<BR><BR>\[ <A HREF='?action=mach_close&window=atm'>Close</A> \]"
-		user << browse(dat, "window=atm;size=400x500")
+		BrowseHTML(user, dat, "window=atm;size=400x500")
 		onclose(user, "atm")
 
 

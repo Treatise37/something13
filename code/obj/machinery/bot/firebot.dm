@@ -83,7 +83,7 @@
 //	if(!src.locked)
 //To-Do: Behavior control stuff to go with ~fire patrols~
 
-	user << browse("<HEAD><TITLE>Firebot v1.0 controls</TITLE></HEAD>[dat]", "window=automed")
+	BrowseHTML(user, "<HEAD><TITLE>Firebot v1.0 controls</TITLE></HEAD>[dat]", "window=automed")
 	onclose(user, "autofire")
 	return
 

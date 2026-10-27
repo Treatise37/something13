@@ -174,7 +174,7 @@
 		for(var/i = 1, i < 5, i++)
 			dat += "[wagesystem.winningNumbers[i][j]] "
 
-	usr << browse(dat, "window=budgetdebug;size=400x400")
+	BrowseHTML(usr, dat, "window=budgetdebug;size=400x400")
 
 /client/proc/BK_alter_funds()
 	set category = "Debug"

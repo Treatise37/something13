@@ -88,7 +88,7 @@
 		if(src.beaker)
 			dat += "<a href='?src=\ref[src];eject=beaker'>Eject Beaker</a><br>"
 
-		user << browse(dat, "window=icecream;size=400x500")
+		BrowseHTML(user, dat, "window=icecream;size=400x500")
 		onclose(user, "icecream")
 		return
 
@@ -233,14 +233,14 @@ var/list/oven_recipes = list()
 			Time: <A href='?src=\ref[src];time=1'>-</A> <A href='?src=\ref[src];time=2'>+</A><BR>
 			Heat: <A href='?src=\ref[src];heat=1'>-</A> <A href='?src=\ref[src];heat=2'>+</A><BR>
 			<A href='?src=\ref[src];eject=1'>Eject Contents</A>"}
-			user << browse(dat, "window=oven;size=400x500")
+			BrowseHTML(user, dat, "window=oven;size=400x500")
 			onclose(user, "oven")
 		else
 			user.machine = src
 			var/dat = {"<B>Cookomatic Multi-Oven</B><BR>
 			<HR><BR>
 			Cooking! Please wait!"}
-			user << browse(dat, "window=oven;size=400x500")
+			BrowseHTML(user, dat, "window=oven;size=400x500")
 			onclose(user, "oven")
 
 	New()
@@ -831,14 +831,14 @@ var/list/mixer_recipes = list()
 			dat += {"<HR>
 			<A href='?src=\ref[src];mix=1'>Mix!</A><BR>
 			<A href='?src=\ref[src];eject=1'>Eject Contents</A>"}
-			user << browse(dat, "window=mixer;size=400x500")
+			BrowseHTML(user, dat, "window=mixer;size=400x500")
 			onclose(user, "mixer")
 		else
 			user.machine = src
 			var/dat = {"<B>KitchenHelper Mixer</B><BR>
 			<HR><BR>
 			Mixing! Please wait!"}
-			user << browse(dat, "window=mixer;size=400x500")
+			BrowseHTML(user, dat, "window=mixer;size=400x500")
 			onclose(user, "mixer")
 
 	Topic(href, href_list)

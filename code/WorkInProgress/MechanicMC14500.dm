@@ -97,7 +97,7 @@ var/list/hex_digit_values = list("0" = 0, "1" = 1, "2" = 2, "3" = 3, "4" = 4, "5
 
 		. = user_interface(user)
 		if (.)
-			user << browse(., "window=mcu14500b")
+			BrowseHTML(user, ., "window=mcu14500b")
 			onclose(user, "mcu14500b")
 
 	proc/user_interface(mob/user as mob)

@@ -163,7 +163,7 @@
 
 	if ( (get_dist(src, user) > 1 ) || (stat & (NOPOWER|BROKEN)) && (!istype(user, /mob/living/silicon/ai)) )
 		user.machine = null
-		user << browse(null, "window=turbine")
+		BrowseHTML(user, null, "window=turbine")
 		return
 
 	user.machine = src
@@ -179,7 +179,7 @@
 	t += "</PRE><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
 	t += "</TT>"
-	user << browse(t, "window=turbine")
+	BrowseHTML(user, t, "window=turbine")
 	onclose(user, "turbine")
 
 	return
@@ -193,7 +193,7 @@
 
 	if (( usr.machine==src && ((get_dist(src, usr) <= 1) && istype(src.loc, /turf))) || (istype(usr, /mob/living/silicon/ai)))
 		if( href_list["close"] )
-			usr << browse(null, "window=turbine")
+			BrowseHTML(usr, null, "window=turbine")
 			usr.machine = null
 			return
 
@@ -206,7 +206,7 @@
 					src.interact(M)
 
 	else
-		usr << browse(null, "window=turbine")
+		BrowseHTML(usr, null, "window=turbine")
 		usr.machine = null
 
 	return
@@ -284,7 +284,7 @@
 	else
 		dat += "<span style=\"color:red\"><B>No compatible attached compressor found.</span>"
 
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 
@@ -311,7 +311,7 @@
 						D.close()
 						door_status = 0
 		else if( href_list["close"] )
-			usr << browse(null, "window=computer")
+			BrowseHTML(usr, null, "window=computer")
 			usr.machine = null
 			return
 

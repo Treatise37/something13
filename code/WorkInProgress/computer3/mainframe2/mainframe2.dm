@@ -152,7 +152,7 @@
 			dat += "Core Shield Maglock is <b>ON</b><hr>"
 
 
-		user << browse(dat, "window=mainframe;size=245x202")
+		BrowseHTML(user, dat, "window=mainframe;size=245x202")
 		onclose(user, "mainframe")
 		return
 

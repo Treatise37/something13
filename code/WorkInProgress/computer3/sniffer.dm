@@ -79,7 +79,7 @@
 			dat += "<b>NONE</b>"
 
 		dat += "<hr>"
-		user << browse(dat,"window=packets")
+		BrowseHTML(user, dat,"window=packets")
 		onclose(user,"packets")
 		return
 

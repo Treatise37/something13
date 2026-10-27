@@ -40,7 +40,7 @@ var/list/special_places = list() //associative List of name=/datum/computer/file
 
 		user.machine = src
 		add_fingerprint(user)
-		user << browse(html, "window=lrporter;size=250x380;can_resize=0;can_minimize=0;can_close=1")
+		BrowseHTML(user, html, "window=lrporter;size=250x380;can_resize=0;can_minimize=0;can_close=1")
 		onclose(user, "lrporter", src)
 
 	Topic(href, href_list)
@@ -197,7 +197,7 @@ var/list/special_places = list() //associative List of name=/datum/computer/file
 			return
 
 		if(using && (!using.client || using.client.inactivity >= 1200 || get_dist(src, using) > 1))
-			using << browse(null, "window=materials")
+			BrowseHTML(using, null, "window=materials")
 			using = null
 
 		if(using && using != user)
@@ -210,7 +210,7 @@ var/list/special_places = list() //associative List of name=/datum/computer/file
 
 		user.machine = src
 		add_fingerprint(user)
-		user << browse(grabResource("html/quantumTelescope.html"), "window=telescope;size=800x435;can_resize=0;can_minimize=0;can_close=1")
+		BrowseHTML(user, grabResource("html/quantumTelescope.html"), "window=telescope;size=800x435;can_resize=0;can_minimize=0;can_close=1")
 		onclose(user, "telescope", src)
 
 		spawn(10)
@@ -275,7 +275,7 @@ var/list/special_places = list() //associative List of name=/datum/computer/file
 	Topic(href, href_list)
 		//boutput(world, href)
 		if(!using || get_dist(using, src) > 1)
-			using << browse(null, "window=telescope")
+			BrowseHTML(using, null, "window=telescope")
 			using = null
 			return
 
@@ -330,7 +330,7 @@ var/list/special_places = list() //associative List of name=/datum/computer/file
 
 					loadContent("EventList", "#contentSide")
 				if("closeWindow")
-					usr << browse(null, "window=telescope")
+					BrowseHTML(usr, null, "window=telescope")
 					using = null
 				if("loadContent")
 					var/contentName = href_list["name"]

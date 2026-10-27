@@ -73,7 +73,7 @@
 			<A href='?src=\ref[src];pickuporder=1'>I'm Ready to Pick Up My Order</A><BR>
 			<A href='?action=mach_close&window=trader'>Goodbye</A>"}
 
-		user << browse(dat, "window=trader;size=575x530")
+		BrowseHTML(user, dat, "window=trader;size=575x530")
 		onclose(user, "trader")
 		return
 

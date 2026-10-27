@@ -40,7 +40,7 @@
 		<A href='?src=\ref[src];buypoints=1'>Purchase Supply Points</A><BR>
 		<A href='?action=mach_close&window=computer'>Close</A>"}
 		//<A href='?src=\ref[src];vieworders=1'>View Approved Orders</A><BR><BR> This right here never worked anyway.
-	user << browse(dat, "window=computer;size=575x450")
+	BrowseHTML(user, dat, "window=computer;size=575x450")
 	onclose(user, "computer")
 	return
 

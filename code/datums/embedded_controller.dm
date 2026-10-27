@@ -403,7 +403,7 @@ obj/machinery/embedded_controller
 	var/on = 1
 
 	attack_hand(mob/user)
-		user << browse(return_text(), "window=computer")
+		BrowseHTML(user, return_text(), "window=computer")
 		user.machine = src
 		onclose(user, "computer")
 
@@ -710,6 +710,6 @@ obj/machinery/embedded_controller/radio/department_controller
 		else
 			output += "[state_options]<hr><b>Airlock Status: </b> [door_status]"
 
-		user << browse(output, "window=dcontroller;size=245x302")
+		BrowseHTML(user, output, "window=dcontroller;size=245x302")
 		onclose(user, "dcontroller")
 

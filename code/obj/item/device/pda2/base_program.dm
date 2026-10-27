@@ -173,7 +173,7 @@
 
 		if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=pda2_\ref[src]")
+			BrowseHTML(usr, null, "window=pda2_\ref[src]")
 			return 0
 
 		if (href_list["quit"])

@@ -85,7 +85,7 @@
 		winshow(user, "traitssetup_[user.ckey]")
 		updateTraits(user)
 
-		user << browse(null, "window=preferences")
+		BrowseHTML(user, null, "window=preferences")
 		return
 
 

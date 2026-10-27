@@ -163,7 +163,7 @@
 				ticker.mode.Agimmicks += target.mind
 
 		boutput(target, __red("<b>You awaken filled with purpose - you must serve your master, [M.real_name]!</B>"))
-		target << browse(grabResource("html/mindslave/implanted.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(target, grabResource("html/mindslave/implanted.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		if (issilicon(target))
 			boutput(target, __red("<b>You must serve your master. All previous laws are irrelevant.</b>"))
 

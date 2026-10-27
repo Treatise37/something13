@@ -719,12 +719,12 @@ td, th {
 
 		var/mob/player1 = players[1]
 		if (player1)
-			player1 << browse(p1, "window=griffening;can_close=0;size=400x600")
+			BrowseHTML(player1, p1, "window=griffening;can_close=0;size=400x600")
 		var/mob/player2 = players[2]
 		if (player2)
-			player2 << browse(p2, "window=griffening;can_close=0;size=400x600")
+			BrowseHTML(player2, p2, "window=griffening;can_close=0;size=400x600")
 		for (var/mob/M in spectators)
-			M << browse(sp, "window=griffening;size=400x600")
+			BrowseHTML(M, sp, "window=griffening;size=400x600")
 	#undef addinfo2
 	#undef addinfo1
 	#undef addinfo

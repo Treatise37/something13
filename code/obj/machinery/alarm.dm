@@ -151,7 +151,7 @@
 /obj/machinery/alarm/attack_hand(mob/user)
 	if(stat & (NOPOWER|BROKEN))
 		return
-	user << browse(return_text(user),"window=atmos")
+	BrowseHTML(user, return_text(user),"window=atmos")
 	user.machine = src
 	onclose(user, "atmos")
 
@@ -159,7 +159,7 @@
 	if ( (get_dist(src, user) > 1 ))
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=atmos")
+			BrowseHTML(user, null, "window=atmos")
 		return
 
 

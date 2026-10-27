@@ -68,7 +68,7 @@
 			rev_mind.objectives += rev_obj
 
 		equip_revolutionary(rev_mind.current)
-		rev_mind.current << browse(grabResource("html/traitorTips/revTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(rev_mind.current, grabResource("html/traitorTips/revTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		update_rev_icons_added(rev_mind)
 
 	for(var/datum/mind/rev_mind in head_revolutionaries)
@@ -174,7 +174,7 @@
 
 	var/list/uncons = src.get_unconvertables()
 	if (!(rev_mind in src.revolutionaries) && !(rev_mind in src.head_revolutionaries) && !(rev_mind in uncons))
-		rev_mind.current << browse(grabResource("html/traitorTips/revAdded.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(rev_mind.current, grabResource("html/traitorTips/revAdded.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		rev_mind.current.show_text("<h2><font color=red>You are now a revolutionary! Kill the heads of staff and don't harm your fellow freedom fighters. You can identify your comrades by the R icons (blue = rev leader, red = regular member).</font></h2>")
 
 		src.revolutionaries += rev_mind
@@ -188,7 +188,7 @@
 		return
 
 	if (rev_mind in revolutionaries)
-		rev_mind.current << browse(grabResource("html/traitorTips/revRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(rev_mind.current, grabResource("html/traitorTips/revRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		rev_mind.current.show_text("<h2><font color=red>You are no longer a revolutionary! Protect the heads of staff and help them kill the leaders of the revolution.</font></h2>", "red")
 
 		src.revolutionaries -= rev_mind

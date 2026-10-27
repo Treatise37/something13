@@ -92,7 +92,7 @@
 		Target gas temperature: <A href='?src=\ref[src];temp=-10'>-</A> <A href='?src=\ref[src];temp=-1'>-</A> <A href='?src=\ref[src];settemp=1'>[current_temperature]</A> <A href='?src=\ref[src];temp=1'>+</A> <A href='?src=\ref[src];temp=10'>+</A><BR>
 		"}
 
-		user << browse(dat, "window=freezer;size=400x500")
+		BrowseHTML(user, dat, "window=freezer;size=400x500")
 		onclose(user, "freezer")
 
 	Topic(href, href_list)

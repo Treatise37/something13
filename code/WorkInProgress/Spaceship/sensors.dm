@@ -39,7 +39,7 @@
 					dat += {"[lifename] | "}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_sensor")
+		BrowseHTML(user, dat, "window=ship_sensor")
 		onclose(user, "ship_sensor")
 		return
 
@@ -58,7 +58,7 @@
 				if ((M.client && M.machine == src))
 					src.opencomputer(M)
 		else
-			usr << browse(null, "window=ship_sensor")
+			BrowseHTML(usr, null, "window=ship_sensor")
 			return
 		return
 

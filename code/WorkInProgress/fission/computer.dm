@@ -98,7 +98,7 @@
 			dat += "<BR>\[ <A HREF='?src=\ref[src];operation=login'>Log In</A> \]"
 
 		dat += "<BR><BR><BR>\[ <A HREF='?action=mach_close&window=fission'>Close</A> \]"
-		user << browse(dat, "window=fission;size=500x300")
+		BrowseHTML(user, dat, "window=fission;size=500x300")
 		onclose(user, "fission")
 
 

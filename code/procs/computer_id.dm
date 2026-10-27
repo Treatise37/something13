@@ -201,4 +201,4 @@ proc/view_client_compid_list(mob/user, var/C)
 				</body>
 			</html>"}
 
-	user << browse(dat, "window=compid_info_view")
+	BrowseHTML(user, dat, "window=compid_info_view")

@@ -66,7 +66,7 @@
 	dat += "AS THE DUCK ADVANCING,FLICKING THE PLUMAGE AND YAWNING THE MOUTH GO WITH MUSIC & LIGHT.<BR>"
 	dat += "THE DUCK STOP,IT SWAYING TAIL THEN THE DUCK LAY AN EGG AS OPEN IT'S BUTTOCKS,<BR>GO WITH THE DUCK'S CALL"
 
-	user << browse("<HEAD><TITLE>Amusing Duck</TITLE></HEAD>[dat]", "window=ducky")
+	BrowseHTML(user, "<HEAD><TITLE>Amusing Duck</TITLE></HEAD>[dat]", "window=ducky")
 	onclose(user, "ducky")
 	return
 /obj/machinery/bot/duckbot/emag_act(var/mob/user, var/obj/item/card/emag/E)

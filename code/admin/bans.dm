@@ -564,7 +564,7 @@
 	bansHtml = replacetext(bansHtml, "null /* cminutes */", "[CMinutes]")
 	if (centralConn)
 		bansHtml = replacetext(bansHtml, "null /* api_key */", "\'[md5(config.extserver_web_token)]\'")
-	usr << browse(bansHtml,"window=[windowName];size=1080x500")
+	BrowseHTML(usr, bansHtml,"window=[windowName];size=1080x500")
 
 
 /client/proc/openBanPanel()

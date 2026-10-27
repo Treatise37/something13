@@ -254,7 +254,7 @@
 			else
 				dat += "The bot is in maintenance mode and cannot be controlled.<BR>"
 
-		user << browse("<HEAD><TITLE>Mulebot [suffix ? "([suffix])" : ""]</TITLE></HEAD>[dat]", "window=mulebot;size=350x500")
+		BrowseHTML(user, "<HEAD><TITLE>Mulebot [suffix ? "([suffix])" : ""]</TITLE></HEAD>[dat]", "window=mulebot;size=350x500")
 		onclose(user, "mulebot")
 		return
 
@@ -379,7 +379,7 @@
 
 				if("close")
 					usr.machine = null
-					usr << browse(null,"window=mulebot")
+					BrowseHTML(usr, null,"window=mulebot")
 
 				if("wirecut")
 					if(istype(usr.equipped(), /obj/item/wirecutters))
@@ -418,7 +418,7 @@
 
 			updateDialog()
 		else
-			usr << browse(null, "window=mulebot")
+			BrowseHTML(usr, null, "window=mulebot")
 			usr.machine = null
 		return
 

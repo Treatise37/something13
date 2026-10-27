@@ -1335,7 +1335,7 @@
 "}
 
 		user.machine = src
-		user << browse(dat, "window=art_computer;size=580x360;can_resize=0")
+		BrowseHTML(user, dat, "window=art_computer;size=580x360;can_resize=0")
 		onclose(user, "art_computer")
 		return
 

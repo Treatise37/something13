@@ -117,7 +117,7 @@ mob/new_player
 
 		output += "<BR><a href='byond://?src=\ref[src];observe=1'>Observe</A><BR>"
 
-		src << browse(output,"window=playersetup;size=250x200;can_close=0")
+		BrowseHTML(src, output,"window=playersetup;size=250x200;can_close=0")
 */
 	Stat()
 		..()
@@ -359,7 +359,7 @@ mob/new_player
 					dat += "</td></tr>"
 		dat += "</table>"
 
-		src << browse(dat, "window=latechoices;size=500x400;can_close=0")
+		BrowseHTML(src, dat, "window=latechoices;size=500x400;can_close=0")
 
 	proc/create_character(var/datum/job/J, var/allow_late_antagonist = 0)
 		if (!src || !src.mind || !src.client)
@@ -501,8 +501,8 @@ mob/new_player
 
 	proc/close_spawn_windows()
 		if(client)
-			src << browse(null, "window=latechoices") //closes late choices window
-			src << browse(null, "window=playersetup") //closes the player setup window
+			BrowseHTML(src, null, "window=latechoices") //closes late choices window
+			BrowseHTML(src, null, "window=playersetup") //closes the player setup window
 			winshow(src, "joinmenu", 0)
 			winshow(src, "playerprefs", 0)
 
@@ -530,7 +530,7 @@ mob/new_player
 				if (usr.client) winset(src, "joinmenu.button_charsetup", "is-disabled=true")
 				if (usr.client) winset(src, "joinmenu.button_ready", "is-disabled=true;is-visible=false")
 				if (usr.client) winset(src, "joinmenu.button_cancel", "is-disabled=false;is-visible=true")
-				usr << browse(null, "window=mob_occupation")
+				BrowseHTML(usr, null, "window=mob_occupation")
 				if(master_mode in list("secret","traitor","nuclear","blob","wizard","changeling","mixed"))
 					if (src.client.antag_tokens > 0) //If the player has any antag tokens available, check if they want to redeem one.
 						if(alert(src,"Would you like to use an Antagonist Token for this round? (Modes that do not support redemption will not alter token balance.)","Remaining Tokens: [src.client.antag_tokens]","Yes","No") == "Yes")

@@ -66,7 +66,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=op")
+			BrowseHTML(user, null, "window=op")
 			return
 
 	user.machine = src
@@ -95,7 +95,7 @@
 <BR>
 <B>No Patient Detected</B>
 "}
-	user << browse(dat, "window=op")
+	BrowseHTML(user, dat, "window=op")
 	onclose(user, "op")
 
 /obj/machinery/computer/operating/Topic(href, href_list)

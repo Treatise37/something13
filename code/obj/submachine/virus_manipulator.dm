@@ -45,13 +45,13 @@
 			<A href='?src=\ref[src];ops=2'>Mutate<BR>
 			<A href='?src=\ref[src];ops=3'>Refresh Report<BR>
 			<A href='?src=\ref[src];ops=4'>Eject Vial"}
-			user << browse(dat, "window=virusmanip;size=400x500")
+			BrowseHTML(user, dat, "window=virusmanip;size=400x500")
 			onclose(user, "virusmanip")
 		else
 			var/dat = {"<B>Virus Manipulator</B><BR>
 			<HR><BR>
 			<B>Please wait. Work in progress.</B><BR>"}
-			user << browse(dat, "window=virusmanip;size=450x500")
+			BrowseHTML(user, dat, "window=virusmanip;size=450x500")
 			onclose(user, "virusmanip")
 
 	Topic(href, href_list)

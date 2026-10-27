@@ -422,7 +422,7 @@ proc/Create_Tommyname()
 		connecting[target] = initData
 		var/retries = max_retries
 		var/extrasleep = 0
-		target << browse(getFile(), "window=[target_window];[target_params]")
+		BrowseHTML(target, getFile(), "window=[target_window];[target_params]")
 		onclose(target, target_window, src)
 
 		do

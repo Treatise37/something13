@@ -986,7 +986,7 @@ var/global/datum/stockMarket/stockExchange = new
 		return 0
 
 	proc/displayValues(var/mob/user)
-		user << browse(plotBarGraph(values, "[name] share value per share"), "window=stock_[name];size=450x450")
+		BrowseHTML(user, plotBarGraph(values, "[name] share value per share"), "window=stock_[name];size=450x450")
 
 /proc/plotBarGraph(var/list/points, var/base_text, var/width=400, var/height=400)
 	var/output = "<table style='border:1px solid black; border-collapse: collapse; width: [width]px; height: [height]px'>"

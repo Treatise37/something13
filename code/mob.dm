@@ -1208,7 +1208,7 @@
 
 /mob/verb/cmd_rules()
 	set name = "Rules"
-	src << browse(rules, "window=rules;size=480x320")
+	BrowseHTML(src, rules, "window=rules;size=480x320")
 
 /mob/verb/togglelocaldeadchat()
 	set desc = "Toggle whether you can hear all chat while dead or just local chat"

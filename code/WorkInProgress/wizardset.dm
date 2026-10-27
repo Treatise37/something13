@@ -795,7 +795,7 @@ var/global/datum/wizard_zone_controller/wizard_zone_controller
 		if (!written)
 			boutput(usr, "<span style=\"color:red\">You cannot decipher the runes written in the book.</span>")
 		else
-			usr << browse(written, "window=tome;size=200x400")
+			BrowseHTML(usr, written, "window=tome;size=200x400")
 
 /obj/bookcase
 	name = "bookcase"

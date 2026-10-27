@@ -76,7 +76,7 @@ var/datum/job_controller/job_controls
 		dat += "<A href='?src=\ref[src];JobCreator=1'>Create New Job</A>"
 		dat += "</body></html>"
 
-		usr << browse(dat,"window=jobconfig;size=300x600")
+		BrowseHTML(usr, dat,"window=jobconfig;size=300x600")
 
 	proc/job_creator()
 		var/dat = "<html><body><title>Job Creation</title>"
@@ -109,7 +109,7 @@ var/datum/job_controller/job_controls
 		dat += "<A href='?src=\ref[src];CreateJob=1'><b>Create Job</b></A>"
 		dat += "</body></html>"
 
-		usr << browse(dat,"window=jobcreator;size=500x600")
+		BrowseHTML(usr, dat,"window=jobcreator;size=500x600")
 
 	Topic(href, href_list[])
 		// JOB CONFIG COMMANDS

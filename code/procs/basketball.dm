@@ -473,7 +473,7 @@ proc/blitz_slam()
 				dat += "<A href='byond://?src=\ref[src];lock=1'>Lock</A><BR>"
 				dat += "<HR>"
 			dat += "<A href='byond://?src=\ref[src];selfdestruct=1'>Self-Destruct</A>"
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -524,7 +524,7 @@ proc/blitz_slam()
 		else if (href_list["lock"] && src.origradio)
 			// presto chango, a regular radio again! (reset the freq too...)
 			usr.machine = null
-			usr << browse(null, "window=radio")
+			BrowseHTML(usr, null, "window=radio")
 			var/obj/item/device/radio/T = src.origradio
 			var/obj/item/bball_uplink/R = src
 			R.set_loc(T)

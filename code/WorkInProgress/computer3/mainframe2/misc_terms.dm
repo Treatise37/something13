@@ -223,7 +223,7 @@
 		dat += "<b>[capitalize(src.setup_tape_tag)]:</b> <a href='?src=\ref[src];tape=1'>[src.tape ? "Eject" : "--------"]</a><hr>"
 
 		if (stat & NOPOWER)
-			user << browse(dat,"window=databank;size=245x302")
+			BrowseHTML(user, dat,"window=databank;size=245x302")
 			onclose(user,"databank")
 			return
 
@@ -250,7 +250,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=databank;size=245x302")
+		BrowseHTML(user, dat,"window=databank;size=245x302")
 		onclose(user,"databank")
 		return
 
@@ -760,7 +760,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=bombtester;size=245x302")
+		BrowseHTML(user, dat,"window=bombtester;size=245x302")
 		onclose(user,"bombtester")
 		return
 
@@ -1080,7 +1080,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=pnetnuke;size=245x302")
+		BrowseHTML(user, dat,"window=pnetnuke;size=245x302")
 		onclose(user,"pnetnuke")
 		return
 
@@ -1421,7 +1421,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=net_radio;size=245x302")
+		BrowseHTML(user, dat,"window=net_radio;size=245x302")
 		onclose(user,"net_radio")
 		return
 
@@ -1802,7 +1802,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=printer;size=245x302")
+		BrowseHTML(user, dat,"window=printer;size=245x302")
 		onclose(user,"printer")
 		return
 
@@ -2180,7 +2180,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=scanner;size=245x302")
+		BrowseHTML(user, dat,"window=scanner;size=245x302")
 		onclose(user,"scanner")
 		return
 
@@ -2443,7 +2443,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=secdetector;size=245x302")
+		BrowseHTML(user, dat,"window=secdetector;size=245x302")
 		onclose(user,"secdetector")
 		return
 
@@ -2919,7 +2919,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=h7emitter;size=285x302")
+		BrowseHTML(user, dat,"window=h7emitter;size=285x302")
 		onclose(user,"h7emitter")
 		return
 
@@ -3403,7 +3403,7 @@
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=testap\ref[src];size=285x302")
+		BrowseHTML(user, dat,"window=testap\ref[src];size=285x302")
 		onclose(user,"testap\ref[src]")
 		return
 

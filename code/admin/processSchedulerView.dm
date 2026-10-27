@@ -78,7 +78,7 @@ var/global/datum/processSchedulerView/processSchedulerView
 	text += getProcessTable()
 	text += "</div></body></html>"
 
-	usr << browse(text, "window=processSchedulerContext;size=800x600")
+	BrowseHTML(usr, text, "window=processSchedulerContext;size=800x600")
 
 /datum/processSchedulerView/proc/bootstrap_browse()
 	/*

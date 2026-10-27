@@ -582,7 +582,7 @@ var/const/PHASER_SNIPER = 256
 		if(safeties) dat += "Safeties active. Phaser locked to non-lethal power levels."
 		//dat += "Damage:[prop_dmg]<BR>"
 		//dat += "Stun:[prop_stun]<BR>"
-		user << browse(dat, "window=phaser;can_minimize=0;can_resize=0;size=180x340")
+		BrowseHTML(user, dat, "window=phaser;can_minimize=0;can_resize=0;size=180x340")
 		onclose(user, "window=phaser")
 		return
 */

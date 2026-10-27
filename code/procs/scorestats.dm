@@ -192,7 +192,7 @@
 		"It is believed that there are at least 200,000 species of mollusks out there including snails. Although only 50,000 have been classified.")
 
 	dat += "<B>FACT: </B> [score_randomfact]"
-	src << browse(dat, "window=roundstats;size=500x650")
+	BrowseHTML(src, dat, "window=roundstats;size=500x650")
 	return
 
 /mob/proc/showtickets()
@@ -231,5 +231,5 @@
 	else
 		dat += "No fines were issued!"
 
-	src << browse(dat, "window=roundstats;size=500x650")
+	BrowseHTML(src, dat, "window=roundstats;size=500x650")
 	return

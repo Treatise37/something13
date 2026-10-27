@@ -192,7 +192,7 @@
 			dat += "<font color='red'><b>ERROR:</b> No sleeper detected!</font><br>"
 			dat += "<br><A href='?src=\ref[src];refresh=1'>Refresh Connection</A>"
 
-		user << browse(dat, "window=sleeper")
+		BrowseHTML(user, dat, "window=sleeper")
 		onclose(user, "sleeper")
 
 		return
@@ -244,7 +244,7 @@
 			if (src.our_sleeper && src.our_sleeper.occupant)
 				src.our_sleeper.go_out()
 				usr.machine = null
-				usr << browse(null, "window=sleeper")
+				BrowseHTML(usr, null, "window=sleeper")
 
 		src.updateUsrDialog()
 		return

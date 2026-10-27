@@ -1158,7 +1158,7 @@ var/list/ai_emotions = list("Happy" = "ai_happy",\
 		dat += "<BR><br>"
 
 	src.viewalerts = 1
-	src << browse(dat, "window=aialerts&can_close=0")
+	BrowseHTML(src, dat, "window=aialerts&can_close=0")
 
 /mob/living/silicon/ai/proc/ai_cancel_call()
 	set category = "AI Commands"
@@ -1176,7 +1176,7 @@ var/list/ai_emotions = list("Happy" = "ai_happy",\
 	for(var/datum/data/record/t in data_core.general)
 		crew += "[t.fields["name"]] - [t.fields["rank"]]<br>"
 
-	usr << browse("<head><title>Crew Manifest</title></head><body><tt><b>Crew Manifest:</b><hr>[crew]</tt></body>", "window=aimanifest")
+	BrowseHTML(usr, "<head><title>Crew Manifest</title></head><body><tt><b>Crew Manifest:</b><hr>[crew]</tt></body>", "window=aimanifest")
 
 /mob/living/silicon/ai/proc/show_laws_verb()
 	set category = "AI Commands"

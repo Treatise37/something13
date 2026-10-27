@@ -83,7 +83,7 @@ var/global/list/chem_whitelist = list("antihol", "charcoal", "epinephrine", "ins
 				dat += " - [current_reagent.volume] [current_reagent.name]<BR>"
 			dat += "<A href='?src=\ref[src];dump_cont=1'>Dump contents</A>"
 
-		user << browse("<TITLE>Hypospray</TITLE>Hypospray:<BR><BR>[dat]", "window=hypospray;size=350x250")
+		BrowseHTML(user, "<TITLE>Hypospray</TITLE>Hypospray:<BR><BR>[dat]", "window=hypospray;size=350x250")
 		onclose(user, "hypospray")
 		return
 

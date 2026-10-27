@@ -4,7 +4,7 @@
 		return
 
 	if (src.mind && !src.mind.is_changeling && (src.mind.special_role != "omnitraitor"))
-		src << browse(grabResource("html/traitorTips/changelingTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(src, grabResource("html/traitorTips/changelingTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	var/datum/abilityHolder/changeling/C = src.add_ability_holder(/datum/abilityHolder/changeling)
 	C.addAbility(/datum/targetable/changeling/abomination)

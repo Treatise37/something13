@@ -287,7 +287,7 @@
 						</body>
 					</html>"}
 
-		current_user << browse(temp, "window=bomb_monitor;size=750x500")
+		BrowseHTML(current_user, temp, "window=bomb_monitor;size=750x500")
 		onclose(current_user, "bomb_monitor", src)
 
 	Topic(href, href_list[])
@@ -362,5 +362,5 @@
 				RB.part3.ignite()
 
 		if(href_list["close"])
-			current_user << browse(null, "window=bomb_monitor")
+			BrowseHTML(current_user, null, "window=bomb_monitor")
 			pool(src)

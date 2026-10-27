@@ -2433,7 +2433,7 @@ var/list/lag_list = new/list()
 		for(var/datum/engibox_mode/D in modes)
 			dat += "<A href='?src=\ref[src];set_mode=\ref[D]'>[D.name]</A> [active_mode == D ? "<<<" : ""]<BR>"
 			dat += "[D.desc]<BR><BR>"
-		user << browse(dat, "window=engibox;can_minimize=0;can_resize=0;size=250x600")
+		BrowseHTML(user, dat, "window=engibox;can_minimize=0;can_resize=0;size=250x600")
 		onclose(user, "window=engibox")
 		return
 

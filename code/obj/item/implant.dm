@@ -452,7 +452,7 @@ IMPLANT GUN
 			boutput(M, "<h2><span style=\"color:red\">You feel an unwavering loyalty to your new master, [I.real_name]! Do not tell anyone about this unless your new master tells you to!</span></h2>")
 		else
 			boutput(M, "<h2><span style=\"color:red\">You feel an unwavering loyalty to [I.real_name]! You feel you must obey \his every order! Do not tell anyone about this unless your master tells you to!</span></h2>")
-			M << browse(grabResource("html/mindslave/implanted.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+			BrowseHTML(M, grabResource("html/mindslave/implanted.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 		if (src.custom_orders)
 			boutput(M, "<h2><span style=\"color:red\">[I.real_name]'s will consumes your mind! <b>\"[src.custom_orders]\"</b> It <b>must</b> be done!</span></h2>")
 
@@ -1040,7 +1040,7 @@ circuitry. As a result neurotoxins can cause massive damage.<BR>
 			dat += "The implant casing is empty."
 	else
 		dat += "Please insert an implant casing!"
-	user << browse(dat, "window=implantpad")
+	BrowseHTML(user, dat, "window=implantpad")
 	onclose(user, "implantpad")
 	return
 
@@ -1070,7 +1070,7 @@ circuitry. As a result neurotoxins can cause massive damage.<BR>
 				//Foreach goto(290)
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=implantpad")
+		BrowseHTML(usr, null, "window=implantpad")
 		return
 	return
 

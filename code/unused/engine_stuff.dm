@@ -405,7 +405,7 @@ text("<A href='?src=\ref[];testfire=1'>Fire</A>", src),
 text("<A href='?src=\ref[];realfire=1'>Fire</A>", src),
 text("<A href='?src=\ref[];stop=1'>Stop</A>", src),
 text("<A href='?src=\ref[];pattern=1'>[src.pattern]</A>", src))
-	user << browse("<HEAD><TITLE>Laser Emitter Control Computer</TITLE></HEAD>[dat]", "window=lasercomputer")
+	BrowseHTML(user, "<HEAD><TITLE>Laser Emitter Control Computer</TITLE></HEAD>[dat]", "window=lasercomputer")
 	onclose(user, "lasercomputer")
 	return
 

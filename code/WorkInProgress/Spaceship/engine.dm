@@ -48,7 +48,7 @@
 				dat+= {"<BR><B>Warp Status:</B> Recharging"}
 		else
 			dat += {"<B><span style=\"color:red\">SYSTEM OFFLINE</span></B>"}
-		user << browse(dat, "window=ship_engine")
+		BrowseHTML(user, dat, "window=ship_engine")
 		onclose(user, "ship_engine")
 		return
 

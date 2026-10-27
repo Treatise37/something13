@@ -387,7 +387,7 @@
 		dat += "<A href='?src=\ref[src];west=1'>Touch the fourth rune</A><BR>"
 
 		usr.machine = src
-		usr << browse("[dat]", "window=rtab;size=400x300")
+		BrowseHTML(usr, "[dat]", "window=rtab;size=400x300")
 		onclose(usr, "rtab")
 		return
 
@@ -422,7 +422,7 @@
 			for(var/obj/shifting_wall/sneaky/cave/C in orange(3, usr))
 				C.do_move(movedir)
 
-		usr << browse(null, "window=rtab")
+		BrowseHTML(usr, null, "window=rtab")
 		src.updateUsrDialog()
 		return
 

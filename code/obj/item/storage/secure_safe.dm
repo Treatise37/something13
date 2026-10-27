@@ -206,7 +206,7 @@
 
 </body>"}
 
-		user << browse(dat, "window=caselock;size=270x300;can_resize=0;can_minimize=0")
+		BrowseHTML(user, dat, "window=caselock;size=270x300;can_resize=0;can_minimize=0")
 
 /*
 	var/dat = "<TT><B>[src.name]</B><BR><br><br>Lock Status: [src.locked ? "LOCKED" : "UNLOCKED"]"
@@ -221,7 +221,7 @@
 	if (!src.locked)
 		message = "*****"
 	dat += "<HR><br>>[message]<BR><br><table border='1'><tr><td><A href='?src=\ref[src];type=1'>1</A></td><td><A href='?src=\ref[src];type=2'>2</A></td><td><A href='?src=\ref[src];type=3'>3</A></td></tr><tr><td><A href='?src=\ref[src];type=4'>4</A></td><td><A href='?src=\ref[src];type=5'>5</A></td><td><A href='?src=\ref[src];type=6'>6</A></td></tr><tr><td><A href='?src=\ref[src];type=7'>7</A></td><td><A href='?src=\ref[src];type=8'>8</A></td><td><A href='?src=\ref[src];type=9'>9</A></td></tr><tr><td><A href='?src=\ref[src];type=R'>R</A></td><td><A href='?src=\ref[src];type=0'>0</A></td><td><A href='?src=\ref[src];type=E'>E</A></td></tr></table></tt>"
-	user << browse(dat, "window=caselock;size=300x280")
+	BrowseHTML(user, dat, "window=caselock;size=300x280")
 */
 /obj/item/storage/secure/Topic(href, href_list)
 	..()
@@ -713,4 +713,4 @@
 
 			</body>"}
 
-		user << browse(dat, "window=caselock;size=270x300;can_resize=0;can_minimize=0")
+		BrowseHTML(user, dat, "window=caselock;size=270x300;can_resize=0;can_minimize=0")

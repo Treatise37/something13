@@ -105,7 +105,7 @@ var/ZSUBTRACT = 0
 				dat += "<br>[b.name] ([b.x]/[b.y]/[b.z]) <A href='?src=\ref[src];restorebookmark=\ref[b]'>Restore</A> <A href='?src=\ref[src];deletebookmark=\ref[b]'>Delete</A>"
 
 		user.machine = src
-		user << browse("<TITLE>Teleport Computer</TITLE><b>Target Coordinates</b><BR>[dat]", "window=t_computer;size=400x600")
+		BrowseHTML(user, "<TITLE>Teleport Computer</TITLE><b>Target Coordinates</b><BR>[dat]", "window=t_computer;size=400x600")
 		onclose(user, "t_computer")
 		return
 
@@ -330,7 +330,7 @@ var/ZSUBTRACT = 0
 			return
 
 		else
-			usr << browse(null, "window=t_computer")
+			BrowseHTML(usr, null, "window=t_computer")
 			src.updateUsrDialog()
 			return
 

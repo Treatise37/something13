@@ -44,7 +44,7 @@
 		if (src.announces_arrivals)
 			dat += "<hr>[src.arrival_announcements_enabled ? "Arrival Announcement Message: \"[src.arrivalalert]\"<br><br><b><a href='?src=\ref[src];set_arrival_message=1'>Change</a></b><br><b><a href='?src=\ref[src];toggle_arrival_message=1'>Disable</a></b>" : "Arrival Announcements Disabled<br><br><b><a href='?src=\ref[src];toggle_arrival_message=1'>Enable</a></b>"]"
 		dat += "</body>"
-		user << browse(dat, "window=announcementcomputer")
+		BrowseHTML(user, dat, "window=announcementcomputer")
 		onclose(user, "announcementcomputer")
 
 	Topic(href, href_list[])

@@ -36,7 +36,7 @@
 	var/second = src.time % 60
 	var/minute = (src.time - second) / 60
 	var/dat = text("<HTML><HEAD></HEAD><BODY><TT><B>Party Button</B> []<br><HR><br>Timer System: []<BR><br>Time Left: [][] <A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A><br></TT></BODY></HTML>", d1, d2, (minute ? text("[]:", minute) : null), second, src, src, src, src)
-	user << browse(dat, "window=partyalarm")
+	BrowseHTML(user, dat, "window=partyalarm")
 	onclose(user, "partyalarm")
 	return
 
@@ -81,6 +81,6 @@
 
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=partyalarm")
+		BrowseHTML(usr, null, "window=partyalarm")
 		return
 	return

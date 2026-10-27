@@ -122,7 +122,7 @@
 					dat += "<A href='?src=\ref[src];gib=2;bot=\ref[R]'>Cancel</A><BR>"
 			dat += "*----------*<BR>"
 
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 

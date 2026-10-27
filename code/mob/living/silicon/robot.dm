@@ -1814,7 +1814,7 @@
 		<A href='byond://?src=\ref[src.radio];freq=10'>+</A><BR>
 		-------
 	</TT>"}
-		src << browse(dat, "window=radio")
+		BrowseHTML(src, dat, "window=radio")
 		onclose(src, "radio")
 		return
 
@@ -1944,7 +1944,7 @@
 				if(!R.activated) dat += text("[R]: <A HREF=?src=\ref[src];upact=\ref[R]><B>Activate</B></A> (Drain Rate: [R.drainrate]/second)<BR>")
 				else dat += text("[R]: <A HREF=?src=\ref[src];upact=\ref[R]><B>Deactivate</B></A> (Drain Rate: [R.drainrate]/second)<BR>")
 
-		src << browse(dat, "window=robotmod;size=400x600")
+		BrowseHTML(src, dat, "window=robotmod;size=400x600")
 
 	proc/spellopen()
 		if (src.locked)
@@ -2116,7 +2116,7 @@
 			dat += "<BR><br>"
 
 		src.viewalerts = 1
-		src << browse(dat, "window=robotalerts&can_close=0")
+		BrowseHTML(src, dat, "window=robotalerts&can_close=0")
 
 	proc/get_poweruse_count()
 		if (src.cell)

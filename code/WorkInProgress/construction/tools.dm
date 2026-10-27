@@ -116,7 +116,7 @@
 			if (!istype(user, /mob/living/silicon))
 				boutput(user, text("Too far away."))
 				user.machine = null
-				user << browse(null, "window=turretid")
+				BrowseHTML(user, null, "window=turretid")
 				return
 
 		user.machine = src
@@ -129,7 +129,7 @@
 			t += text("Currently firing at <A href='?src=\ref[];firesAt=1'>[]</a><br><br>", src, firesat)
 			t += text("Currently set for [] - <A href='?src=\ref[];toggleLethal=1'>Change to []?</a><br><br>", src.lethal?"lethal":"stun repeatedly", src,  src.lethal?"Stun repeatedly":"Lethal")
 
-		user << browse(t, "window=turretid")
+		BrowseHTML(user, t, "window=turretid")
 		onclose(user, "turretid")
 
 

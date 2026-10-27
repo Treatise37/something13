@@ -158,7 +158,7 @@
 		else
 			body = "<a href='?src=\ref[src];auth=1'>{Log in}</a>"
 		dat = "<tt>[header][body]<hr><a href='?src=\ref[src];mode=1'>Access Crew Manifest</a><br></tt>"
-	user << browse(dat, "window=id_com;size=725x500")
+	BrowseHTML(user, dat, "window=id_com;size=725x500")
 	onclose(user, "id_com")
 	return
 

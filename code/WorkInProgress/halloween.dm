@@ -1803,7 +1803,7 @@ var/list/timewarp_interior_sounds = list('sound/ambience/timeship_fx1.ogg','soun
 
 		dat += "<br>Network ID: <b>\[[uppertext(src.net_id)]]</b><br>"
 
-		user << browse("<head><title>Robuddy v2.9 controls</title></head>[dat]", "window=guardbot")
+		BrowseHTML(user, "<head><title>Robuddy v2.9 controls</title></head>[dat]", "window=guardbot")
 		onclose(user, "guardbot")
 		return
 

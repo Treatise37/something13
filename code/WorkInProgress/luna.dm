@@ -1326,7 +1326,7 @@ obj/machinery/embedded_controller/radio/maintpanel
 
 		dat += "</script></body></html>"
 
-		user << browse(dat, "window=maintpanel;size=435x380;can_resize=0")
+		BrowseHTML(user, dat, "window=maintpanel;size=435x380;can_resize=0")
 		onclose(user, "maintpanel")
 
 	Topic(href, href_list)

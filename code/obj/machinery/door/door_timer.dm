@@ -257,7 +257,7 @@
 			else
 				dat += "<BR><BR><A href='?src=\ref[src];fc=1'>Flash Cell</A>"
 	dat += "<BR><BR><A href='?action=mach_close&window=computer'>Close</A></TT></BODY></HTML>"
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 

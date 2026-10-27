@@ -208,7 +208,7 @@
 				dat += "[P.name]: <A href='?src=\ref[src];op=\ref[P];tp=move'>Remove</A><BR>"
 
 				user.machine = src
-				user << browse("<HEAD><TITLE>Frame</TITLE></HEAD><TT>[dat]</TT>", "window=fkit")
+				BrowseHTML(user, "<HEAD><TITLE>Frame</TITLE></HEAD><TT>[dat]</TT>", "window=fkit")
 				onclose(user, "fkit")
 
 		if(1)
@@ -258,7 +258,7 @@
 
 		updateDialog()
 	else
-		usr << browse(null, "window=fkit")
+		BrowseHTML(usr, null, "window=fkit")
 		usr.machine = null
 	return
 
@@ -528,7 +528,7 @@
 	dat += "<HR>"
 
 	user.machine = src
-	user << browse("<HEAD><TITLE>Ruckingenur Kit Control Panel</TITLE></HEAD><TT>[dat]</TT>", "window=rkit")
+	BrowseHTML(user, "<HEAD><TITLE>Ruckingenur Kit Control Panel</TITLE></HEAD><TT>[dat]</TT>", "window=rkit")
 	onclose(user, "rkit")
 
 /obj/machinery/rkit/Topic(href, href_list)
@@ -565,7 +565,7 @@
 
 		updateDialog()
 	else
-		usr << browse(null, "window=rkit")
+		BrowseHTML(usr, null, "window=rkit")
 		usr.machine = null
 	return
 

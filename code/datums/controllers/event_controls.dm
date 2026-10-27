@@ -136,7 +136,7 @@ var/datum/event_controller/random_events
 
 		dat += "<HR>"
 		dat += "</body></html>"
-		usr << browse(dat,"window=reconfig;size=450x450")
+		BrowseHTML(usr, dat,"window=reconfig;size=450x450")
 
 	Topic(href, href_list[])
 

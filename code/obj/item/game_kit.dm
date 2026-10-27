@@ -73,7 +73,7 @@ THAT STUPID GAME KIT
 
 		if (!( src.data ))
 			update()
-		user << browse(src.data, "window=game_kit;size=325x550")
+		BrowseHTML(user, src.data, "window=game_kit;size=325x550")
 		onclose(user, "game_kit")
 		return
 	return

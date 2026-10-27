@@ -1481,7 +1481,7 @@ for some reason I brought it back and tried to clean it up a bit and I regret ev
 			src.time = min(max(round(src.time), 60), 600)
 
 		if (href_list["close"])
-			usr << browse(null, "window=timer")
+			BrowseHTML(usr, null, "window=timer")
 			usr.machine = null
 			return
 		*/
@@ -1492,7 +1492,7 @@ for some reason I brought it back and tried to clean it up a bit and I regret ev
 
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=timer")
+		BrowseHTML(usr, null, "window=timer")
 		return
 	return
 
@@ -1512,10 +1512,10 @@ for some reason I brought it back and tried to clean it up a bit and I regret ev
 		var/dat = text("<TT><B>Timing Unit</B><br>[] []:[]<br><A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A><br></TT>", (src.timing ? text("<A href='?src=\ref[];time=0'>Timing</A>", src) : text("<A href='?src=\ref[];time=1'>Not Timing</A>", src)), minute, second, src, src, src, src)
 		dat += "<BR><BR><A href='?src=\ref[src];close=1'>Close</A>"
 		*/
-		user << browse(src.get_interface(), "window=timer")
+		BrowseHTML(user, src.get_interface(), "window=timer")
 		onclose(user, "timer")
 	else
-		user << browse(null, "window=timer")
+		BrowseHTML(user, null, "window=timer")
 		user.machine = null
 
 	src.add_fingerprint(user)

@@ -89,7 +89,7 @@ var/telesci_modifiers_set = 0
 		if (src.panel_open)
 			dat += net_switch_html()
 
-		user << browse(dat,"window=telepad;size=245x302")
+		BrowseHTML(user, dat,"window=telepad;size=245x302")
 		onclose(user,"telepad")
 		return
 
@@ -989,7 +989,7 @@ var/telesci_modifiers_set = 0
 			dat += net_switch_html()
 
 		user.machine = src
-		user << browse(dat, "window=t_computer;size=400x600")
+		BrowseHTML(user, dat, "window=t_computer;size=400x600")
 		onclose(user, "t_computer")
 		return
 
@@ -1210,7 +1210,7 @@ var/telesci_modifiers_set = 0
 			return
 
 		else
-			usr << browse(null, "window=t_computer")
+			BrowseHTML(usr, null, "window=t_computer")
 			src.updateUsrDialog()
 			return
 

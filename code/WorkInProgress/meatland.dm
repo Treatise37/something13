@@ -1101,7 +1101,7 @@ var/global/list/default_meat_head_dialog = list("hello hello", "... it's not vir
 
 </body>"}
 
-		user << browse(dat, "window=cheget;size=270x300;can_resize=0;can_minimize=0")
+		BrowseHTML(user, dat, "window=cheget;size=270x300;can_resize=0;can_minimize=0")
 
 	Topic(href, href_list)
 		..()

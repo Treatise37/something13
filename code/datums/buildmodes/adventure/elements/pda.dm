@@ -14,7 +14,7 @@ The HTML source for the interface of handheld computers must match the following
 The number of action slots on the device will be the highest index in the sequence from 1 to that index.<br>
 So if the document contains &lt;1&gt; &lt;2&gt; &lt;3&gt; then the number of action slots will be 3.<br>
 But if the document contains &lt;1&gt; &lt;2&gt; &lt;4&gt; then the number of action slots will be 2 instead of 4 due to the missing &lt;3&gt;."}
-		usr << browse(help_text, "window=pda_help;size=300x300")
+		BrowseHTML(usr, help_text, "window=pda_help;size=300x300")
 
 	initialize()
 		var/is_custom = alert("Use custom HTML?",,"Yes", "What is this?", "No")

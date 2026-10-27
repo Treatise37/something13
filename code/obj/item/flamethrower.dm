@@ -304,7 +304,7 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 /obj/item/flamethrower/Topic(href,href_list[])
 	if (href_list["close"])
 		usr.machine = null
-		usr << browse(null, "window=flamethrower")
+		BrowseHTML(usr, null, "window=flamethrower")
 		return
 	if(usr.stat || usr.restrained() || usr.lying)
 		return
@@ -338,7 +338,7 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 		icon_state = "flamethrower_no_oxy[fuel]"
 		item_state = "flamethrower0"
 		usr.machine = null
-		usr << browse(null, "window=flamethrower")
+		BrowseHTML(usr, null, "window=flamethrower")
 	if (href_list["removefuel"])
 		if(!src.part5)	return
 		var/obj/item/reagent_containers/food/drinks/fueltank/A = src.part5
@@ -354,7 +354,7 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 		icon_state = "flamethrower[oxy]_no_fuel"
 		item_state = "flamethrower0"
 		usr.machine = null
-		usr << browse(null, "window=flamethrower")
+		BrowseHTML(usr, null, "window=flamethrower")
 	if (href_list["mode"])
 		mode = text2num(href_list["mode"])
 	for(var/mob/M in viewers(1, src.loc))
@@ -394,7 +394,7 @@ GETLINEEEEEEEEEEEEEEEEEEEEE
 	else
 		dat += "<a href='?src=\ref[src];mode=3'>Stream of 10 (dangerous)</a>"
 	dat += text("<BR><br><A HREF='?src=\ref[src];close=1'>Close</A></TT>")
-	user << browse(dat, "window=flamethrower;size=600x300")
+	BrowseHTML(user, dat, "window=flamethrower;size=600x300")
 	onclose(user, "flamethrower")
 	return
 

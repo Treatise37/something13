@@ -171,7 +171,7 @@
 				<U>Re-establish</U><BR><BR>
 				<U><B><font bold=5 size=7>Activate</font></B></U>"}
 
-		user << browse(T, "window=bodyswapper;size=300x600;can_resize=1")
+		BrowseHTML(user, T, "window=bodyswapper;size=300x600;can_resize=1")
 		onclose(user, "bodyswapper")
 
 	Topic(href, href_list[])

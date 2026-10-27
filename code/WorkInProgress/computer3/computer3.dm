@@ -465,7 +465,7 @@ function lineEnter ()
 		dat += {"<td><a href='byond://?src=\ref[src];restart=1'>Restart</a></td>
 		</body>"}
 
-		user << browse(dat,"window=comp3;size=455x405")
+		BrowseHTML(user, dat,"window=comp3;size=455x405")
 		onclose(user,"comp3")
 	return
 

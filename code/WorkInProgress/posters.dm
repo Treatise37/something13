@@ -365,7 +365,7 @@ var/global/icon/wanted_poster_unknown = icon('icons/obj/decals.dmi', "wanted-unk
 		if (!C || !src.popup_win || !src.poster_HTML)
 			return
 		C << browse_rsc(src.poster_image, "posterimage.png")
-		C << browse(src.poster_HTML, "window=[src.line_title]_poster;titlebar=1;size=[src.imgw]x[src.imgh];can_resize=0")
+		BrowseHTML(C, src.poster_HTML, "window=[src.line_title]_poster;titlebar=1;size=[src.imgw]x[src.imgh];can_resize=0")
 
 	proc/generate_poster()
 		src.poster_HTML = {"<html><head><meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\"/></head><body><title>Poster</title>\

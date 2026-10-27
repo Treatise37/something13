@@ -164,7 +164,7 @@
 		dat += "<br>"
 		dat += "Status: <A href='?src=\ref[src];start=1'>[src.on ? "On" : "Off"]</A><br>"
 
-		user << browse(dat, "window=autocleaner")
+		BrowseHTML(user, dat, "window=autocleaner")
 		onclose(user, "autocleaner")
 		return
 

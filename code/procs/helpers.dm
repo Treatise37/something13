@@ -2120,13 +2120,13 @@ proc/countJob(rank)
 
 	if (removal_type == "death")
 		boutput(M, "<h2><span style=\"color:red\">Since you have died, you are no longer a mindslave! Do not obey your former master's orders even if you've been brought back to life somehow.</span></h2>")
-		M << browse(grabResource("html/mindslave/death.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(M, grabResource("html/mindslave/death.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 	else if (removal_type == "override")
 		boutput(M, "<h2><span style=\"color:red\">Your mindslave implant has been overridden by a new one, cancelling out your former allegiances!</span></h2>")
-		M << browse(grabResource("html/mindslave/override.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(M, grabResource("html/mindslave/override.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 	else
 		boutput(M, "<h2><span style=\"color:red\">Your mind is your own again! You no longer feel the need to obey your former master's orders.</span></h2>")
-		M << browse(grabResource("html/mindslave/expire.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(M, grabResource("html/mindslave/expire.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	return
 

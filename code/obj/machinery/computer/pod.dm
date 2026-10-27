@@ -160,7 +160,7 @@
 			dat += "<BR><BR><BR>RECHARGING TELEPORT<BR><DD>Please stand by...</DD>"
 		dat += text("<BR><BR><A href = '?src=\ref[];door=1'>Toggle Outer Door</A><BR>", src)
 		dat += text("<BR><BR><A href='?action=mach_close&window=computer'>Close</A></TT></BODY></HTML>")
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 
@@ -188,7 +188,7 @@
 					src.TPR = 0
 					src.updateDialog()
 			usr.machine = null
-			usr << browse(null, "window=computer")
+			BrowseHTML(usr, null, "window=computer")
 			usr.teleportscroll(1, 2, src)
 			return
 		if (href_list["power"])

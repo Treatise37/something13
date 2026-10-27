@@ -561,11 +561,11 @@ var/zapLimiter = 0
 	if ( (get_dist(src, user) > 1 ))
 		if (!issilicon(user))
 			user.machine = null
-			user << browse(null, "window=apc")
+			BrowseHTML(user, null, "window=apc")
 			return
 		else if (issilicon(user) && src.aidisabled)
 			boutput(user, "AI control for this APC interface has been disabled.")
-			user << browse(null, "window=apc")
+			BrowseHTML(user, null, "window=apc")
 			return
 	if(wiresexposed && (!istype(user, /mob/living/silicon/ai)))
 		user.machine = src
@@ -588,7 +588,7 @@ var/zapLimiter = 0
 			t1 += "<br>"
 		t1 += text("<br><br>[(src.locked ? "The APC is locked." : "The APC is unlocked.")]<br><br>[(src.shorted ? "The APCs power has been shorted." : "The APC is working properly!")]<br><br>[(src.aidisabled ? "The 'AI control allowed' light is off." : "The 'AI control allowed' light is on.")]")
 		t1 += text("<p><a href='?src=\ref[src];close2=1'>Close</a></p><br>")
-		user << browse(t1, "window=apcwires")
+		BrowseHTML(user, t1, "window=apcwires")
 		onclose(user, "apcwires")
 
 	user.machine = src
@@ -683,7 +683,7 @@ var/zapLimiter = 0
 	t += "<BR><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
 	t += "</TT>"
-	user << browse(t, "window=apc")
+	BrowseHTML(user, t, "window=apc")
 	onclose(user, "apc")
 	return
 
@@ -1044,11 +1044,11 @@ var/zapLimiter = 0
 			updateicon()
 			update()
 		else if( href_list["close"] )
-			usr << browse(null, "window=apc")
+			BrowseHTML(usr, null, "window=apc")
 			usr.machine = null
 			return
 		else if (href_list["close2"])
-			usr << browse(null, "window=apcwires")
+			BrowseHTML(usr, null, "window=apcwires")
 			usr.machine = null
 			return
 
@@ -1065,7 +1065,7 @@ var/zapLimiter = 0
 		src.updateUsrDialog()
 
 	else
-		usr << browse(null, "window=apc")
+		BrowseHTML(usr, null, "window=apc")
 		usr.machine = null
 
 	return

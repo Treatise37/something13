@@ -249,7 +249,7 @@
 			html += {"</div>
 					</body>
 				</html>"}
-			user << browse(html, "window=modmanu2;size=610x458;can_resize=0;can_minimize=0")
+			BrowseHTML(user, html, "window=modmanu2;size=610x458;can_resize=0;can_minimize=0")
 		return
 
 	Topic(href, href_list)
@@ -259,7 +259,7 @@
 			if(active_recipe)
 				if(!users.Find(usr)) users.Add(usr)
 				show_to(usr)
-				usr << browse(null, "window=modmanu2")
+				BrowseHTML(usr, null, "window=modmanu2")
 				return
 
 			var/datum/modular_recipe/sel = locate(href_list["loadrecipe"])
@@ -267,7 +267,7 @@
 				load_recipe(sel)
 				if(!users.Find(usr)) users.Add(usr)
 				show_to(usr)
-				usr << browse(null, "window=modmanu2")
+				BrowseHTML(usr, null, "window=modmanu2")
 
 	proc/unload_recipe()
 		if(active_recipe)

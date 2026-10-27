@@ -578,7 +578,7 @@
 
 		o += "</table>"
 		o += "</body></html>"
-		user << browse(o, "window=sims_controller;size=500x400")
+		BrowseHTML(user, o, "window=sims_controller;size=500x400")
 
 
 var/global/datum/simsControl/simsController = new()

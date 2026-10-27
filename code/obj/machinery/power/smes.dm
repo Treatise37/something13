@@ -231,7 +231,7 @@
 	if ( (get_dist(src, user) > 1 ))
 		if (!istype(user, /mob/living/silicon/ai))
 			user.machine = null
-			user << browse(null, "window=smes")
+			BrowseHTML(user, null, "window=smes")
 			return
 
 	user.machine = src
@@ -257,7 +257,7 @@
 	t += "<BR></PRE><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
 	t += "</TT>"
-	user << browse(t, "window=smes;size=460x300")
+	BrowseHTML(user, t, "window=smes;size=460x300")
 	onclose(user, "smes")
 	return
 
@@ -269,7 +269,7 @@
 
 	if (( usr.machine==src && ((get_dist(src, usr) <= 1) && istype(src.loc, /turf))) || (istype(usr, /mob/living/silicon/ai)))
 		if( href_list["close"] )
-			usr << browse(null, "window=smes")
+			BrowseHTML(usr, null, "window=smes")
 			usr.machine = null
 			return
 
@@ -340,7 +340,7 @@
 		src.updateUsrDialog()
 
 	else
-		usr << browse(null, "window=smes")
+		BrowseHTML(usr, null, "window=smes")
 		usr.machine = null
 
 	return

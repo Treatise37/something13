@@ -50,7 +50,7 @@
 		if (..())
 			return
 		if (href_list["close"])
-			usr << browse(null, "window=rtg")
+			BrowseHTML(usr, null, "window=rtg")
 			usr.machine = null
 		else if (href_list["eject"] && in_range(src, usr))
 			fuel_pellet.loc = src.loc
@@ -61,7 +61,7 @@
 	proc/interact(mob/user)
 		if (get_dist(src, user) > 1 && !istype(user, /mob/living/silicon/ai))
 			user.machine = null
-			user << browse(null, "window=rtg")
+			BrowseHTML(user, null, "window=rtg")
 			return
 
 		user.machine = src
@@ -73,7 +73,7 @@
 		else
 			t += "No fuel pellet inserted.<br>"
 		t += "<a href='?src=\ref[src];close=1'>Close</a>"
-		user << browse(t, "window=rtg")
+		BrowseHTML(user, t, "window=rtg")
 		onclose(user, "rtg")
 
 	proc/updateicon()

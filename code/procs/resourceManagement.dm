@@ -176,6 +176,6 @@
 			</html>
 			"}
 
-	src << browse(s, "window=resourcePreload;titlebar=0;size=1x1;can_close=0;can_resize=0;can_scroll=0;border=0")
+	BrowseHTML(src, s, "window=resourcePreload;titlebar=0;size=1x1;can_close=0;can_resize=0;can_scroll=0;border=0")
 	src.resourcesLoaded = 1
 	return 1

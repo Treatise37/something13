@@ -16,7 +16,7 @@
 		src.resistances += /datum/ailment/disease/lycanthropy
 
 		if (src.mind && src.mind.special_role != "omnitraitor")
-			src << browse(grabResource("html/traitorTips/werewolfTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+			BrowseHTML(src, grabResource("html/traitorTips/werewolfTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	else return
 

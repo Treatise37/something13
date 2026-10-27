@@ -55,7 +55,7 @@ There's A LOT of duplicate code here, which isn't ideal to say the least. Should
 		dat += "Injection amount: <A href='?src=\ref[src];change_amt=1'>[inj_amount == -1 ? "ALL" : inj_amount]</A><BR><BR>"
 		dat += "Min. time between activations: <A href='?src=\ref[src];change_mintime=1'>[min_time] seconds</A><BR><BR>"
 
-		user << browse("<TITLE>Injector Belt</TITLE>Injector Belt:<BR><BR>[dat]", "window=inj_belt;size=575x250")
+		BrowseHTML(user, "<TITLE>Injector Belt</TITLE>Injector Belt:<BR><BR>[dat]", "window=inj_belt;size=575x250")
 		onclose(user, "inj_belt")
 		return
 
@@ -199,7 +199,7 @@ There's A LOT of duplicate code here, which isn't ideal to say the least. Should
 		dat += "Injection amount: <A href='?src=\ref[src];change_amt=1'>[inj_amount == -1 ? "ALL" : inj_amount]</A><BR><BR>"
 		dat += "Min. time between activations: <A href='?src=\ref[src];change_mintime=1'>[min_time] seconds</A><BR><BR>"
 
-		user << browse("<TITLE>Vapo-Matic</TITLE>Vapo-Matic:<BR><BR>[dat]", "window=inj_belt;size=575x250")
+		BrowseHTML(user, "<TITLE>Vapo-Matic</TITLE>Vapo-Matic:<BR><BR>[dat]", "window=inj_belt;size=575x250")
 		onclose(user, "inj_belt")
 		return
 

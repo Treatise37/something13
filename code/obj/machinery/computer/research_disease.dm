@@ -88,7 +88,7 @@ Confirm Identity: <A href='?src=\ref[src];scan=1'>[src.scan ? src.scan.name : "-
 				else
 		else
 			dat += text("<A href='?src=\ref[src];login=1'>{Log In}</A>")
-	user << browse(text("<HEAD><TITLE>Disease Research</TITLE></HEAD><TT>[]</TT>", dat), "window=dis_res")
+	BrowseHTML(user, text("<HEAD><TITLE>Disease Research</TITLE></HEAD><TT>[]</TT>", dat), "window=dis_res")
 	onclose(user, "dis_res")
 	return
 

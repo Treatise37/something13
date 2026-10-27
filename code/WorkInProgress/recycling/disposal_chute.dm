@@ -240,7 +240,7 @@
 
 
 		user.machine = src
-		user << browse(dat, "window=disposal;size=360x170")
+		BrowseHTML(user, dat, "window=disposal;size=360x170")
 		onclose(user, "disposal")
 
 	// handle machine interaction
@@ -262,7 +262,7 @@
 			if(href_list["close"])
 				DEBUG_MESSAGE("closed [src]")
 				usr.machine = null
-				usr << browse(null, "window=disposal")
+				BrowseHTML(usr, null, "window=disposal")
 				return
 
 			if(href_list["pump"])
@@ -290,7 +290,7 @@
 			if (!in_range(src, usr))
 				DEBUG_MESSAGE("[src] and [usr] are too far apart: [src] [log_loc(src)], [usr] [log_loc(usr)]")
 
-			usr << browse(null, "window=disposal")
+			BrowseHTML(usr, null, "window=disposal")
 			usr.machine = null
 			return
 		return

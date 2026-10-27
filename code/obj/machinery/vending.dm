@@ -947,7 +947,7 @@
 			if (!src.acceptcard)
 				src.vending_HTML += "<BR>This machine only takes credit bills."
 
-		src.vending_HTML += "</TT>"
+	src.vending_HTML += "</TT>"
 
 /obj/machinery/vending/proc/generate_wire_HTML()
 	src.vendwires = list("Violet" = 1,\
@@ -1058,8 +1058,7 @@
 		if (src.HTML && src.panel_open && !src.wire_HTML)
 			src.generate_HTML(0, 1)
 
-	user << browse(src.HTML, "window=vending")
-	winset(user, "vending", "auto-format=false")
+	BrowseHTML(user, src.HTML, "window=vending")
 	onclose(user, "vending")
 	return
 
@@ -1223,7 +1222,7 @@
 			else
 				src.pulse(twire)
 	else
-		usr << browse(null, "window=vending")
+		BrowseHTML(usr, null, "window=vending")
 		return
 	return
 

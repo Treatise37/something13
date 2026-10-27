@@ -166,7 +166,7 @@
 		dat += "<HR>"
 		dat += "<b><u>Mode:</u></b> <A href='?src=\ref[src];page=1'>(Overview)</A> <A href='?src=\ref[src];page=2'>(Extraction)</A> <A href='?src=\ref[src];page=3'>(Seed List)</A>"
 
-		user << browse(dat, "window=plantmaster;size=370x500")
+		BrowseHTML(user, dat, "window=plantmaster;size=370x500")
 		onclose(user, "rextractor")
 
 	Topic(href, href_list)
@@ -691,7 +691,7 @@
 		dat += "<HR>"
 		dat += "<b><u>Mode:</u></b> <A href='?src=\ref[src];page=1'>(Overview)</A> <A href='?src=\ref[src];page=2'>(Extraction)</A> <A href='?src=\ref[src];page=3'>(Transference)</A>"
 
-		user << browse(dat, "window=rextractor;size=370x500")
+		BrowseHTML(user, dat, "window=rextractor;size=370x500")
 		onclose(user, "rextractor")
 
 	handle_event(var/event)
@@ -955,7 +955,7 @@
 				if (!src.category || (src.category == A.category))
 					dat += "<b>[A.name]</b>: <A href='?src=\ref[src];disp=\ref[A]'>(VEND)</A><br>"
 
-		user << browse(dat, "window=seedfab;size=400x500")
+		BrowseHTML(user, dat, "window=seedfab;size=400x500")
 		onclose(user, "seedfab")
 
 		if (src.panelopen)
@@ -981,7 +981,7 @@
 			pdat += "The blue light is [src.malfunction ? "flashing" : "on"].<BR>"
 			pdat += "The white light is [src.hacked ? "on" : "off"].<BR>"
 
-			user << browse(pdat, "window=fabpanel")
+			BrowseHTML(user, pdat, "window=fabpanel")
 			onclose(user, "fabpanel")
 
 	Topic(href, href_list)

@@ -213,7 +213,7 @@
 			dat += text("<BR><BR><A href='?action=mach_close&window=scannernew'>Close</A>", user)
 		else
 			dat = "<font color='red'> Error: No DNA Modifier connected. </FONT>"
-	user << browse(dat, "window=scannernew;size=550x625")
+	BrowseHTML(user, dat, "window=scannernew;size=550x625")
 	onclose(user, "scannernew")
 	return
 
@@ -229,7 +229,7 @@
 		if (href_list["genpulse"])
 			src.delete = 1
 			src.temphtml = text("Working ... Please wait ([] Seconds)", src.radduration)
-			usr << browse(temphtml, "window=scannernew;size=550x650")
+			BrowseHTML(usr, temphtml, "window=scannernew;size=550x650")
 			onclose(usr, "scannernew")
 			sleep(10*src.radduration)
 			if (!src.connected.occupant)
@@ -307,7 +307,7 @@
 			block = getblock(getblock(src.connected.occupant.primarynew.uni_identity,src.uniblock,3),src.subblock,1)
 			src.delete = 1
 			src.temphtml = text("Working ... Please wait ([] Seconds)", src.radduration)
-			usr << browse(temphtml, "window=scannernew;size=550x650")
+			BrowseHTML(usr, temphtml, "window=scannernew;size=550x650")
 			onclose(usr, "scannernew")
 			sleep(10*src.radduration)
 			if (!src.connected.occupant)
@@ -376,7 +376,7 @@
 			block = getblock(getblock(src.connected.occupant.primarynew.struc_enzyme,src.strucblock,3),src.subblock,1)
 			src.delete = 1
 			src.temphtml = text("Working ... Please wait ([] Seconds)", src.radduration)
-			usr << browse(temphtml, "window=scannernew;size=550x650")
+			BrowseHTML(usr, temphtml, "window=scannernew;size=550x650")
 			onclose(usr, "scannernew")
 			sleep(10*src.radduration)
 			if (!src.connected.occupant)

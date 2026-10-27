@@ -393,7 +393,7 @@
 			src.updateSelfDialog()
 
 		else if (href_list["close"])
-			usr << browse(null, "window=pda2_\ref[src]")
+			BrowseHTML(usr, null, "window=pda2_\ref[src]")
 			usr.machine = null
 
 		src.updateSelfDialog()

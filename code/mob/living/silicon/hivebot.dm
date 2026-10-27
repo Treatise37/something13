@@ -774,7 +774,7 @@
 		else
 			dat += text("[obj]: \[<A HREF=?src=\ref[src];act=\ref[obj]>Activate</A> | <B>Deactivated</B>\]<BR>")
 */
-	src << browse(dat, "window=robotmod&can_close=0")
+	BrowseHTML(src, dat, "window=robotmod&can_close=0")
 
 
 /mob/living/silicon/hivebot/Topic(href, href_list)
@@ -885,7 +885,7 @@ Frequency:
 <A href='byond://?src=\ref[src.radio];freq=10'>+</A><BR>
 -------
 </TT>"}
-	src << browse(dat, "window=radio")
+	BrowseHTML(src, dat, "window=radio")
 	onclose(src, "radio")
 	return
 

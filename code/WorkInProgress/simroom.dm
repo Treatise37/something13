@@ -67,7 +67,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=mm")
+			BrowseHTML(user, null, "window=mm")
 			return
 
 	user.machine = src
@@ -104,7 +104,7 @@
 
 
 
-	user << browse(dat, "window=mm")
+	BrowseHTML(user, dat, "window=mm")
 	onclose(user, "mm")
 
 /obj/machinery/sim/transmitter/Topic(href, href_list)
@@ -215,7 +215,7 @@
 		var/minute = (src.time - second) / 60
 		dat += text("<br><HR><br>Timer System: [d2]<br>Time Left: [(minute ? text("[minute]:") : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-5'>-</A> <A href='?src=\ref[src];tp=5'>+</A> <A href='?src=\ref[src];tp=30'>+</A>")
 		dat += text("<BR><BR><A href='?action=mach_close&window=computer'>Close</A></TT></BODY></HTML>")
-		user << browse(dat, "window=computer;size=400x500")
+		BrowseHTML(user, dat, "window=computer;size=400x500")
 		onclose(user, "computer")
 
 		if (G)
@@ -299,7 +299,7 @@
 	var/minute = (src.time - second) / 60
 	dat += text("<br><HR><br>Timer System: [d2]<br>Time Left: [(minute ? text("[minute]:") : null)][second] <A href='?src=\ref[src];tp=-30'>-</A> <A href='?src=\ref[src];tp=-5'>-</A> <A href='?src=\ref[src];tp=5'>+</A> <A href='?src=\ref[src];tp=30'>+</A>")
 	dat += text("<BR><BR><A href='?action=mach_close&window=computer'>Close</A></TT></BODY></HTML>")
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	src.add_fingerprint(user)
 	return
@@ -383,7 +383,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.machine = null
-			user << browse(null, "window=mm")
+			BrowseHTML(user, null, "window=mm")
 			return
 
 	user.machine = src
@@ -409,7 +409,7 @@
 
 
 
-	user << browse(dat, "window=mm")
+	BrowseHTML(user, dat, "window=mm")
 	onclose(user, "mm")
 
 /obj/machinery/sim/programcomp/Topic(href, href_list)

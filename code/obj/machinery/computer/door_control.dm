@@ -43,7 +43,7 @@
 	dat += text("<br><A href='?src=\ref[src];openall=1'>Open All</A><br>")
 	dat += text("<A href='?src=\ref[src];closeall=1'>Close All</A><br>")
 	dat += text("<BR><BR><A href='?action=mach_close&window=computer'>Close</A></TT></BODY></HTML>")
-	user << browse(dat, "window=computer;size=400x500")
+	BrowseHTML(user, dat, "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 

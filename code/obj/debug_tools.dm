@@ -132,7 +132,7 @@
 		dat += "<A href='?src=\ref[src];add=1'>Add New Element</A><BR>"
 		dat += "<A href='?src=\ref[src];wipe=1'>Erase All Elements</A><BR>"
 
-		user << browse(dat, "window=jumpsuitmaker;size=575x450")
+		BrowseHTML(user, dat, "window=jumpsuitmaker;size=575x450")
 		onclose(user, "jumpsuitmaker")
 		return
 

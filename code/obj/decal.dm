@@ -49,7 +49,7 @@
 	proc/show_popup_win(var/client/C)
 		if (!C || !src.popup_win)
 			return
-		C << browse(grabResource("html/traitorTips/wizardTips.html"),"window=antagTips;titlebar=1;size=[imgw]x[imgh];can_minimize=0;can_resize=0")
+		BrowseHTML(C, grabResource("html/traitorTips/wizardTips.html"),"window=antagTips;titlebar=1;size=[imgw]x[imgh];can_minimize=0;can_resize=0")
 
 	wallsign
 		desc = "A sign, on a wall. Wow!"

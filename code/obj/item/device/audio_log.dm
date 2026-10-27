@@ -185,10 +185,10 @@
 			dat += "<td><a href='byond://?src=\ref[src];command=clear'>Clear Log</a></td>"
 			dat += "<td><a href='byond://?src=\ref[src];command=continuous_mode'>[continuous ? "Looping" : "No Loop"]</a></td></table></tt>"
 
-			user << browse(dat, "window=audiolog;size=400x140")
+			BrowseHTML(user, dat, "window=audiolog;size=400x140")
 			onclose(user, "audiolog")
 		else
-			user << browse(null, "window=audiolog")
+			BrowseHTML(user, null, "window=audiolog")
 			user.machine = null
 
 		return
@@ -266,7 +266,7 @@
 			src.add_fingerprint(usr)
 			src.updateSelfDialog()
 		else
-			usr << browse(null, "window=audiolog")
+			BrowseHTML(usr, null, "window=audiolog")
 			return
 		return
 

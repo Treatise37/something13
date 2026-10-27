@@ -44,7 +44,7 @@
 				C.mind.is_vampire = C.abilityHolder
 
 		if (src.mind && src.mind.special_role != "omnitraitor")
-			src << browse(grabResource("html/traitorTips/vampireTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+			BrowseHTML(src, grabResource("html/traitorTips/vampireTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	else return
 

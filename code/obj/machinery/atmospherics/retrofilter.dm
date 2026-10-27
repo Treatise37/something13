@@ -134,7 +134,7 @@ obj/machinery/atmospherics/retrofilter
 
 	attack_hand(mob/user as mob)
 		if(..())
-			user << browse(null, "window=pipefilter")
+			BrowseHTML(user, null, "window=pipefilter")
 			user.machine = null
 			return
 
@@ -174,7 +174,7 @@ obj/machinery/atmospherics/retrofilter
 
 		dat += "<br><A href='?src=\ref[src];close=1'>Close</A>"
 
-		user << browse(dat, "window=pipefilter;size=300x365")
+		BrowseHTML(user, dat, "window=pipefilter;size=300x365")
 		onclose(user, "pipefilter")
 		return
 
@@ -199,7 +199,7 @@ obj/machinery/atmospherics/retrofilter
 			src.update_overlays()
 
 		else if (href_list["close"])
-			usr << browse(null, "window=pipefilter")
+			BrowseHTML(usr, null, "window=pipefilter")
 			usr.machine = null
 			return
 		return

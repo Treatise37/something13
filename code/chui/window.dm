@@ -228,4 +228,30 @@ mob/proc/Browse( var/html, var/opts )
 	if( src.client )
 		chui.staticinst.bbrowse( src.client, html, opts )
 
+/proc/BrowseHTML(var/target, var/html, var/opts)
+	var/client/C
+	if (istype(target, /client))
+		C = target
+	else if (ismob(target))
+		var/mob/M = target
+		C = M.client
+	if (!C)
+		return
+	if (isnull(html))
+		C << browse(null, opts)
+		return
+	C << browse(browser_html_document(html), opts)
+
+// BYOND 516 treats browse strings without a document wrapper as preformatted text.
+/proc/browser_html_document(var/html)
+	if (!istext(html))
+		return html
+
+	var/document_start = lowertext(trim(copytext(html, 1, 257)))
+	if (findtext(document_start, "<!doctype"))
+		return html
+	if (findtext(document_start, "<html") || findtext(document_start, "<head"))
+		return "<!DOCTYPE html>[html]"
+	return "<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>[html]</body></html>"
+
 //#define browse #error Use --.Browse() instead.

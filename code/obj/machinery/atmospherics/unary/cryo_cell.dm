@@ -111,7 +111,7 @@
 			<B>Current occupant:</B> [src.occupant ? "<BR>Name: [src.occupant]<BR>Health: [health_text]<BR>Oxygen deprivation: [src.occupant.get_oxygen_deprivation()]<BR>Brute damage: [src.occupant.get_brute_damage()]<BR>Fire damage: [src.occupant.get_burn_damage()]<BR>Toxin damage: [src.occupant.get_toxin_damage()]<BR>Body temperature: [src.occupant.bodytemperature]" : "<FONT color=red>None</FONT>"]<BR>
 		"}
 
-		user << browse(dat, "window=cryo")
+		BrowseHTML(user, dat, "window=cryo")
 		onclose(user, "cryo")
 
 	Topic(href, href_list)

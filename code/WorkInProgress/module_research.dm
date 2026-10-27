@@ -872,7 +872,7 @@ var/global/datum/module_research_controller/module_control = new
 
 	proc/show_to_user(var/mob/user, var/interface)
 		user << browse_rsc(icon('icons/mob/hud_robot.dmi', "module-[module_icon_state]"), "module-icon.png")
-		user << browse(interface, "window=module_res;size=600x500")
+		BrowseHTML(user, interface, "window=module_res;size=600x500")
 		onclose(user, "module_res", src)
 
 	proc/show_interface(var/mob/user)

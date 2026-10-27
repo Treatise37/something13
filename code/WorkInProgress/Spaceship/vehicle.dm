@@ -384,10 +384,10 @@
 
 		else
 			if (panel_status)
-				usr << browse(null, "window=ship_maint")
+				BrowseHTML(usr, null, "window=ship_maint")
 				return
 
-			usr << browse(null, "window=ship_main")
+			BrowseHTML(usr, null, "window=ship_main")
 			return
 		return
 
@@ -957,7 +957,7 @@
 	else
 		dat += "None Installed"
 
-	user << browse(dat, "window=ship_maint")
+	BrowseHTML(user, dat, "window=ship_maint")
 	onclose(user, "ship_maint")
 	return
 /////////////////////////////////////////////////////////////////////
@@ -1071,7 +1071,7 @@
 				dat += "<br><a href='?src=\ref[src.lock];lock=1'>(Lock)</a>"
 
 			dat += " <a href='?src=\ref[src.lock];setcode=1;'>(Set Code)</a>"
-	user << browse(dat, "window=ship_main")
+	BrowseHTML(user, dat, "window=ship_main")
 	onclose(user, "ship_main")
 	return
 

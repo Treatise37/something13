@@ -361,7 +361,7 @@
 		for(var/datum/a in R.items_to_research[i])
 			dat += "[a:name]<BR>"
 
-	usr << browse(dat, "window=researchdebug;size=400x400")
+	BrowseHTML(usr, dat, "window=researchdebug;size=400x400")
 
 /client/proc/RS_artifact_debug()
 	set category = "Specialist Debug"
@@ -399,7 +399,7 @@
 		for(var/datum/a in R.items_to_research[i])
 			dat += "[a:name]<BR>"
 
-	usr << browse(dat, "window=researchdebug;size=400x400")
+	BrowseHTML(usr, dat, "window=researchdebug;size=400x400")
 
 /client/proc/RS_robotics_debug()
 	set category = "Specialist Debug"
@@ -437,7 +437,7 @@
 		for(var/datum/a in R.items_to_research[i])
 			dat += "[a:name]<BR>"
 
-	usr << browse(dat, "window=researchdebug;size=400x400")
+	BrowseHTML(usr, dat, "window=researchdebug;size=400x400")
 
 /client/proc/RS_grant_research()
 	set category = "Specialist Debug"

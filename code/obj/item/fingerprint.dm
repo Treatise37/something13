@@ -15,7 +15,7 @@
 	var/dat = "<B>Clipboard</B><BR>"
 	for(var/obj/item/f_card/P in src)
 		dat += text("<A href='?src=\ref[];read=\ref[]'>[]</A> <A href='?src=\ref[];remove=\ref[]'>Remove</A><BR>", src, P, P.name, src, P)
-	user << browse(dat, "window=fcardholder")
+	BrowseHTML(user, dat, "window=fcardholder")
 	onclose(user, "fcardholder")
 	return
 
@@ -35,10 +35,10 @@
 			var/obj/item/f_card/P = locate(href_list["read"])
 			if ((P && P.loc == src))
 				if (!( istype(usr, /mob/living/carbon/human) ))
-					usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.display()), text("window=[]", P.name))
+					BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.display()), text("window=[]", P.name))
 					onclose(usr, "[P.name]")
 				else
-					usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.display()), text("window=[]", P.name))
+					BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", P.name, P.display()), text("window=[]", P.name))
 					onclose(usr, "[P.name]")
 			src.add_fingerprint(usr)
 		if (ismob(src.loc))
@@ -121,7 +121,7 @@
 
 	..()
 	boutput(usr, text("<span style=\"color:blue\">There are [] on the stack!</span>", src.amount))
-	usr << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, display()), text("window=[]", src.name))
+	BrowseHTML(usr, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", src.name, display()), text("window=[]", src.name))
 	onclose(usr, "[src.name]")
 	return
 

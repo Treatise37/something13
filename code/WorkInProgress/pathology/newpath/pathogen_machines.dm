@@ -63,7 +63,7 @@
 
 
 		*/
-		user << browse("<HEAD><TITLE>Centrifuge</TITLE></HEAD><BODY>[output_text]</BODY>", "window=centrifuge")
+		BrowseHTML(user, "<HEAD><TITLE>Centrifuge</TITLE></HEAD><BODY>[output_text]</BODY>", "window=centrifuge")
 		onclose(user, "centrifuge")
 		return
 
@@ -437,7 +437,7 @@
 			sendSpliceInfo(1)
 		sendAnalysisData()
 		/*
-		user << browse(grabResource("html/PathoComp.html"), "window=pathology;size=900x800")
+		BrowseHTML(user, grabResource("html/PathoComp.html"), "window=pathology;size=900x800")
 		sendData(user, initUI(), "setUIState")
 		*/
 
@@ -531,7 +531,7 @@
 					</body>
 				</html>"}
 			//html = '<table><th><a href="#" onclick="sortAndDisplay('seq'); return false;">Sequence</a></th><th><a href="#" onclick="sortAndDisplay('stable'); return false;">Stable</a></th><th><a href="#" onclick="sortAndDisplay('trans'); return false;">Transient</a></th>' + html + '</table>';
-			usr << browse(op, "window=pathology_ks;size=300x500")
+			BrowseHTML(usr, op, "window=pathology_ks;size=300x500")
 		if (href_list["setstate"])
 			var/state  = text2num(href_list["newstate"])
 			if(state != null && state >= 0 && state <= 5 && state != PATHOGEN_MANIPULATOR_STATE_SPLICING_SESSION && src.manip.machine_state != PATHOGEN_MANIPULATOR_STATE_SPLICING_SESSION)
@@ -1374,7 +1374,7 @@
 						else
 							output_text += "No vaccine synthesis method is known for [body_name].<br>"
 
-		user << browse(output_text, "window=synthomatic;size=800x600")
+		BrowseHTML(user, output_text, "window=synthomatic;size=800x600")
 
 	Topic(href, href_list)
 		if (!(usr in range(1)))

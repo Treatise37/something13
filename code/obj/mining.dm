@@ -672,7 +672,7 @@
 			override_text = "Disable Cooldown Override"
 		dat += "<A href='?src=\ref[src];override_cooldown=1'>[override_text]</A><BR>"
 		dat += "<BR><A href='?action=mach_close&window=computer'>Close</A>"
-		usr << browse(dat, "window=computer;size=300x400")
+		BrowseHTML(usr, dat, "window=computer;size=300x400")
 		onclose(usr, "computer")
 		return null
 
@@ -811,7 +811,7 @@
 			//dat += "<BR><a href='?src=\ref[src];unlink=1'>Disconnect Terminal from Magnet</a>"
 
 			dat += "<BR><A href='?action=mach_close&window=computer'>Close</A>"
-			user << browse(dat, "window=computer;size=300x400")
+			BrowseHTML(user, dat, "window=computer;size=300x400")
 			onclose(user, "computer")
 		return
 

@@ -204,7 +204,7 @@
 	else
 		dat += "<a href='byond://?src=\ref[src];send=1'>Move Shuttle</a><BR><BR>"
 
-	user << browse(dat, "window=shuttle")
+	BrowseHTML(user, dat, "window=shuttle")
 	onclose(user, "shuttle")
 	return
 
@@ -224,7 +224,7 @@
 
 		if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=shuttle")
+			BrowseHTML(usr, null, "window=shuttle")
 
 	src.add_fingerprint(usr)
 	src.updateUsrDialog()
@@ -271,7 +271,7 @@
 	else
 		dat += "<a href='byond://?src=\ref[src];send=1'>Move Shuttle</a><BR><BR>"
 
-	user << browse(dat, "window=shuttle")
+	BrowseHTML(user, dat, "window=shuttle")
 	onclose(user, "shuttle")
 	return
 
@@ -292,7 +292,7 @@
 
 		else if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=shuttle")
+			BrowseHTML(usr, null, "window=shuttle")
 
 	src.add_fingerprint(usr)
 	src.updateUsrDialog()
@@ -363,7 +363,7 @@
 	else
 		dat += "<a href='byond://?src=\ref[src];send=1'>Move Shuttle</a><BR><BR>"
 
-	user << browse(dat, "window=shuttle")
+	BrowseHTML(user, dat, "window=shuttle")
 	onclose(user, "shuttle")
 	return
 
@@ -394,7 +394,7 @@
 
 		else if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=shuttle")
+			BrowseHTML(usr, null, "window=shuttle")
 
 	src.add_fingerprint(usr)
 	src.updateUsrDialog()
@@ -440,7 +440,7 @@
 	else
 		dat += "<a href='byond://?src=\ref[src];send=1'>Move Elevator</a><BR><BR>"
 
-	user << browse(dat, "window=ice_elevator")
+	BrowseHTML(user, dat, "window=ice_elevator")
 	onclose(user, "ice_elevator")
 	return
 
@@ -460,7 +460,7 @@
 
 		if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=ice_elevator")
+			BrowseHTML(usr, null, "window=ice_elevator")
 
 	src.add_fingerprint(usr)
 	src.updateUsrDialog()
@@ -504,7 +504,7 @@
 	else
 		dat += "<a href='byond://?src=\ref[src];send=1'>Move Elevator</a><BR><BR>"
 
-	user << browse(dat, "window=ice_elevator")
+	BrowseHTML(user, dat, "window=ice_elevator")
 	onclose(user, "biodome_elevator")
 	return
 
@@ -524,7 +524,7 @@
 
 		if (href_list["close"])
 			usr.machine = null
-			usr << browse(null, "window=biodome_elevator")
+			BrowseHTML(usr, null, "window=biodome_elevator")
 
 	src.add_fingerprint(usr)
 	src.updateUsrDialog()

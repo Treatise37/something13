@@ -123,7 +123,7 @@ var/global/datum/cdc_contact_controller/QM_CDC = new()
 			dat += "No Traders in Communications Range<BR>"
 		dat += "<A href='?action=mach_close&window=computer'>Close</A>"
 
-	user << browse(dat, "window=computer;size=575x600")
+	BrowseHTML(user, dat, "window=computer;size=575x600")
 	onclose(user, "computer")
 	return
 

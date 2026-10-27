@@ -132,7 +132,7 @@
 			src.updateUsrDialog()
 			return
 		else
-			usr << browse(null, "window=chem_heater")
+			BrowseHTML(usr, null, "window=chem_heater")
 			src.update_icon()
 			src.updateUsrDialog()
 			return
@@ -174,7 +174,7 @@
 				var/datum/reagent/current_reagent = R.reagent_list[reagent_id]
 				dat += "[current_reagent.name], [current_reagent.volume] Units.<BR>"
 
-		user << browse("<TITLE>Reagent Heating/Cooling Unit</TITLE>Reagent Heating/Cooling Unit:<BR><BR>[dat]", "window=chem_heater")
+		BrowseHTML(user, "<TITLE>Reagent Heating/Cooling Unit</TITLE>Reagent Heating/Cooling Unit:<BR><BR>[dat]", "window=chem_heater")
 
 		onclose(user, "chem_heater")
 		return
@@ -390,7 +390,7 @@
 			beaker = null
 			src.update_icon()
 			usr.machine = null
-			usr << browse(null, "window=chem_dispenser")
+			BrowseHTML(usr, null, "window=chem_dispenser")
 			return
 
 		else if (href_list["dispense"])
@@ -450,7 +450,7 @@
 			src.updateUsrDialog()
 			return
 		else
-			usr << browse(null, "window=chem_dispenser")
+			BrowseHTML(usr, null, "window=chem_dispenser")
 			return
 
 		src.add_fingerprint(usr)
@@ -494,7 +494,7 @@
 					reagent_number++
 					dat += "[reagent][group.reagent_number == reagent_number ? "" : ", "]"
 				dat += "<BR><a href='?src=\ref[src];group_delete=\ref[group]'>Delete</a>"
-		user << browse("<TITLE>[dispenser_name] Dispenser</TITLE>[dispenser_name] dispenser:<BR>[dat]", "window=chem_dispenser;size=500x800")
+		BrowseHTML(user, "<TITLE>[dispenser_name] Dispenser</TITLE>[dispenser_name] dispenser:<BR>[dat]", "window=chem_dispenser;size=500x800")
 
 		onclose(user, "chem_dispenser")
 		return
@@ -619,7 +619,7 @@
 		usr.machine = src
 
 		if (href_list["close"])
-			usr << browse(null, "window=chem_master")
+			BrowseHTML(usr, null, "window=chem_master")
 			return
 
 		if (!beaker) return
@@ -627,7 +627,7 @@
 
 		if (href_list["analyze"])
 			var/dat = "<TITLE>Chemmaster 3000</TITLE>Chemical infos:<BR><BR>Name:<BR>[href_list["name"]]<BR><BR>Description:<BR>[href_list["desc"]]<BR><BR><BR><A href='?src=\ref[src];main=1'>(Back)</A>"
-			usr << browse(dat, "window=chem_master;size=575x400")
+			BrowseHTML(usr, dat, "window=chem_master;size=575x400")
 			return
 		else if (href_list["isolate"])
 			beaker:reagents.isolate_reagent(href_list["isolate"])
@@ -770,7 +770,7 @@
 			return
 
 		else
-			usr << browse(null, "window=chem_master")
+			BrowseHTML(usr, null, "window=chem_master")
 			return
 
 		src.add_fingerprint(usr)
@@ -802,7 +802,7 @@
 				dat += "<A href='?src=\ref[src];createbottle=1'>Create bottle (30 units max)</A><BR>"
 				dat += "<A href='?src=\ref[src];createpatch=1'>Create patch (40 units max)</A><BR>"
 				dat += "<A href='?src=\ref[src];multipatch=1'>Create multiple patches (5 units min)</A>"
-		user << browse("<TITLE>Chemmaster 3000</TITLE>Chemmaster menu:<BR><BR>[dat]", "window=chem_master;size=575x400")
+		BrowseHTML(user, "<TITLE>Chemmaster 3000</TITLE>Chemmaster menu:<BR><BR>[dat]", "window=chem_master;size=575x400")
 		onclose(user, "chem_master")
 		return
 

@@ -217,7 +217,7 @@ var/list/genescanner_addresses = list()
 
 	disposing()
 		if(usercl && usercl.mob)
-			usercl.mob << browse(null, "window=geneticsappearance")
+			BrowseHTML(usercl.mob, null, "window=geneticsappearance")
 			usercl = null
 		target_mob = null
 		..()
@@ -343,7 +343,7 @@ var/list/genescanner_addresses = list()
 			dat += "<a href='byond://?src=\ref[src];apply=1'>Apply</a><br>"
 			dat += "</body></html>"
 
-			user << browse(dat, "window=geneticsappearance;size=300x250;can_resize=0;can_minimize=0")
+			BrowseHTML(user, dat, "window=geneticsappearance;size=300x250;can_resize=0;can_minimize=0")
 			onclose(user, "geneticsappearance", src)
 			return
 

@@ -388,7 +388,7 @@ td {
 		if (current)
 			output += "<b>Currently adding: </b> [current.name] <a href='?src=\ref[src];edcurr=1;mod=\ref[D]'>(EDIT)</a><br>"
 			output += "<a href='?src=\ref[src];addcurr=1;mod=\ref[D]'>Add to module</a>"
-		usr << browse(output, "window=module_editor;size=400x600")
+		BrowseHTML(usr, output, "window=module_editor;size=400x600")
 
 	Topic(href, href_list)
 		var/obj/item/robot_module/D = locate(href_list["mod"])
@@ -595,7 +595,7 @@ var/global/list/module_editors = list()
 
 			if (persistent == 0)
 				boutput(src, "<h2><span style=\"color:red\">You have been deactivated, removing your antagonist status. Do not commit traitorous acts if you've been brought back to life somehow.</h></span>")
-				src << browse(grabResource("html/traitorTips/roguerobotRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+				BrowseHTML(src, grabResource("html/traitorTips/roguerobotRemoved.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 			return
 

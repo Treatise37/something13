@@ -885,7 +885,7 @@ About the new airlock wires panel:
 	t1 += text("<br><br>")
 
 	t1 += text("<p><a href='?src=\ref[];close=1'>Close Window</a></p>", src)
-	user << browse(t1, "window=airlock")
+	BrowseHTML(user, t1, "window=airlock")
 	onclose(user, "airlock")
 
 //aiDisable - 1 idscan, 2 disrupt main power, 3 disrupt backup power, 4 drop door bolts, 5 un-electrify door, 7 close door
@@ -999,7 +999,7 @@ About the new airlock wires panel:
 
 		t1 += text("<p><a href='?src=\ref[];close=1'>Close</a></p>", src)
 
-		user << browse(t1, "window=airlock")
+		BrowseHTML(user, t1, "window=airlock")
 		onclose(user, "airlock")
 
 	else
@@ -1012,7 +1012,7 @@ About the new airlock wires panel:
 	if (usr.stat || usr.restrained() )
 		return
 	if (href_list["close"])
-		usr << browse(null, "window=airlock")
+		BrowseHTML(usr, null, "window=airlock")
 		if (usr.machine==src)
 			usr.machine = null
 			return

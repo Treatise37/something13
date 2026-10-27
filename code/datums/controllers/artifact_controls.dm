@@ -92,7 +92,7 @@ var/datum/artifact_controller/artifact_controls
 
 		dat += "</small></body></html>"
 
-		usr << browse(dat,"window=artifacts;size=400x600")
+		BrowseHTML(usr, dat,"window=artifacts;size=400x600")
 
 	Topic(href, href_list[])
 		if (href_list["Activate"])

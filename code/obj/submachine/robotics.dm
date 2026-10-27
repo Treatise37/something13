@@ -33,7 +33,7 @@
 			if (ticker && ticker.mode)
 				if (istype(ticker.mode, /datum/game_mode/construction))
 					dat += "<A href='?src=\ref[src];module=con'>Write Construction Worker Module</A><BR>"
-			user << browse(dat, "window=mwriter;size=400x500")
+			BrowseHTML(user, dat, "window=mwriter;size=400x500")
 			onclose(user, "mwriter")
 		else
 			var/dat = {"<B>Module Rewriter</B><BR>
@@ -41,7 +41,7 @@
 			<B>Modules Available:</B> [modules]<BR>
 			<HR><BR>
 			The Rewriter is currently busy!"}
-			user << browse(dat, "window=mwriter;size=400x500")
+			BrowseHTML(user, dat, "window=mwriter;size=400x500")
 			onclose(user, "mwriter")
 
 		return

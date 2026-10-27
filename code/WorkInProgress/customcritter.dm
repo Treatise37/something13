@@ -2106,7 +2106,7 @@ td.title { font-size: 1.4em; font-weight: bold; text-align: center; }
 		output += "This round: [clickable_link("roundsave", "Save")] | [clickable_link("roundload", "Load")]<br/>"
 		output += "Into file: [clickable_link("filesave", "Save")] | [clickable_link("fileload", "Load")]</td></tr>"
 		output += "</table></body></html>"
-		M << browse(output, "window=crcreator;size=800x600")
+		BrowseHTML(M, output, "window=crcreator;size=800x600")
 
 /client/proc/critter_creator_debug()
 	set name = "Critter Creator (WIP)"

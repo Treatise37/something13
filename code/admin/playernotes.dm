@@ -14,7 +14,7 @@
 
 	if(!http)
 		dat += "Query Failed."
-		usr << browse(dat, "window=notesp;size=875x400")
+		BrowseHTML(usr, dat, "window=notesp;size=875x400")
 		return
 
 	var/key
@@ -25,7 +25,7 @@
 
 	if (0 == contentExists)
 		dat += "Query Failed."
-		usr << browse(dat, "window=notesp;size=875x400")
+		BrowseHTML(usr, dat, "window=notesp;size=875x400")
 		return
 
 	var/content = ""
@@ -38,7 +38,7 @@
 
 	dat += content
 	dat = "<h1>Player Notes for <b>[player]</b></h1><HR></FONT><br><A href='?src=\ref[src];action=notes2;target=[player];type=add'>Add Note</A><br><HR>[dat]"
-	usr << browse(dat, "window=notesp;size=875x400")
+	BrowseHTML(usr, dat, "window=notesp;size=875x400")
 	return
 
 

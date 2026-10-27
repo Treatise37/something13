@@ -68,7 +68,7 @@
 
 
 		user.machine = src
-		user << browse(dat, "window=mailchute;size=360x270")
+		BrowseHTML(user, dat, "window=mailchute;size=360x270")
 		onclose(user, "mailchute")
 
 	Topic(href, href_list)
@@ -84,7 +84,7 @@
 
 			if(href_list["close"])
 				usr.machine = null
-				usr << browse(null, "window=mailchute")
+				BrowseHTML(usr, null, "window=mailchute")
 				return
 
 			if(href_list["pump"])
@@ -120,7 +120,7 @@
 			if(href_list["eject"])
 				eject()
 		else
-			usr << browse(null, "window=mailchute")
+			BrowseHTML(usr, null, "window=mailchute")
 			usr.machine = null
 			return
 		return

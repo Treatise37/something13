@@ -43,7 +43,7 @@
 	wizard_mob.set_clothing_icon_dirty()
 
 	boutput(wizard_mob, "The Space Wizards Federation has equipped you with a Spellbook on your belt with which to purchase your desired spells.")
-	wizard_mob << browse(grabResource("html/traitorTips/wizardTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+	BrowseHTML(wizard_mob, grabResource("html/traitorTips/wizardTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 	return
 
 ////////////////////////////////////////////// Helper procs ////////////////////////////////////////////////////

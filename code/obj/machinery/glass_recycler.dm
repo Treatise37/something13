@@ -32,7 +32,7 @@
 		dat += "<A href='?src=\ref[src];type=flute'>Champagne Flute</A>"
 		dat += "<HR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
 		dat += "<BR><BR><A href='?action=mach_close&window=glass'>Close</A>"
-		user << browse(dat, "window=glass;size=220x240")
+		BrowseHTML(user, dat, "window=glass;size=220x240")
 		onclose(user, "glass")
 		return
 

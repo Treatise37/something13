@@ -11,7 +11,7 @@ obj/machinery/computer/general_air_control
 	var/datum/radio_frequency/radio_connection
 
 	attack_hand(mob/user)
-		user << browse(return_text(),"window=computer")
+		BrowseHTML(user, return_text(),"window=computer")
 		user.machine = src
 		onclose(user, "computer")
 
@@ -480,7 +480,7 @@ Rate: <A href='?src=\ref[src];change_vol=-10'>--</A> <A href='?src=\ref[src];cha
 
 
 	attack_hand(mob/user)
-		user << browse(return_text(),"window=computer")
+		BrowseHTML(user, return_text(),"window=computer")
 		user.machine = src
 		onclose(user, "computer")
 
@@ -558,7 +558,7 @@ Rate: <A href='?src=\ref[src];change_vol=-10'>--</A> <A href='?src=\ref[src];cha
 	attack_hand(mob/user)
 		if(stat & (BROKEN | NOPOWER))
 			return
-		user << browse(return_text(),"window=computer")
+		BrowseHTML(user, return_text(),"window=computer")
 		user.machine = src
 		onclose(user, "computer")
 

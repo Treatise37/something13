@@ -231,7 +231,7 @@
 		dat += "<b>Generator mode:</b> [src.mode == 1 ? "<u>Charge APC</u> / Charge cell" : "Charge APC / <u>Charge cell</u>"] (<a href='?src=\ref[src];togglemode=1'>Toggle</a>)<br>"
 		dat += "<b>Generator status:</b> [src.active ? "Running" : "Off"] (<a href='?src=\ref[src];togglepower=1'>Toggle</a>)<br>"
 
-		user << browse(dat, "window=generator")
+		BrowseHTML(user, dat, "window=generator")
 		onclose(user, "generator")
 		return
 

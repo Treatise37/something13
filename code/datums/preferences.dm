@@ -247,7 +247,7 @@ datum/preferences
 
 		traitPreferences.updateTraits(user)
 
-		user << browse(dat,"window=preferences;size=333x615")
+		BrowseHTML(user, dat,"window=preferences;size=333x615")
 
 	proc/ResetAllPrefsToMed(mob/user)
 		src.job_favorite = null
@@ -461,8 +461,8 @@ datum/preferences
 		HTML += {"<a href=\"byond://?src=\ref[user];preferences=1;resetalljobs=1\"><b>Reset All Jobs</b></a> * "}
 		HTML += {"<a href=\"byond://?src=\ref[user];preferences=1;closejobswindow=1\"><b>Close Window</b></a>"}
 
-		user << browse(null, "window=preferences")
-		user << browse(HTML, "window=mob_occupation;size=550x400")
+		BrowseHTML(user, null, "window=preferences")
+		BrowseHTML(user, HTML, "window=mob_occupation;size=550x400")
 		return
 
 	proc/SetJob(mob/user, occ=1, job="Captain",var/level = 0)
@@ -598,7 +598,7 @@ datum/preferences
 					mind that admins can still select you by hand to play enemy roles during a round. Generally if you don't want to go
 					along with whatever the admin has in mind, just adminhelp it and say so. Most of us are cool about that kind of thing."}
 
-			user << browse(helptext, "window=jobs_help;size=400x400")
+			BrowseHTML(user, helptext, "window=jobs_help;size=400x400")
 			return
 
 		if (link_tags["job"])
@@ -615,7 +615,7 @@ datum/preferences
 			return
 
 		if (link_tags["closejobswindow"])
-			user << browse(null, "window=mob_occupation")
+			BrowseHTML(user, null, "window=mob_occupation")
 			src.ShowChoices(user)
 			return
 

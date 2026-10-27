@@ -57,7 +57,7 @@
 	<h1>[deletionWhat]</h1>
 	<ul id="listing"></ul>
 	</body></html>"}
-	src << browse(html, "window=deletedObjects;size=400x600")
+	BrowseHTML(src, html, "window=deletedObjects;size=400x600")
 
 #ifdef IMAGE_DEL_DEBUG
 /client/proc/debug_image_deletions_clear()
@@ -102,7 +102,7 @@
 	#else
 	var/html = "<h1>Image deletion debug disabled</h1>"
 	#endif
-	src << browse(html, "window=deletedImageData;size=400x600")
+	BrowseHTML(src, html, "window=deletedImageData;size=400x600")
 #endif
 
 /client/proc/debug_pools()
@@ -186,7 +186,7 @@
 				</script>
 				</body></html>"}
 	#endif
-	src << browse(html, "window=poolCounts;size=400x800")
+	BrowseHTML(src, html, "window=poolCounts;size=400x800")
 
 /client/proc/call_proc_atom(atom/target as null|area|obj|mob|turf in world)
 	set name = "Call Proc"
@@ -572,7 +572,7 @@ body
 	html += body
 	html += "</body></html>"
 
-	usr << browse(html, "window=variables\ref[prefs]")
+	BrowseHTML(usr, html, "window=variables\ref[prefs]")
 
 /client/proc/check_gang_scores()
 	set category = "Debug"
@@ -647,7 +647,7 @@ body
 			T += "   - [R.type]<br>"
 		T+="<hr>"
 
-	usr << browse(T, "window=browse_reactions")
+	BrowseHTML(usr, T, "window=browse_reactions")
 
 /client/proc/debug_reagents_cache()
 	set category = "Debug"
@@ -659,7 +659,7 @@ body
 		var/datum/reagent/R = reagents_cache[reagent]
 		T += "<tr><td>[reagent]</td><td>[R]</td><td>[R.type]</td></tr>"
 	T += "</table>"
-	usr << browse(T, "window=browse_reagents;size=800x400")
+	BrowseHTML(usr, T, "window=browse_reagents;size=800x400")
 
 /client/proc/debug_check_possible_reactions(var/atom/O as mob|obj|turf)
 	set category = "Debug"
@@ -674,7 +674,7 @@ body
 		else
 			T += "Nothing at all!"
 
-		usr << browse(T, "window=possible_chem_reactions_in_thing")
+		BrowseHTML(usr, T, "window=possible_chem_reactions_in_thing")
 	else
 		usr.show_text("\The [O] does not have a reagent holder or is empty.", "red")
 
@@ -940,7 +940,7 @@ proc/display_camera_paths()
 					</table>
 				</body>
 			</html>"}
-	src << browse(output, "window=holyfuck;size=600x500")
+	BrowseHTML(src, output, "window=holyfuck;size=600x500")
 
 #endif
 
@@ -995,7 +995,7 @@ proc/display_camera_paths()
 					</table>
 				</body>
 			</html>"}
-	src << browse(output, "window=queuestats;size=600x500")
+	BrowseHTML(src, output, "window=queuestats;size=600x500")
 
 #endif
 

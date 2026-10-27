@@ -27,13 +27,13 @@
 	if (!src.uses)
 		boutput(user, "<span style=\"color:blue\"><b>The depleted scroll vanishes in a puff of smoke!</b></span>")
 		user.machine = null
-		user << browse(null,"window=scroll")
+		BrowseHTML(user, null,"window=scroll")
 		qdel(src)
 		return
 	dat += "<b>Teleportation Scroll:</b><br><br>"
 	dat += "Charges left: [src.uses]<br><hr><br>"
 	dat += "<A href='byond://?src=\ref[src];spell_teleport=1'>Teleport</A><br><br><hr>"
-	user << browse(dat,"window=scroll")
+	BrowseHTML(user, dat,"window=scroll")
 	onclose(user, "scroll")
 	return
 

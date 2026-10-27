@@ -119,10 +119,10 @@
 		var/timing_text = (src.timing ? "Timing - controls locked" : "Not timing - controls unlocked")
 		var/dat = text("<TT><B>Timing Unit</B><br>[] []:[]<br><A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A><br></TT>", detonator_trigger ? timing_text : timing_links, minute, second, src, src, src, src)
 		dat += "<BR><BR><A href='?src=\ref[src];close=1'>Close</A>"
-		user << browse(dat, "window=timer")
+		BrowseHTML(user, dat, "window=timer")
 		onclose(user, "timer")
 	else
-		user << browse(null, "window=timer")
+		BrowseHTML(user, null, "window=timer")
 		user.machine = null
 
 	return
@@ -170,7 +170,7 @@
 				src.time = 90
 
 		if (href_list["close"])
-			usr << browse(null, "window=timer")
+			BrowseHTML(usr, null, "window=timer")
 			usr.machine = null
 			return
 
@@ -192,6 +192,6 @@
 						src.attack_self(M)
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=timer")
+		BrowseHTML(usr, null, "window=timer")
 		return
 	return

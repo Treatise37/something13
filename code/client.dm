@@ -123,7 +123,7 @@ var/global/list/hellbans = null
 									</body>
 								</html>
 							"}
-			src.mob << browse(banstring, "window=ripyou")
+			BrowseHTML(src.mob, banstring, "window=ripyou")
 
 			if (src)
 				del(src)
@@ -964,7 +964,7 @@ var/global/curr_day = null
 
 		if("resourcePreloadComplete")
 			bout(src, "<span style='color:blue;'><b>Preload completed.</b></span>")
-			src << browse(null, "window=resourcePreload")
+			BrowseHTML(src, null, "window=resourcePreload")
 			return
 
 		/* For debug

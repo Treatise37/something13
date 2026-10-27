@@ -42,13 +42,13 @@
 			var/dat = {"<B>Slot Machine</B><BR>
 			<HR><BR>
 			<B>Please insert card!</B><BR>"}
-			user << browse(dat, "window=slotmachine;size=450x500")
+			BrowseHTML(user, dat, "window=slotmachine;size=450x500")
 			onclose(user, "slotmachine")
 		else if (src.working)
 			var/dat = {"<B>Slot Machine</B><BR>
 			<HR><BR>
 			<B>Please wait!</B><BR>"}
-			user << browse(dat, "window=slotmachine;size=450x500")
+			BrowseHTML(user, dat, "window=slotmachine;size=450x500")
 			onclose(user, "slotmachine")
 		else
 			var/dat = {"<B>Slot Machine</B><BR>
@@ -60,7 +60,7 @@
 			<HR><BR>
 			<A href='?src=\ref[src];ops=1'>Play!</A><BR>
 			<A href='?src=\ref[src];ops=2'>Eject card</A>"}
-			user << browse(dat, "window=slotmachine;size=400x500")
+			BrowseHTML(user, dat, "window=slotmachine;size=400x500")
 			onclose(user, "slotmachine")
 
 	Topic(href, href_list)

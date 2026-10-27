@@ -36,7 +36,7 @@
 			return
 
 		if(using && (!using.client || using.client.inactivity >= 1200 || get_dist(src, using) > 1))
-			using << browse(null, "window=materials")
+			BrowseHTML(using, null, "window=materials")
 			using = null
 
 		if(using && using != user)
@@ -48,7 +48,7 @@
 		//<a href='?src=\ref[src];fart=1'><small>(fart)</small></a>
 		user.machine = src
 		add_fingerprint(user)
-		user << browse(grabResource("html/materialRecombobulator.html"), "window=materials;size=730x415;can_resize=0;can_minimize=0;can_close=0")
+		BrowseHTML(user, grabResource("html/materialRecombobulator.html"), "window=materials;size=730x415;can_resize=0;can_minimize=0;can_close=0")
 		onclose(user, "materials", src)
 
 		spawn(10) callJsFunc(usr, "setRef", list("\ref[src]")) //This is shit but without it, it calls the JS before the window is open and doesn't work.
@@ -77,7 +77,7 @@
 	Topic(href, href_list)
 		//boutput(world, href)
 		if(!using || get_dist(using, src) > 1)
-			using << browse(null, "window=materials")
+			BrowseHTML(using, null, "window=materials")
 			using = null
 			return
 
@@ -129,7 +129,7 @@
 							newhtml += "</tr></table>"
 							callJsFunc(usr, "setHtmlId", list("#tabs-3", newhtml))
 				if("closeWindow")
-					usr << browse(null, "window=materials")
+					BrowseHTML(usr, null, "window=materials")
 					using = null
 				if("ejectMaterial")
 					if(editing_obj)

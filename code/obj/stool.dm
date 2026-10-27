@@ -936,7 +936,7 @@
 				<A href='?src=\ref[src];lethal=1'>[lethal ? "<font color='red'>Lethal</font>" : "Nonlethal"]</A><BR><BR>
 				<A href='?src=\ref[src];shock=1'>Shock</A><BR>"}
 
-			user << browse("<TITLE>Electric Chair</TITLE><b>Electric Chair</b><BR>[dat]", "window=e_chair;size=180x180")
+			BrowseHTML(user, "<TITLE>Electric Chair</TITLE><b>Electric Chair</b><BR>[dat]", "window=e_chair;size=180x180")
 
 			onclose(usr, "e_chair")
 		return

@@ -744,7 +744,7 @@
 		var/datum/game_mode/construction/C = ticker.mode
 		var/is_powered = src.powered()
 		if (!is_powered && !has_battery_power)
-			user << browse("The screen is blank.", "window=specsupply;size=500x400")
+			BrowseHTML(user, "The screen is blank.", "window=specsupply;size=500x400")
 			return
 		var/interface = {"<html><head><style>
 table.orderable {
@@ -852,4 +852,4 @@ h2 {
 
 			interface += "</tbody></table>"
 		interface += "</body></html>"
-		user << browse(interface, "window=specsupply;size=500x400")
+		BrowseHTML(user, interface, "window=specsupply;size=500x400")

@@ -112,7 +112,7 @@ Frequency:
 			dat += "[ headset_channel_lookup["[src.secure_frequencies["[sayToken]"]]"] ? headset_channel_lookup["[src.secure_frequencies["[sayToken]"]]"] : "???" ]: \[[format_frequency(src.secure_frequencies["[sayToken]"])]] (Activator: <b>[sayToken]</b>)<br>"
 
 	dat += "[t1]</TT>"
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -133,7 +133,7 @@ Frequency:
 
 			if (!isnull(src.traitorradio) && src.traitor_frequency && src.frequency == src.traitor_frequency)
 				usr.machine = null
-				usr << browse(null, "window=radio")
+				BrowseHTML(usr, null, "window=radio")
 				onclose(usr, "radio")
 				// now transform the regular radio, into a (disguised)syndicate uplink!
 				var/obj/item/uplink/integrated/radio/T = src.traitorradio
@@ -195,7 +195,7 @@ Frequency:
 				src.updateDialog()
 		src.add_fingerprint(usr)
 	else
-		usr << browse(null, "window=radio")
+		BrowseHTML(usr, null, "window=radio")
 
 /obj/item/device/radio/talk_into(mob/M as mob, messages, secure, real_name, lang_id)
 	// According to a pair of DEBUG_MESSAGE calls set up for testing, no radio jammer check for the src radio was performed.
@@ -569,7 +569,7 @@ Frequency:
 					if (M.client)
 						src.attack_self(M)
 	else
-		usr << browse(null, "window=radio")
+		BrowseHTML(usr, null, "window=radio")
 		return
 	return
 /*
@@ -621,7 +621,7 @@ Code:
 <A href='byond://?src=\ref[src];code=1'>+</A>
 <A href='byond://?src=\ref[src];code=5'>+</A><BR>
 </TT>"}
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -683,7 +683,7 @@ Code:
 <A href='byond://?src=\ref[src];code=5'>+</A><BR>
 [t1]
 </TT>"}
-	user << browse(dat, "window=radio")
+	BrowseHTML(user, dat, "window=radio")
 	onclose(user, "radio")
 	return
 
@@ -833,6 +833,6 @@ obj/item/device/radio/signaler/attackby(obj/item/W as obj, mob/user as mob)
 					if (M.client)
 						src.attack_self(M)
 	else
-		usr << browse(null, "window=radio")
+		BrowseHTML(usr, null, "window=radio")
 		return
 	return

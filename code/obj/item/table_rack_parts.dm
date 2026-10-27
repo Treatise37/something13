@@ -51,7 +51,7 @@ RACK PARTS
 <tr><td><A href='?src=\ref[src];dir=WEST'>W</A></td><td><A href='?src=\ref[src];dir=CENTER'>O</A></td><td><A href='?src=\ref[src];dir=EAST'>E</A></td></tr>
 <tr><td><A href='?src=\ref[src];dir=SOUTHWEST'>SW</A></td><td><A href='?src=\ref[src];dir=SOUTH'>S</A></td><td><A href='?src=\ref[src];dir=SOUTHEAST'>SE</A></td></tr>
 "}
-	user << browse(dat,"window=assembletable;size=160x160;can_close=1")
+	BrowseHTML(user, dat,"window=assembletable;size=160x160;can_close=1")
 
 	src.add_fingerprint(user)
 	return
@@ -80,11 +80,11 @@ RACK PARTS
 
 			newTable.add_fingerprint(usr)
 			logTheThing("station", usr, null, "builds a table (<b>Material:</b> [newTable.material && newTable.material.mat_id ? "[newTable.material.mat_id]" : "*UNKNOWN*"]) at [log_loc(usr)].")
-			usr << browse(null, "window=assembletable")
+			BrowseHTML(usr, null, "window=assembletable")
 			qdel(src)
 			return
 	else
-		usr << browse(null, "window=assembletable")
+		BrowseHTML(usr, null, "window=assembletable")
 	return
 
 /*

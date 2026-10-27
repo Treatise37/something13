@@ -139,7 +139,7 @@
 		else if (refreshing)
 			dat += "<i>Refreshing data, please wait...</i>"
 
-		user << browse(dat,"window=net_logreader;size=545x302")
+		BrowseHTML(user, dat,"window=net_logreader;size=545x302")
 		onclose(user,"net_logreader")
 		return
 

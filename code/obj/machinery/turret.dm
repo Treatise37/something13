@@ -318,7 +318,7 @@
 			if (locked)
 				if (user.machine==src)
 					user.machine = null
-					user << browse(null, "window=turretid")
+					BrowseHTML(user, null, "window=turretid")
 			else
 				if (user.machine==src)
 					src.attack_hand(usr)
@@ -336,7 +336,7 @@
 		if (!istype(user, /mob/living/silicon))
 			boutput(user, text("Too far away."))
 			user.machine = null
-			user << browse(null, "window=turretid")
+			BrowseHTML(user, null, "window=turretid")
 			return
 
 	user.machine = src
@@ -371,7 +371,7 @@
 	else
 		t += "!ALERT! Unable to connect to a turret!<br><br>"
 
-	user << browse(t, "window=turretid")
+	BrowseHTML(user, t, "window=turretid")
 	onclose(user, "turretid")
 
 /obj/machinery/turretid/Topic(href, href_list)

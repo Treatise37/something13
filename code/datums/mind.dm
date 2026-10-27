@@ -131,7 +131,7 @@ datum/mind
 			if (mymaster)
 				output+= "<br><b>Your master:</b> [mymaster.real_name]"
 
-		recipient << browse(output,"window=memory")
+		BrowseHTML(recipient, output,"window=memory")
 
 	proc/set_miranda(new_text)
 		miranda = new_text
@@ -139,7 +139,7 @@ datum/mind
 	proc/show_miranda(mob/recipient)
 		var/output = "<B>[current.real_name]'s Miranda Rights</B><HR>[miranda]"
 
-		recipient << browse(output,"window=miranda")
+		BrowseHTML(recipient, output,"window=miranda")
 
 	Del()
 		logTheThing("debug", null, null, "<b>Mind</b> Mind for \[[src.key ? src.key : "NO KEY"]] deleted!")

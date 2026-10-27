@@ -14,7 +14,7 @@
 	Topic(href, href_list)
 		..()
 		if (href_list["close"])
-			usr << browse(null, "window=forcefield")
+			BrowseHTML(usr, null, "window=forcefield")
 			if (usr.machine == src) usr.machine = null
 			src.updateUsrDialog()
 			return
@@ -96,7 +96,7 @@
 			html += "<p>Can not change state - Forcefield is offline.</p><br><br>"
 
 		html += "<p><a href='?src=\ref[src];close=1'>Close</a></p>"
-		user << browse(html, "window=forcefield")
+		BrowseHTML(user, html, "window=forcefield")
 
 		return
 

@@ -96,7 +96,7 @@ Atmos alert computer
 		else
 			dat += "-- All Systems Nominal<BR><br>"
 		dat += "<BR><br>"
-	user << browse(dat, "window=alerts")
+	BrowseHTML(user, dat, "window=alerts")
 	onclose(user, "alerts")
 
 /obj/machinery/computer/atmosphere/alerts/Topic(href, href_list)

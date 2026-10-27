@@ -63,7 +63,7 @@
 		<b>Mask Release Pressure:</b> <A href='?src=\ref[src];dist_p=-10'>-</A> <A href='?src=\ref[src];dist_p=-1'>-</A> <A href='?src=\ref[src];setpressure=1'>[distribute_pressure]</A> <A href='?src=\ref[src];dist_p=1'>+</A> <A href='?src=\ref[src];dist_p=10'>+</A><BR>
 		<b>Mask Release Valve:</b> <A href='?src=\ref[src];stat=1'>[using_internal?("Open"):("Closed")]</A>
 		"}
-		user << browse(message, "window=tank;size=600x300")
+		BrowseHTML(user, message, "window=tank;size=600x300")
 		onclose(user, "tank")
 		return
 
@@ -93,7 +93,7 @@
 				if ((M.client && M.machine == src))
 					src.attack_self(M)
 		else
-			usr << browse(null, "window=tank")
+			BrowseHTML(usr, null, "window=tank")
 			return
 		return
 

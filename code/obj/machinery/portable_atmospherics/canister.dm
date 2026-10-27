@@ -523,7 +523,7 @@
 							<A href='?action=mach_close&window=canister'>Close</A><BR>
 						</div>"}
 
-	user << browse(output_text, "window=canister;size=[width]x[height]")
+	BrowseHTML(user, output_text, "window=canister;size=[width]x[height]")
 	onclose(user, "canister")
 	return
 
@@ -770,7 +770,7 @@
 		src.add_fingerprint(usr)
 		update_icon()
 	else
-		usr << browse(null, "window=canister")
+		BrowseHTML(usr, null, "window=canister")
 		return
 	return
 

@@ -99,14 +99,14 @@
 			if (traitor_mob.equip_if_possible(R, traitor_mob.slot_in_backpack) == 0)
 				qdel(R)
 				traitor_mob.verbs += /client/proc/gearspawn_traitor
-				traitor_mob << browse(grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+				BrowseHTML(traitor_mob, grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 				return
 	if (!R)
 		traitor_mob.verbs += /client/proc/gearspawn_traitor
-		traitor_mob << browse(grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(traitor_mob, grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 	else
 		if (!(ticker && ticker.mode && istype(ticker.mode, /datum/game_mode/revolution)) && !(traitor_mob.mind && traitor_mob.mind.special_role == "Spy"))
-			traitor_mob << browse(grabResource("html/traitorTips/traitorTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+			BrowseHTML(traitor_mob, grabResource("html/traitorTips/traitorTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 		if (istype(R, /obj/item/device/radio))
 			var/obj/item/device/radio/RR = R

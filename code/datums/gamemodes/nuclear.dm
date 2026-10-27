@@ -166,7 +166,7 @@
 		boutput(synd_mind.current, "<span style=\"color:red\">Your headset allows you to communicate on the syndicate radio channel by prefacing messages with :h, as (say \":h Agent reporting in!\").</span>")
 
 		synd_mind.current.antagonist_overlay_refresh(1, 0)
-		synd_mind.current << browse(grabResource("html/traitorTips/syndiTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+		BrowseHTML(synd_mind.current, grabResource("html/traitorTips/syndiTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	if(nuke_spawn)
 		the_bomb = new /obj/machinery/nuclearbomb(nuke_spawn.loc)

@@ -577,4 +577,4 @@
 		/*var/datum/tag/firebug/fb = new
 		html.addToHead(fb)*/
 
-		usr << browse(html.toHtml(), "window=cheminterface;size=600x600")
+		BrowseHTML(usr, html.toHtml(), "window=cheminterface;size=600x600")

@@ -630,7 +630,7 @@ datum/controller/pathogen
 				else
 					output += "<h1>NOTHING TO SEE HERE YET</h1>"
 		output += "</body></html>"
-		usr << browse(output, "window=cdc;size=800x480")
+		BrowseHTML(usr, output, "window=cdc;size=800x480")
 
 	proc/gen_empty(var/key)
 		if (!(key in src.cdc_creator))

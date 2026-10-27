@@ -110,10 +110,10 @@
 		var/dat = text("<TT><B>Proximity Sensor</B><br>[] []:[]<br><A href='?src=\ref[];tp=-30'>-</A> <A href='?src=\ref[];tp=-1'>-</A> <A href='?src=\ref[];tp=1'>+</A> <A href='?src=\ref[];tp=30'>+</A><br></TT>", (src.timing ? text("<A href='?src=\ref[];time=0'>Timing</A>", src) : text("<A href='?src=\ref[];time=1'>Not Timing</A>", src)), minute, second, src, src, src, src)
 		dat += "<BR><A href='?src=\ref[src];arm=1'>[src.armed ? "Armed":"Not Armed"]</A> (Movement sensor active when armed!)"
 		dat += "<BR><BR><A href='?src=\ref[src];close=1'>Close</A>"
-		user << browse(dat, "window=prox")
+		BrowseHTML(user, dat, "window=prox")
 		onclose(user, "prox")
 	else
-		user << browse(null, "window=prox")
+		BrowseHTML(user, null, "window=prox")
 		user.machine = null
 		return
 
@@ -165,7 +165,7 @@
 			src.time = min(max(round(src.time), 0), 600)
 
 		if (href_list["close"])
-			usr << browse(null, "window=prox")
+			BrowseHTML(usr, null, "window=prox")
 			usr.machine = null
 			return
 
@@ -184,7 +184,7 @@
 					if (M.client && (M.machine == src.master || M.machine == src))
 						src.attack_self(M)
 	else
-		usr << browse(null, "window=prox")
+		BrowseHTML(usr, null, "window=prox")
 		return
 	return
 

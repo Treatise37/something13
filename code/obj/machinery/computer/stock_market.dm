@@ -135,7 +135,7 @@ a.updated {
 			dat += "<a href='?src=\ref[src];archive=\ref[S]' class='[news ? "updated" : "default"]'>(A)</a> <a href='?src=\ref[src];viewhistory=\ref[S]'>(H)</a></td></tr>"
 
 	dat += "</body></html>"
-	user << browse(dat, "window=computer;size=600x400")
+	BrowseHTML(user, dat, "window=computer;size=600x400")
 	onclose(user, "computer")
 	return
 
@@ -295,7 +295,7 @@ a.updated {
 			dat += "<div><b style='font-size:1.25em'>[A.headline]</b><br><i>[A.subtitle]</i><br><br>[A.article]<br>- [A.author], [A.spacetime] (via <i>[A.outlet]</i>)</div>"
 			p++
 		dat += "</div></body></html>"
-		usr << browse(dat, "window=archive_[S.name];size=600x400")
+		BrowseHTML(usr, dat, "window=archive_[S.name];size=600x400")
 
 	if (href_list["cycleview"])
 		vmode++

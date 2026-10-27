@@ -348,7 +348,7 @@
 	set background = 1
 
 	// HTML is built only once, via New() -- all subsequent updates are done using javascript. Slick.
-	usr << browse(html, "window=chemicompiler;size=400x600")
+	BrowseHTML(usr, html, "window=chemicompiler;size=400x600")
 
 /datum/chemicompiler_core/proc/initHtml()
 	var/i

@@ -163,7 +163,7 @@ Auto Patrol: <A href='?src=\ref[src];operation=patrol'>[auto_patrol ? "On" : "Of
 Report Arrests: <A href='?src=\ref[src];operation=report'>[report_arrests ? "On" : "Off"]</A>"}
 
 
-		user << browse("<HEAD><TITLE>Securitron v2.0 controls</TITLE></HEAD>[dat]", "window=autosec")
+		BrowseHTML(user, "<HEAD><TITLE>Securitron v2.0 controls</TITLE></HEAD>[dat]", "window=autosec")
 		onclose(user, "autosec")
 		return
 

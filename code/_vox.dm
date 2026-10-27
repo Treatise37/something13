@@ -123,7 +123,7 @@ proc/vox_help(var/mob/user)
 
 		voxhelp_cache += "</body></html>"
 
-	usr << browse(voxhelp_cache, "window=voxhelp;size=300x600")
+	BrowseHTML(usr, voxhelp_cache, "window=voxhelp;size=300x600")
 
 /client/proc/cmd_admin_intercom_announce()
 	set category = "Special Verbs"

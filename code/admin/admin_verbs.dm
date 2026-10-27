@@ -717,7 +717,7 @@ var/list/special_pa_observing_verbs = list(\
 		alert("You cannot perform this action. You must be of a higher administrative rank!", null, null, null, null, null)
 		return
 	if(!M.client.warned)
-		M << browse(rules, "window=rules;size=480x320")
+		BrowseHTML(M, rules, "window=rules;size=480x320")
 		boutput(M, "<span style=\"color:red\"><B>You have been warned by an administrator. This is the only warning you will receive.</B></span>")
 		M.client.warned = 1
 		message_admins("<span style=\"color:blue\">[src.ckey] warned [M.ckey].</span>")
@@ -769,7 +769,7 @@ var/list/fun_images = list()
 	message_admins("[key_name(src)] forced [key_name(M)] to view the rules.")
 	M << csound("sound/misc/klaxon.ogg")
 	boutput(M, "<span style=\"color:red\"><B>WARNING: An admin is likely very cross with you and wants you to read the rules right fucking now!</B></span>")
-	M << browse(rules, "window=rules;size=480x320")
+	BrowseHTML(M, rules, "window=rules;size=480x320")
 
 /client/proc/view_fingerprints(obj/O as obj in world)
 	set name = "View Object Fingerprints"

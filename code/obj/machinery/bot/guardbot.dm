@@ -948,7 +948,7 @@
 
 			dat += "<br>Network ID: <b>\[[uppertext(src.net_id)]]</b><br>"
 
-			user << browse("<head><title>Guardbuddy v1.4 controls</title></head>[dat]", "window=guardbot")
+			BrowseHTML(user, "<head><title>Guardbuddy v1.4 controls</title></head>[dat]", "window=guardbot")
 			onclose(user, "guardbot")
 			return
 
@@ -3167,7 +3167,7 @@
 
 			dat += "</tr></table>"
 
-		user << browse(dat,"window=guarddock;size=245x282")
+		BrowseHTML(user, dat,"window=guarddock;size=245x282")
 		onclose(user,"guarddock")
 		return
 
@@ -3598,7 +3598,7 @@
 				dat += "<b>Current Location:</b> [istype(guideArea) ? guideArea.name : "<font color=red>Unknown</font>"]"
 
 
-		user << browse("<head><title>Tour Monitor</title></head>[dat]", "window=tourconsole;size=302x245")
+		BrowseHTML(user, "<head><title>Tour Monitor</title></head>[dat]", "window=tourconsole;size=302x245")
 		onclose(user, "tourconsole")
 		return
 
@@ -3665,7 +3665,7 @@
 
 		dat += "<br>Network ID: <b>\[[uppertext(src.net_id)]]</b><br>"
 
-		user << browse("<head><title>Robuddy v0.8 controls</title></head>[dat]", "window=guardbot")
+		BrowseHTML(user, "<head><title>Robuddy v0.8 controls</title></head>[dat]", "window=guardbot")
 		onclose(user, "guardbot")
 		return
 

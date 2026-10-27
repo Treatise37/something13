@@ -86,7 +86,7 @@
 
 	dat += "</b></center>"
 
-	user << browse(dat, "window=arcade")
+	BrowseHTML(user, dat, "window=arcade")
 	onclose(user, "arcade")
 	return
 
@@ -131,7 +131,7 @@
 
 	if (href_list["close"])
 		usr.machine = null
-		usr << browse(null, "window=arcade")
+		BrowseHTML(usr, null, "window=arcade")
 
 	else if (href_list["newgame"]) //Reset everything
 		temp = "New Round"

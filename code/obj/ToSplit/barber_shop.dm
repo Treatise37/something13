@@ -400,7 +400,7 @@
 		else
 			dat += "No Dye Bottle Loaded<BR>"
 
-		user << browse(dat, "window=dye_dispenser")
+		BrowseHTML(user, dat, "window=dye_dispenser")
 		onclose(user, "dye_dispenser")
 		return
 
@@ -455,6 +455,6 @@
 				if ((M.client && M.machine == src))
 					src.attack_hand(M)
 		else
-			usr << browse(null, "window=dye_dispenser")
+			BrowseHTML(usr, null, "window=dye_dispenser")
 			return
 		return

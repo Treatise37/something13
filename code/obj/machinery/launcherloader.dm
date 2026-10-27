@@ -289,7 +289,7 @@
 		dat += "<BR><b><A href='?src=\ref[src];add=1'>Add Tag</A></b>"
 
 		user.machine = src
-		user << browse("<TITLE>Barcode Computer</TITLE><BR>[dat]", "window=bc_computer;size=400x300")
+		BrowseHTML(user, "<TITLE>Barcode Computer</TITLE><BR>[dat]", "window=bc_computer;size=400x300")
 		onclose(user, "bc_computer")
 		return
 
@@ -339,7 +339,7 @@
 			if(length(input) && !destinations.Find(input))
 				destinations.Add(input)*/
 
-		usr << browse(null, "window=bc_computer")
+		BrowseHTML(usr, null, "window=bc_computer")
 		src.updateUsrDialog()
 		return
 
@@ -365,7 +365,7 @@
 		dat += "<BR><b><A href='?src=\ref[src];add=1'>Add Tag</A></b>"
 
 		user.machine = src
-		user << browse("<TITLE>Barcode Computer</TITLE><BR>[dat]", "window=bc_computer;size=400x300")
+		BrowseHTML(user, "<TITLE>Barcode Computer</TITLE><BR>[dat]", "window=bc_computer;size=400x300")
 		onclose(user, "bc_computer")
 		return
 

@@ -251,12 +251,12 @@
 				pdat += "The white light is [src.hacked ? "on" : "off"].<BR>"
 				pdat += "The red light is on.<BR>"
 
-			user << browse(pdat, "window=manupanel")
+			BrowseHTML(user, pdat, "window=manupanel")
 			onclose(user, "manupanel")
 
 		if (stat & BROKEN || stat & NOPOWER)
 			dat = "The screen is blank."
-			user << browse(dat, "window=manufact;size=400x500")
+			BrowseHTML(user, dat, "window=manufact;size=400x500")
 			onclose(user, "manufact")
 			return
 
@@ -375,7 +375,7 @@
 
 		dat += "<hr>"
 
-		user << browse(dat, "window=manufact;size=450x500")
+		BrowseHTML(user, dat, "window=manufact;size=450x500")
 		onclose(user, "manufact")
 
 	Topic(href, href_list)

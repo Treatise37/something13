@@ -3286,7 +3286,7 @@
 	<BR>[(src.internal ? text("<A href='?src=\ref[src];slot=internal;item=internal'>Remove Internal</A>") : "")]
 	<BR><A href='?action=mach_close&window=mob[src.name]'>Close</A>
 	<BR>"}
-	user << browse(dat, text("window=mob[src.name];size=340x480"))
+	BrowseHTML(user, dat, text("window=mob[src.name];size=340x480"))
 	onclose(user, "mob[src.name]")
 	return
 	//	<BR><A href='?src=\ref[src];item=pockets'>Empty Pockets</A>

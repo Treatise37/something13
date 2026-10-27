@@ -33,7 +33,7 @@
 				dat += "<BR><B>Available Credits:</B> $[src.credit]<BR>"
 			dat += "Topping - <A href='?src=\ref[src];picktopping=1'>[piztopping]</A><BR>"
 			dat += "<A href='?src=\ref[src];cook=1'>Cook!</A><BR>"
-		user << browse("<HEAD><TITLE>Pizza Vendor</TITLE></HEAD>[dat]", "window=pizzavend")
+		BrowseHTML(user, "<HEAD><TITLE>Pizza Vendor</TITLE></HEAD>[dat]", "window=pizzavend")
 		onclose(user, "pizzavend")
 		return
 
@@ -625,7 +625,7 @@
 
 		else
 			dat += "<center><a href='?src=\ref[src];unlock=1'>Unlock Vault</a></center>"
-		user << browse("<head><title>Vault Computer</title></head>[dat]", "window=tourconsole;size=302x245")
+		BrowseHTML(user, "<head><title>Vault Computer</title></head>[dat]", "window=tourconsole;size=302x245")
 		onclose(user, "vaultcomputer")
 		return
 

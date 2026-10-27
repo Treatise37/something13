@@ -342,4 +342,4 @@ var/list/default_limb_paths = list("l_arm" = /obj/item/parts/human_parts/arm/lef
 		</tbody></table>
 		"}
 
-		user << browse(HTML,"window=part_mod_[target.ckey ? target.ckey : target];size=680x620")
+		BrowseHTML(user, HTML,"window=part_mod_[target.ckey ? target.ckey : target];size=680x620")

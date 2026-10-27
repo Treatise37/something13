@@ -49,7 +49,7 @@
 		HTML += "<br><b><a href='?src=\ref[src];action=load_admin_prefs'>LOAD</a></b> | <b><a href='?src=\ref[src];action=save_admin_prefs'>SAVE</a></b>"
 		HTML += "</body></html>"
 
-		user << browse(HTML,"window=aprefs")
+		BrowseHTML(user, HTML,"window=aprefs")
 
 	proc/load_admin_prefs()
 		if (!src.owner)

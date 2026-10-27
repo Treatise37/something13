@@ -402,7 +402,7 @@ var/global/noir = 0
 
 			body = "<br>[jobs]<br><br>"
 			dat = "<tt>[header][body]</tt>"
-			usr << browse(dat, "window=jobban2;size=600x150")
+			BrowseHTML(usr, dat, "window=jobban2;size=600x150")
 
 		if("jobban")
 			if (src.level >= LEVEL_SA)
@@ -566,7 +566,7 @@ var/global/noir = 0
 							<A href='?src=\ref[src];action=[cmd];type=construction'>Construction (For testing only. Don't select this!)</A>
 							</body></html>
 						"}
-				usr << browse(dat, "window=c_mode")
+				BrowseHTML(usr, dat, "window=c_mode")
 			else
 				alert("You need to be at least a Secondary Adminstrator to change the game mode.")
 
@@ -1729,7 +1729,7 @@ var/global/noir = 0
 							<A href='?src=\ref[src];action=chgadlvl;type=Goat Fart;target=\ref[C]'>Goat Fart</A><BR>
 							<A href='?src=\ref[src];action=chgadlvl;type=Remove;target=\ref[C]'>Remove Admin</A><BR>
 							"}
-				usr << browse(dat, "window=prom_demot;size=480x300")
+				BrowseHTML(usr, dat, "window=prom_demot;size=480x300")
 			else
 				alert("You need to be at least a Primary Adminstrator to promote or demote.")
 
@@ -2116,13 +2116,13 @@ var/global/noir = 0
 						var/be_string = "To add or remove multiple bioeffects enter multiple IDs separated by semicolons.<br><br><b>All Bio Effect IDs</b><hr>"
 						for(var/S in bioEffectList)
 							be_string += "[S]<br>"
-						usr << browse(be_string,"window=bioeffect_help;size=300x600")
+						BrowseHTML(usr, be_string,"window=bioeffect_help;size=300x600")
 
 					if ("reagent_help")
 						var/r_string = "To add or remove multiple reagents enter multiple IDs separated by semicolons.<br><br><b>All Reagent IDs</b><hr>"
 						for(var/R in reagents_cache)
 							r_string += "[R]<br>"
-						usr << browse(r_string,"window=reagent_help;size=300x600")
+						BrowseHTML(usr, r_string,"window=reagent_help;size=300x600")
 
 					if ("add_bioeffect_one","remove_bioeffect_one")
 						if (src.level >= LEVEL_PA)
@@ -2734,7 +2734,7 @@ var/global/noir = 0
 								dat += "</table>"
 
 							dat += "</body></html>"
-							usr << browse(dat, "window=roundstatus;size=400x500")
+							BrowseHTML(usr, dat, "window=roundstatus;size=400x500")
 						else
 							alert("The game hasn't started yet!")
 					if("shuttle_panel")
@@ -2753,7 +2753,7 @@ var/global/noir = 0
 									if(1)
 										dat += "ETA: <a href='?src=\ref[src];action=edit_shuttle_time'>[(timeleft / 60) % 60]:[add_zero(num2text(timeleft % 60), 2)]</a><BR>"
 							dat += "</body></html>"
-							usr << browse(dat, "window=roundstatus;size=400x500")
+							BrowseHTML(usr, dat, "window=roundstatus;size=400x500")
 					if("manifest")
 						var/dat = "<B>Showing Crew Manifest.</B><HR>"
 						dat += "<table cellspacing=5><tr><th>Name</th><th>Original Position</th><th>Position</th></tr>"
@@ -2762,7 +2762,7 @@ var/global/noir = 0
 								dat += "<tr><td>[H.name]</td><td>[(H.mind ? H.mind.assigned_role : "Unknown Position")]</td><td>[(istype(H.wear_id, /obj/item/card/id) || istype(H.wear_id, /obj/item/device/pda2)) ? "[H.wear_id:assignment]" : "Unknown Position"]</td></tr>"
 							sleep(-1)
 						dat += "</table>"
-						usr << browse(dat, "window=manifest;size=440x410")
+						BrowseHTML(usr, dat, "window=manifest;size=440x410")
 					if("jobcaps")
 						job_controls.job_config()
 					if("randomevents")
@@ -2788,7 +2788,7 @@ var/global/noir = 0
 								dat += "<tr><td>[H]</td><td>[H.bioHolder.Uid]</td><td>[H.bioHolder.bloodType]</td></tr>"
 							sleep(-1)
 						dat += "</table>"
-						usr << browse(dat, "window=DNA;size=440x410")
+						BrowseHTML(usr, dat, "window=DNA;size=440x410")
 					if("fingerprints")
 						var/dat = "<B>Showing Fingerprints.</B><HR>"
 						dat += "<table cellspacing=5><tr><th>Name</th><th>Fingerprints</th></tr>"
@@ -2800,7 +2800,7 @@ var/global/noir = 0
 									dat += "<tr><td>[H]</td><td>H.bioHolder.Uid = null</td></tr>"
 							sleep(-1)
 						dat += "</table>"
-						usr << browse(dat, "window=fingerprints;size=440x410")
+						BrowseHTML(usr, dat, "window=fingerprints;size=440x410")
 					else
 				if (usr)
 					logTheThing("admin", usr, null, "used secret [href_list["secretsadmin"]]")
@@ -2864,7 +2864,7 @@ var/global/noir = 0
 				dat = replacetext(dat, "%admin_ref%", "\ref[src]")
 				var/adminLogHtml = grabResource("html/admin/admin_log.html")
 				adminLogHtml = replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
-				usr << browse(adminLogHtml, "window=[logType]_log;size=750x500")
+				BrowseHTML(usr, adminLogHtml, "window=[logType]_log;size=750x500")
 			else
 				alert("You cannot perform this action. You must be of a higher administrative rank!", null, null, null, null, null)
 
@@ -2894,7 +2894,7 @@ var/global/noir = 0
 				dat = replacetext(dat, "%admin_ref%", "\ref[src]")
 				var/adminLogHtml = grabResource("html/admin/admin_log.html")
 				adminLogHtml = replacetext(adminLogHtml, "<!-- TABLE GOES HERE -->", "[dat]")
-				usr << browse(adminLogHtml, "window=[logType]_log;size=750x500")
+				BrowseHTML(usr, adminLogHtml, "window=[logType]_log;size=750x500")
 
 		if ("s_rez")
 			if (src.level >= LEVEL_SHITGUY)
@@ -3058,7 +3058,7 @@ var/global/noir = 0
 
 	dat += "</table></body></html>"
 
-	usr << browse(dat, "window=players;size=1035x480")
+	BrowseHTML(usr, dat, "window=players;size=1035x480")
 
 
 /datum/admins/proc/s_respawn()
@@ -3069,7 +3069,7 @@ var/global/noir = 0
 			<A href='?src=\ref[src];action=s_rez;type=spawn_syndies'>Spawn a Syndicate attack force</A><BR>
 			<A href='?src=\ref[src];action=s_rez;type=spawn_custom'>Spawn a custom mob type</A><BR>
 			"}
-	usr << browse(dat, "window=SRespawn")
+	BrowseHTML(usr, dat, "window=SRespawn")
 
 	// Someone else removed these but left the (non-functional) buttons. Move back inside the dat section and uncomment to re-add. - IM
 	// <A href='?src=\ref[src];action=s_rez;type=spawn_commandos'>Spawn a force of commandos</A><BR>
@@ -3118,7 +3118,7 @@ var/global/noir = 0
 			current_jobbans_rev = global_jobban_cache_rev
 			jobbans_last_cached = world.timeofday
 
-		usr << browse("<html><head><title>Ban Management</title><style type=\"text/css\">body{font-size: 8pt; font-family: Verdana, sans-serif;}</style></head><body><iframe src=\"jobbans.html\"width=\"100%\" height=\"90%\"></iframe>[jobban_count] job bans. banlist built at [time2text(global_jobban_cache_built)] and downloaded at [time2text(jobbans_last_cached)]</body>", "window=jobbanp;size=400x800")
+		BrowseHTML(usr, "<html><head><title>Ban Management</title><style type=\"text/css\">body{font-size: 8pt; font-family: Verdana, sans-serif;}</style></head><body><iframe src=\"jobbans.html\"width=\"100%\" height=\"90%\"></iframe>[jobban_count] job bans. banlist built at [time2text(global_jobban_cache_built)] and downloaded at [time2text(jobbans_last_cached)]</body>", "window=jobbanp;size=400x800")
 
 /datum/admins/proc/Game()
 	var/dat
@@ -3134,7 +3134,7 @@ var/global/noir = 0
 		dat += "<A href='?src=\ref[src];action=create_object'>Create Object</A><br>"
 		dat += "<A href='?src=\ref[src];action=create_turf'>Create Turf</A><br>"
 		dat += "<A href='?src=\ref[src];action=create_mob'>Create Mob</A><br>" // Moved from SG to PA. They can do this through build mode anyway (Convair880).
-	usr << browse(dat, "window=admin2;size=210x180")
+	BrowseHTML(usr, dat, "window=admin2;size=210x180")
 	return
 
 /datum/admins/proc/Secrets()
@@ -3277,7 +3277,7 @@ var/global/noir = 0
 				<A href='?src=\ref[src];action=secretsfun;type=the_great_switcharoo'>The Great Switcharoo</A><BR>
 		"}
 
-	usr << browse(dat, "window=secrets")
+	BrowseHTML(usr, dat, "window=secrets")
 	return
 
 /datum/admins/proc/Voting()
@@ -3290,7 +3290,7 @@ var/global/noir = 0
 					<A href='?src=\ref[src];action=voteres'>Toggle Voting</A><br>
 				"}
 
-	usr << browse(dat, "window=admin2;size=210x160")
+	BrowseHTML(usr, dat, "window=admin2;size=210x160")
 	return
 
 /////////////////////////////////////////////////////////////////////////////////////////////////admins2.dm merge
@@ -3353,7 +3353,7 @@ var/global/noir = 0
 	for(var/mob/M in mobs)
 		// clear vote window from all clients
 		if(M.client)
-			M << browse(null, "window=vote")
+			BrowseHTML(M, null, "window=vote")
 			M.client.showvote = 0
 
 /datum/admins/proc/restart()
@@ -3614,10 +3614,10 @@ var/global/noir = 0
 				if(special != "hardmode")
 					M.mind.special_role = "traitor"
 					M.verbs += /client/proc/gearspawn_traitor
-					M << browse(grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+					BrowseHTML(M, grabResource("html/traitorTips/traitorradiouplinkTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 				else
 					M.mind.special_role = "hard-mode traitor"
-					M << browse(grabResource("html/traitorTips/traitorhardTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+					BrowseHTML(M, grabResource("html/traitorTips/traitorhardTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 			if("changeling")
 				M.mind.special_role = "changeling"
 				M.show_text("<h2><font color=red><B>You have mutated into a changeling!</B></font></h2>", "red")
@@ -3625,7 +3625,7 @@ var/global/noir = 0
 			if("wizard")
 				M.mind.special_role = "wizard"
 				M.show_text("<h2><font color=red><B>You have been seduced by magic and become a wizard!</B></font></h2>", "red")
-				M << browse(grabResource("html/traitorTips/wizardcustomTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+				BrowseHTML(M, grabResource("html/traitorTips/wizardcustomTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 				M.verbs += /client/proc/gearspawn_wizard
 			if("vampire")
 				M.mind.special_role = "vampire"
@@ -3667,7 +3667,7 @@ var/global/noir = 0
 				M.make_wrestler(1)
 				M.make_grinch()
 				M.show_text("<h2><font color=red><B>You have become an omnitraitor!</B></font></h2>", "red")
-				M << browse(grabResource("html/traitorTips/omniTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+				BrowseHTML(M, grabResource("html/traitorTips/omniTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	else
 		M.show_text("<h2><font color=red><B>You have become evil and are now an antagonist!</B></font></h2>", "red")

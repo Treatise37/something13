@@ -71,7 +71,7 @@ MATERIAL
 			if (istype(src.loc,/mob/living/))
 				var/mob/living/L = src.loc
 				L.u_equip(src)
-				L << browse(null, "window=met_sheet")
+				BrowseHTML(L, null, "window=met_sheet")
 				onclose(L, "met_sheet")
 			qdel(src)
 		return
@@ -246,7 +246,7 @@ MATERIAL
 			t1 += "<BR>"
 
 		t1 += "</TT></HTML>"
-		user << browse(t1, "window=met_sheet")
+		BrowseHTML(user, t1, "window=met_sheet")
 		onclose(user, "met_sheet")
 		return
 

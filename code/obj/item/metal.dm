@@ -251,7 +251,7 @@ MATERIAL
 				counter = 1
 			t1 += "<BR>"
 		t1 += "</TT></HTML>"
-		user << browse(t1, "window=met_sheet")
+		BrowseHTML(user, t1, "window=met_sheet")
 		onclose(user, "met_sheet")
 		return
 
@@ -390,7 +390,7 @@ MATERIAL
 						logTheThing("station", usr, null, "builds Wall Girders in [usr.loc.loc] ([showCoords(usr.x, usr.y, usr.z)])")
 
 			if (src.amount <= 0)
-				usr << browse(null, "window=met_sheet")
+				BrowseHTML(usr, null, "window=met_sheet")
 				onclose(usr, "met_sheet")
 				usr.u_equip(src)
 				boutput(usr, "<span style=\"color:red\">You use up the last of your metal.</span>")
@@ -438,7 +438,7 @@ MATERIAL
 				counter = 1
 			t1 += "<BR>"
 		t1 += "</TT></HTML>"
-		user << browse(t1, "window=met_sheet")
+		BrowseHTML(user, t1, "window=met_sheet")
 		onclose(user, "met_sheet")
 		return
 
@@ -505,7 +505,7 @@ MATERIAL
 					C.amount = 2
 
 			if (src.amount <= 0)
-				usr << browse(null, "window=met_sheet")
+				BrowseHTML(usr, null, "window=met_sheet")
 				onclose(usr, "met_sheet")
 				usr.u_equip(src)
 				qdel(src)

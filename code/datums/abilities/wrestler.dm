@@ -74,7 +74,7 @@
 					A5.is_inherent = 1
 
 		if (belt_check != 1 && (src.mind && src.mind.special_role != "omnitraitor"))
-			src << browse(grabResource("html/traitorTips/wrestlerTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
+			BrowseHTML(src, grabResource("html/traitorTips/wrestlerTips.html"),"window=antagTips;titlebar=1;size=600x400;can_minimize=0;can_resize=0")
 
 	else return
 
