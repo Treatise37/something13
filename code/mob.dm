@@ -1163,7 +1163,7 @@
 
 /mob/verb/hotkeys()
 	set name = "Hotkeys"
-	//src << browse('browserassets/html/admin/hotkeys.html', "window=help")
+	src << browse('browserassets/html/admin/hotkeys.html', "window=help")
 	return
 
 /mob/verb/abandon_mob()

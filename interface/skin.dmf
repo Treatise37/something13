@@ -849,6 +849,15 @@ menu "menu"
 		group = ""
 		is-disabled = false
 		saved-params = "is-checked"
+	elem
+		name = "&Hotkeys"
+		command = "hotkeys"
+		category = "&Help"
+		is-checked = false
+		can-check = false
+		group = ""
+		is-disabled = false
+		saved-params = "is-checked"
 
 
 window "camera_console"
