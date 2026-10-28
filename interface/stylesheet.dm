@@ -73,12 +73,7 @@ h1.alert, h2.alert		{color: #000000;}
 
 .bling					{color: #D5AD6D; text-shadow: 0 0 3px #D5AD6D; font-weight: bold; font-size: 110%;}
 
-.achievementrare		{color: #D5AD6D; text-shadow: 0 0 3px #D5AD6D; font-weight: bold; font-size: 150%; animation: rare 2500ms infinite;}
-	@keyframes rare {
-		0% {color: #D5AD6D; text-shadow: 0 0 3px #D5AD6D;}
-		50% {color: #d3d56d;text-shadow: 0 0 9px #d5d36d;}
-		100% {color: #D5AD6D;text-shadow: 0 0 3px #D5AD6D;}
-}
+.achievementrare		{color: #D5AD6D; text-shadow: 0 0 3px #D5AD6D; font-weight: bold; font-size: 150%;}
 
 .achievementgood		{color: #7cdd7c; text-shadow: 0 0 3px #7cdd7c; font-weight: bold;font-size: 125%;}
 
@@ -88,30 +83,10 @@ h1.alert, h2.alert		{color: #000000;}
 
 .largeinfo				{color: #9ab0ff; text-shadow: 0 0 3px #86a0ff; font-size: 125%;}
 
-.effortgained			{color: #5df4ff; text-shadow: 0 0 8px #5df4ff; font-size: 110%; animation: effortgained 3000ms infinite;}
-	@keyframes effortgained {
-		0% {text-shadow: 0 0 4px #5df4ff;}
-		50% {text-shadow: 0 0 8px #5df4ff;}
-		100% {text-shadow: 0 0 4px #5df4ff;}
-}
-.effortlost				{color: #5df4ff; text-shadow: 0 0 8px #5df4ff; font-size: 110%; animation: effortlost 3000ms infinite;}
-	@keyframes effortlost {
-  		0% {text-shadow: 0 0 4px #5df4ff;}
-		50% {text-shadow: 0 0 8px #ff5a83;}
-		100% {text-shadow: 0 0 4px #ff5a83;}
-}
-.animatedpain 					{color: #BA55D3; text-shadow: 0 0 6px #c75be2; font-size: 110%; animation: pain 2500ms infinite;}
-	@keyframes pain {
-		0% {color: #BA55D3;text-shadow: 0 0 4px #c75be2;}
-		50% {color: #cc00ff;text-shadow: 0 0 8px #ad37ca;}
-		100% {color: #BA55D3;text-shadow: 0 0 4px #c75be2;}
-}
-.flashinguserdanger		{color: #BA55D3; text-shadow: 0 0 6px #c75be2; font-size: 125%; animation: flashuserdanger 250ms infinite;}
-	@keyframes flashuserdanger {
-		0% {color: #BA55D3;text-shadow: 0 0 6px #c75be2;}
-		50% {color: #ff56ff;text-shadow: 0 0 8px #ff4aff;}
-		100% {color: #BA55D3;text-shadow: 0 0 6px #c75be2;}
-}
+.effortgained			{color: #5df4ff; text-shadow: 0 0 8px #5df4ff; font-size: 110%;}
+.effortlost				{color: #5df4ff; text-shadow: 0 0 8px #5df4ff; font-size: 110%;}
+.animatedpain 					{color: #BA55D3; text-shadow: 0 0 6px #c75be2; font-size: 110%;}
+.flashinguserdanger		{color: #BA55D3; text-shadow: 0 0 6px #c75be2; font-size: 125%;}
 .lowpain				{color: #a4a562; text-shadow: 0 0 0px #a4a562;}
 .lowestpain				{color: #a4a562; font-size: 85%; text-shadow: 0 0 0px #a4a562;}
 .artery					{color: #9B5455; text-shadow: 0 0 3px #9B5455;}
@@ -119,13 +94,8 @@ h1.alert, h2.alert		{color: #000000;}
 .bolddanger 			{color: #c51e1e; text-shadow: 0 0 3px #ff4747; font-weight: bold;}
 .bigdanger				{color: #c51e1e; font-size: 140%; text-shadow: 0 0 6px #ff4444;}
 .danger					{color: #ff0000; text-shadow: 0 0 3px #ff4747;}
-.flashingdanger 		{color: #c51e1e; font-weight: bold; text-shadow: 0 0 3px #a81010; animation: flashdanger 2000ms infinite;}
-.flashingbigdanger		{color: #c51e1e; font-size: 140%; font-weight: bold; text-shadow: 0 0 6px #ff4444; animation: flashdanger 1000ms infinite;}
-	@keyframes flashdanger {
-		0% {color: #ff4f4f; text-shadow: 0 0 4px #ff4444;}
-		50% {color: #c51e1e; text-shadow: 0 0 3px #ff4444;}
-		100% {color: #ff4f4f; text-shadow: 0 0 4px #ff4444;}
-}
+.flashingdanger 		{color: #c51e1e; font-weight: bold; text-shadow: 0 0 3px #a81010;}
+.flashingbigdanger		{color: #c51e1e; font-size: 140%; font-weight: bold; text-shadow: 0 0 6px #ff4444;}
 .infection				{color: #77c72b; text-shadow: 0 0 3px #68af26;}
 .necrosis				{color: #497a1a; text-shadow: 0 0 6px #558d20;}
 .dead					{color: #b280df; text-shadow: 0 0 1px #b280df;}
@@ -208,25 +178,13 @@ h1.alert, h2.alert		{color: #000000;}
 .clown					{color: #FF69Bf;	font-size: 3;	font-family: "Comic Sans MS", cursive, sans-serif;	font-weight: bold;}
 .singing				{font-family: "Trebuchet MS", cursive, sans-serif; font-style: italic;}
 .his_grace				{color: #15D512;	font-family: "Courier New", cursive, sans-serif;	font-style: italic;}
-.hypnophrase			{color: #3bb5d3;	font-weight: bold;	animation: hypnocolor 1500ms infinite; animation-direction: alternate;}
-	@keyframes hypnocolor {
-		0%		{color: #0d0d0d;}
-		25%		{color: #410194;}
-		50%		{color: #7f17d8;}
-		75%		{color: #410194;}
-		100%	{color: #3bb5d3;}
-}
+.hypnophrase			{color: #3bb5d3;	font-weight: bold;}
 
-.phobia			{color: #dd0000;	font-weight: bold;	animation: phobia 750ms infinite;}
-	@keyframes phobia {
-		0%		{color: #0d0d0d;}
-		50%		{color: #dd0000;}
-		100%	{color: #0d0d0d;}
-}
+.phobia			{color: #dd0000;	font-weight: bold;}
 .icon					{height: 1em;	width: auto;}
 .infobox				{border: 1px ridge #383243; background: rgba(40, 40, 60, 0.5); margin: 2px 8px; padding: 8px 12px; max-width: 550px;}
 
-.infohr 				{border: 0; height: 1px; background-image: linear-gradient(to right, rgba(187, 187, 255, 0), rgba(187, 187, 255, 0.65), rgba(187, 187, 255, 0));}
+.infohr 				{border: 0; height: 1px; background: rgba(187, 187, 255, 0.5);}
 
 .memo					{color: #638500;	text-align: center;}
 .memoedit				{text-align: center;	font-size: 2;}
