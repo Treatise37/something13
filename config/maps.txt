@@ -14,7 +14,6 @@ Format:
 endmap
 
 map combat_map
-	default
 	votable
 endmap
 
@@ -52,4 +51,8 @@ map verina
 endmap
 
 map prison_verina
+endmap
+
+map penis
+	default
 endmap

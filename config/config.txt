@@ -16,7 +16,7 @@ $include septic/septic_config.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-SERVERNAME ESCAPE FROM NEVADO: OMSK CRUELTY
+SERVERNAME ESCAPE FROM NEVADO: SAMARA OUTPOST
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME tgstation

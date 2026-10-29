@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"map_name": "Samara",
+	"map_path": "_something/map_files/Penis/",
+	"map_file": "penis.dmm",
+	"Gravity" : true,
+	"dynamic_forced_roundstart_rulesets": [
+		"/datum/dynamic_ruleset/roundstart/samara"
+	]
+}

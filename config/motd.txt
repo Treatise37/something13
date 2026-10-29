@@ -1,4 +1,4 @@
 <!-- Most valid html will work in here, excluding images. -->
 <div style='height: 1000px'></div>
-<h1>Welcome to the Escape from Nevado: Omsk Cruelty!</h1>
-If you need to learn how to play, check our discord. Talk with people, betray them. Enjoy Omsk.
+<h1>Welcome to the Escape from Nevado: Samara Outpost!</h1>
+OK Untermensch...
