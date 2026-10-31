@@ -1,0 +1,78 @@
+@use 'sass:color';
+@use 'sass:meta';
+
+@use '../colors.scss' with (
+  $primary: #7a2a22,
+  $good: #8c9a5b,
+  $average: #b8923f,
+  $bad: #b22a2a,
+  $label: #8c8073,
+);
+@use '../base.scss' with (
+  $color-bg: #14100e,
+  $color-bg-grad-spread: 3%,
+  $border-radius: 0,
+);
+
+.theme-grimdark {
+  // Atomic classes
+  @include meta.load-css('../atomic/color.scss');
+
+  // Components
+  @include meta.load-css('../components/Button.scss', $with: (
+    'color-default': #4b1a15,
+    'color-disabled': #2a2523,
+    'color-selected': #7a1f1a,
+    'color-caution': #6b4e1b,
+    'color-danger': #8f1a1a,
+    'color-transparent-text': rgba(201, 181, 138, 0.5),
+  ));
+  @include meta.load-css('../components/Input.scss', $with: (
+    'border-color': #5a3a30,
+  ));
+  @include meta.load-css('../components/NoticeBox.scss', $with: (
+    'background-color': #3a1511,
+  ));
+  @include meta.load-css('../components/Section.scss', $with: (
+    'title-text-color': #c9b58a,
+    'separator-color': #5a1f1a,
+    'background-color': rgba(0, 0, 0, 0.4),
+  ));
+  @include meta.load-css('../components/Tabs.scss', $with: (
+    'color-default': #a8362c,
+    'text-color': rgba(201, 181, 138, 0.55),
+    'text-color-selected': #e0cfa6,
+    'tab-color-hovered': rgba(122, 31, 26, 0.25),
+    'tab-color-selected': rgba(122, 31, 26, 0.4),
+  ));
+  @include meta.load-css('../components/Tooltip.scss', $with: (
+    'color': #c9b58a,
+    'background-color': #1c1411,
+  ));
+
+  // Layouts
+  @include meta.load-css('../layouts/Layout.scss');
+  @include meta.load-css('../layouts/Window.scss');
+  @include meta.load-css('../layouts/TitleBar.scss', $with: (
+    'text-color': #c9b58a,
+    'background-color': #2a0f0c,
+    'shadow-color-core': #000000,
+  ));
+
+  .Layout__content {
+    color: #c9b58a;
+    background-image: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0, 0) 35%,
+      rgba(0, 0, 0, 0.7) 100%);
+    background-size: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+  }
+
+  .Section__titleText {
+    font-family: Georgia, 'Times New Roman', serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+}
